@@ -15,7 +15,20 @@ body,
 .kv-card{
     max-width: 350px;
 }
-
+body.index-bg{
+  background-color: #fff;
+  background-image: url('../images/onlyBG.png'), url('../images/bg_bottom.png');
+  background-size: 100% auto, 100% auto;
+  background-position: center center, center center;
+  background-repeat: no-repeat, repeat-y;
+}
+.bg-head{
+  background-color: #fff;
+  background-image: url('../images/onlyBG.png');
+  background-size: 100% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 
 @media only screen and (max-width: 768px) {
   .navbar {
@@ -29,4 +42,18 @@ body,
 
 #time-counter {
   font-size: 3rem;
+}
+@media (min-width: 800px) and (max-width: 850px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #1c2331 !important;
+  }
+}
+@media (max-width:515px){
+  .bg-head{
+    background-color: aqua;
+    background-image: url('../images/onlyBG.png');
+    background-size: auto 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
 }

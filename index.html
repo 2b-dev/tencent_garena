@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Tencent X Garena</title>
+    <title>ARENA OF VALOR</title>
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -21,144 +21,156 @@
     <!-- Material Design Bootstrap -->
     <link href="./node_modules/mdbootstrap/css/mdb.min.css" rel="stylesheet" />
     <!-- Your custom styles (optional) -->
-    <link href="./css/css.css" rel="stylesheet" />
-    <style type="text/css">
-      html,
-      body,
-      header,
-      .view {
-        height: 100%;
-      }
-
-      @media (max-width: 559px) {
-        html,
-        body,
-        header,
-        .view {
-          height: 1000px;
-        }
-      }
-
-      @media (min-width: 560px) and (max-width: 740px) {
-        html,
-        body,
-        header,
-        .view {
-          height: 700px;
-        }
-      }
-
-      @media (min-width: 800px) and (max-width: 850px) {
-        html,
-        body,
-        header,
-        .view {
-          height: 600px;
-        }
-      }
-
-      @media (min-width: 800px) and (max-width: 850px) {
-        .navbar:not(.top-nav-collapse) {
-          background: #1c2331 !important;
-        }
-      }
-    </style>
+    <link href="./css/css.css" rel="stylesheet" />    
   </head>
 
-  <body>
+  <body class="index-bg">
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-      <div class="container">
-        <!-- Brand -->
-        <a
-          class="navbar-brand"
-          href="https://mdbootstrap.com/docs/jquery/"
-          target="_blank"
-        >
-          <strong>Tencent X Garena</strong>
-        </a>
-
-        <!-- Collapse -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Links -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!-- Left -->
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="#!">News</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#!">Activities</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#!">Agenda</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#!">Floor Plan</a>
-            </li>
-          </ul>
-
-          <!-- Right -->
-          <ul class="navbar-nav nav-flex-icons">
-            <li class="nav-item">
-              <a class="nav-link" href="#!">Contact us</a>
-            </li>
-            <li class="nav-item">
-              <a href="#!" class="nav-link border border-light rounded px-3">
-                <i class="fas fa-user mr-2"></i>Login
-              </a>
-            </li>
-          </ul>
+    <!--
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+        <div class="container">          
+          <a
+            class="navbar-brand"
+            href="https://mdbootstrap.com/docs/jquery/"
+            target="_blank"
+          >
+            <strong>Tencent X Garena</strong>
+          </a>
+          
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item"><a class="nav-link" href="#!">News</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!">Activities</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#!">Agenda</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!">Floor Plan</a>
+              </li>
+            </ul>
+            
+            <ul class="navbar-nav nav-flex-icons">
+              <li class="nav-item">
+                <a class="nav-link" href="#!">Contact us</a>
+              </li>
+              <li class="nav-item">
+                <a href="#!" class="nav-link border border-light rounded px-3">
+                  <i class="fas fa-user mr-2"></i>Login
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    -->
     <!-- Navbar -->
 
     <!-- Full Page Intro -->
-    <div class="view">
-      <video
-        class="video-intro"
-        poster="./images/poster_background.jpg"
-        playsinline
-        autoplay
-        muted
-        loop
-      >
-        <source src="./videos/intro.mp4" type="video/mp4" />
-      </video>
-
+    <div class="view bg-head">
       <!-- Mask & flexbox options-->
-      <div
-        class="mask rgba-black-light d-flex justify-content-center align-items-center"
-      >
+      <div class="mask d-flex justify-content-center align-items-center">
         <!-- Content -->
-        <div class="text-center white-text mx-5 wow fadeInUp">
-          <h1 class="">
-            <!-- Card image -->
-            
-              <img
-                class="kv-card m-auto z-depth-5 animated pulse infinite delay-3s"
-                src="./images/kv.png"
-                alt="Arena of Valor"
-              />
-          </h1>
-          <!-- Card -->
-          <h1 class="display-4 mb-4 mt-3"><strong>Coming Soon!</strong></h1>
+        <div class="text-center black-text mx-5 wow fadeInUp">
+          <!-- Card -->          
           <!-- Time Counter -->
-          <p id="time-counter" class="border border-light my-4 px-4">00d 00h 00m 00s</p>
+          <p id="time-counter" class="border border-light my-4 px-4">
+            00d 00h 00m 00s
+          </p>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item"
+              src="https://www.youtube.com/embed/6IDeC7g1PyE"
+              allowfullscreen
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+            ></iframe>
+          </div>
+          <div class="input-group mt-3 mb-3">
+            <div class="input-group-prepend" id="button-addon3">
+              <button
+                class="btn btn-lg btn-outline-danger m-0 px-3 py-2 z-depth-0 waves-effect"
+                type="button"
+              >
+                Enter your passport ID
+              </button>
+            </div>
+            <input
+              type="text"
+              class="form-control form-control-lg"
+              placeholder="..."
+              aria-label="Example text with two button addons"
+              aria-describedby="button-addon3"
+            />
+            <div class="input-group-append">
+              <button
+                class="btn btn-lg btn-danger m-0 px-3 py-2 z-depth-0 waves-effect"
+                type="button"
+                id="button-addon3"
+              >
+                Login
+              </button>
+            </div>
+          </div>
         </div>
         <!-- Content -->
       </div>
       <!-- Mask & flexbox options-->
     </div>
     <!-- Full Page Intro -->
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe
+                class="embed-responsive-item"
+                src="https://www.youtube.com/embed/6IDeC7g1PyE"
+                allowfullscreen
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              ></iframe>
+            </div>
+            <div class="input-group mt-3 mb-3">
+              <div class="input-group-prepend" id="button-addon3">
+                <button
+                  class="btn btn-lg btn-outline-danger m-0 px-3 py-2 z-depth-0 waves-effect"
+                  type="button"
+                >
+                  Enter your passport ID
+                </button>
+              </div>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="..."
+                aria-label="Example text with two button addons"
+                aria-describedby="button-addon3"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-lg btn-danger m-0 px-3 py-2 z-depth-0 waves-effect"
+                  type="button"
+                  id="button-addon3"
+                >
+                  Login
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!--Footer-->
     <footer class="page-footer text-center font-small wow fadeIn">
@@ -201,7 +213,6 @@
       // Animations initialization
       new WOW().init();
     </script>
-    
 
     <!-- Time Counter -->
     <script type="text/javascript">
