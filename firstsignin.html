@@ -25,9 +25,13 @@
       href="./node_modules/sweetalert2/dist/sweetalert2.min.css"
       rel="stylesheet"
     />
-    <link href="./node_modules/smartwizard/dist/css/smart_wizard.min.css" rel="stylesheet" />
     <link
-      href="./node_modules/smartwizard/dist/css/smart_wizard_theme_arrows.min.css" rel="stylesheet"
+      href="./node_modules/smartwizard/dist/css/smart_wizard.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="./node_modules/smartwizard/dist/css/smart_wizard_theme_arrows.min.css"
+      rel="stylesheet"
     />
     <!-- Your custom styles (optional) -->
     <link href="./css/css.css" rel="stylesheet" />
@@ -39,40 +43,259 @@
         <div class="row">
           <div class="col-12">
             <div id="smartwizard">
-              <ul>
+              <ul class="">
                 <li>
                   <a href="#step-1"
-                    >Step 1<br /><small>Personal Infomation</small></a
+                    >Step 1<br /><small class="d-none d-md-block"
+                      >Personal Infomation</small
+                    ></a
                   >
                 </li>
                 <li>
                   <a href="#step-2"
-                    >Step Title<br /><small>Step description</small></a
+                    >Step 2<br /><small class="d-none d-md-block"
+                      >Step description</small
+                    ></a
                   >
                 </li>
                 <li>
                   <a href="#step-3"
-                    >Step Title<br /><small>Step description</small></a
+                    >Step 3<br /><small class="d-none d-md-block"
+                      >Step description</small
+                    ></a
                   >
                 </li>
                 <li>
                   <a href="#step-4"
-                    >Step Title<br /><small>Step description</small></a
+                    >Step 4<br /><small class="d-none d-md-block"
+                      >Step description</small
+                    ></a
                   >
                 </li>
               </ul>
 
               <div>
                 <div id="step-1" class="">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                
+                  <div class="container py-4">
+                    <div class="row">
+                      <div class="col-12 text-center">
+                        <h3 class="red-text font-weight-bolder">
+                          PERSONAL INFORMATION FILL IN
+                        </h3>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-row">
+                          <div class="col-12 col-md-4 col-lg-3 mb-2">
+                            <button
+                              class="btn btn-danger disabled label btn-block text-center text-md-left"
+                            >
+                              <i>ARE YOU FROM</i>
+                            </button>
+                          </div>
+                          <div
+                            class="col-6 col-md-4 col-lg-3 mb-2 align-self-center text-center"
+                          >
+                            <div class="custom-control custom-radio">
+                              <input
+                                type="radio"
+                                class="custom-control-input"
+                                id="garena"
+                                name="fromCompany"
+                              />
+                              <label class="custom-control-label" for="garena"
+                                >GARENA</label
+                              >
                             </div>
+                          </div>
+                          <div
+                            class="col-6 col-md-4 col-lg-3 mb-2 align-self-center text-center"
+                          >
+                            <div class="custom-control custom-radio">
+                              <input
+                                type="radio"
+                                class="custom-control-input"
+                                id="tencent"
+                                name="fromCompany"
+                              />
+                              <label class="custom-control-label" for="tencent"
+                                >TENCENT</label
+                              >
+                            </div>
+                          </div>
                         </div>
+                        <div class="form-row mt-2">
+                          <div class="col-12 col-md-4 col-lg-3 mb-2">
+                            <button
+                              class="btn btn-danger disabled label btn-block text-center text-md-left"
+                            >
+                              <i>WHERE ARE YOU FROM</i>
+                            </button>
+                          </div>
+                          <div
+                            class="col-12 col-md-6 col-lg-6 mb-2 align-self-center px-md-5"
+                          >
+                            <select class="browser-default custom-select">
+                              <option selected disabled
+                                >--Select your nationality--</option
+                              >
+                              <option value="1">CHAINA</option>
+                              <option value="2">CHAINA-SHANGHAI</option>
+                              <option value="3">CHAINA-SHENZHEN</option>
+                              <option value="4">INDONESIA</option>
+                              <option value="5">SINGAPORE</option>
+                              <option value="6">TAIWAN</option>
+                              <option value="7">THAILAND</option>
+                              <option value="8">VIETNAM</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-row mt-2">
+                          <div class="col-12 col-md-4 col-lg-3 mb-2">
+                            <button
+                              class="btn btn-danger disabled label btn-block text-center text-md-left"
+                            >
+                              <i>T-SHIRT SIZE</i>
+                            </button>
+                          </div>
+                          <div
+                            class="col-6 col-md-2 col-lg-2 mb-2 align-self-center text-center"
+                          >
+                            <div class="custom-control custom-radio">
+                              <input
+                                type="radio"
+                                class="custom-control-input"
+                                id="t-s"
+                                name="tshirst"
+                              />
+                              <label class="custom-control-label" for="t-s"
+                                >SMALL</label
+                              >
+                            </div>
+                          </div>
+                          <div
+                            class="col-6 col-md-2 col-lg-2 mb-2 align-self-center text-center"
+                          >
+                            <div class="custom-control custom-radio">
+                              <input
+                                type="radio"
+                                class="custom-control-input"
+                                id="t-m"
+                                name="tshirst"
+                              />
+                              <label class="custom-control-label" for="t-m"
+                                >MEDIEAM</label
+                              >
+                            </div>
+                          </div>
+                          <div
+                            class="col-6 col-md-2 col-lg-2 mb-2 align-self-center text-center"
+                          >
+                            <div class="custom-control custom-radio">
+                              <input
+                                type="radio"
+                                class="custom-control-input"
+                                id="t-l"
+                                name="tshirst"
+                              />
+                              <label class="custom-control-label" for="t-l"
+                                >LARGE</label
+                              >
+                            </div>
+                          </div>
+                          <div
+                            class="col-6 col-md-2 col-lg-2 mb-2 align-self-center text-center"
+                          >
+                            <div class="custom-control custom-radio">
+                              <input
+                                type="radio"
+                                class="custom-control-input"
+                                id="t-xl"
+                                name="tshirst"
+                              />
+                              <label class="custom-control-label" for="t-xl"
+                                >EXTRA LARGE</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-row mt-2">
+                          <div class="col-12 col-md-12 col-lg-4 mb-2">
+                            <button
+                              class="btn btn-danger disabled label btn-block text-center text-md-left"
+                            >
+                              <i>FOOD PREFERENCE / LIMITATION</i>
+                            </button>
+                          </div>
+                          <div
+                            class="col-12 col-md-12 col-lg-6 mb-2 align-self-center px-lg-5"
+                          >
+                            <input
+                              id="food"
+                              class="form-control"
+                              placeholder="FOOD PREFERENCE / LIMITATION"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-row mt-2">
+                          <div class="col-12 col-md-12 col-lg-4 mb-2">
+                            <button
+                              class="btn btn-danger disabled label btn-block text-center text-md-left"
+                            >
+                              <i>PHOBIA OR PHYSICAL LIMITATION</i>
+                            </button>
+                          </div>
+                          <div
+                            class="col-12 col-md-12 col-lg-6 mb-2 align-self-center px-lg-5"
+                          >
+                            <input
+                              id="phobia"
+                              class="form-control"
+                              placeholder="PHOBIA OR PHYSICAL LIMITATION"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-row mt-2">
+                          <div class="col-12 col-md-12 col-lg-12 mb-2">
+                            <button
+                              class="btn btn-danger disabled label btn-block text-center text-md-left"
+                            >
+                              <i
+                                >WOULD YOU REQUIRE ANY EXTRA ASSISTANCE ON
+                                ANYTHING ?</i
+                              >
+                            </button>
+                          </div>
+                          <div
+                            class="col-12 col-md-12 col-lg-12 mb-2 align-self-center"
+                          >
+                            <input
+                              id="extrareq"
+                              class="form-control"
+                              placeholder=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 text-center">
+                        <button class="btn btn-primary" onclick="submitPI();">
+                          SUBMIT & NEXT STEP
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="step-2" class="">
+                  <div class="container py-4">
+                      <div class="row">
+                          <div class="col-12">
+                              
+                          </div>
+                          <div class="col-12">
+                              <h4 class="red-text font-weight-bolder"><i>You can see the above data again after finish all step</i></h4>
+                          </div>
+                      </div>
                     </div>
                 </div>
-                <div id="step-2" class="">Step Content2</div>
                 <div id="step-3" class="">Step Content3</div>
                 <div id="step-4" class="">Step Content4</div>
               </div>
@@ -126,7 +349,7 @@
           autoAdjustHeight: true, // Automatically adjust content height
           cycleSteps: false, // Allows to cycle the navigation of steps
           backButtonSupport: true, // Enable the back button support
-          useURLhash: false, // Enable selection of the step based on url hash
+          useURLhash: true, // Enable selection of the step based on url hash
           showStepURLhash: false,
           lang: {
             // Language variables
@@ -136,21 +359,15 @@
           toolbarSettings: {
             toolbarPosition: "bottom", // none, top, bottom, both
             toolbarButtonPosition: "right", // left, right
-            showNextButton: true, // show/hide a Next button
-            showPreviousButton: true, // show/hide a Previous button
+            showNextButton: false, // show/hide a Next button
+            showPreviousButton: false, // show/hide a Previous button
             toolbarExtraButtons: [
-              $("<button></button>")
+              /*$("<button></button>")
                 .text("Finish")
                 .addClass("btn btn-info")
                 .on("click", function() {
                   alert("Finsih button click");
-                }),
-              $("<button></button>")
-                .text("Cancel")
-                .addClass("btn btn-danger")
-                .on("click", function() {
-                  alert("Cancel button click");
-                })
+                })*/
             ]
           },
           anchorSettings: {
@@ -167,6 +384,11 @@
           transitionSpeed: "400"
         });
       });
+    </script>
+    <script>
+      function submitPI() {
+        window.location.hash = "#step-2";
+      }
     </script>
   </body>
 </html>

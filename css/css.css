@@ -92,9 +92,20 @@ body.index-bg{
   border-left: 30px solid #ff0000!important;
 }
 
+.btn.disabled.label{
+  opacity: 1;
+}
+.custom-control-input:checked~.custom-control-label::before{
+  border-color: #ff0000;
+  background-color: #ff0000;
+}
+
 @media only screen and (max-width: 768px) {
   .navbar {
     background-color: #1c2331;
+  }
+  .sw-theme-arrows>ul.step-anchor{
+    background-color: #ffadad!important;
   }
 }
 
@@ -116,6 +127,9 @@ body.index-bg{
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+  }
+  .sw-theme-arrows>ul.step-anchor>li>a ,.sw-theme-arrows>ul.step-anchor>li>a, .sw-theme-arrows>ul.step-anchor>li>a:hover{
+    padding-right: 15px;
   }
 }
 @media (max-width:515px){
@@ -142,4 +156,6 @@ body.index-bg{
   #time-counter {
     font-size: 1.5rem;
   }
+  
+
 }
