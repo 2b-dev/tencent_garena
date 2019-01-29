@@ -17,19 +17,54 @@ body,
 }
 body.index-bg{
   background-color: #fff;
-  background-image: url('../images/onlyBG.png'), url('../images/bg_bottom.png');
+  /*background-image: url('../images/onlyBG.png'), url('../images/bg_bottom.png');
   background-size: 100% auto, 100% auto;
   background-position: center center, center center;
-  background-repeat: no-repeat, repeat-y;
+  background-repeat: no-repeat, repeat-y;*/
+  background-image: url('../images/bg_bottom.png');
+  background-size: 100% auto;
+  background-position: center center;
+  background-repeat: repeat-y;
 }
 .bg-head{
   background-color: #fff;
-  background-image: url('../images/onlyBG.png');
-  background-size: 100% auto;
+  background-image: url('../images/bg_Head_desktop.png');
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-
+.bg-index-bottom{
+  background-image: url('../images/bg-index-bottom.png');
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+.container-kv{
+  width: 100%;
+  height: auto;
+  position: relative
+}
+.container-animate{
+  width: 100%;
+  height: auto;
+  background-color: red;
+  position: relative;
+}
+.layer-kv{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.layer-kv-test{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  display: none;
+}
 @media only screen and (max-width: 768px) {
   .navbar {
     background-color: #1c2331;
@@ -48,12 +83,36 @@ body.index-bg{
     background: #1c2331 !important;
   }
 }
+@media (max-width:768px){
+  .bg-index-bottom{
+    background-image: url('../images/bg-index-bottom.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
 @media (max-width:515px){
+  body.index-bg{
+    background-color: #fff;    
+    background-image: url('../images/bg_bottom.png');
+    background-size: 100% auto;
+    background-position: center center;
+    background-repeat: repeat-y;
+  }
   .bg-head{
     background-color: aqua;
     background-image: url('../images/onlyBG.png');
     background-size: auto 100%;
     background-position: center center;
     background-repeat: no-repeat;
+  }
+  .bg-index-bottom{
+    background-image: url('../images/bg_bottom.png');
+    background-size: 100% auto;
+    background-position: center center;
+    background-repeat: repeat-y;
+  }
+  #time-counter {
+    font-size: 1.5rem;
   }
 }
