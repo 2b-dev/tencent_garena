@@ -20,6 +20,11 @@
     />
     <!-- Material Design Bootstrap -->
     <link href="./node_modules/mdbootstrap/css/mdb.min.css" rel="stylesheet" />
+
+    <link
+      href="./node_modules/sweetalert2/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
     <!-- Your custom styles (optional) -->
     <link href="./css/css.css" rel="stylesheet" />
   </head>
@@ -275,10 +280,8 @@
       src="./node_modules/mdbootstrap/js/mdb.min.js"
     ></script>
     <!-- Sweet Alert -->
-    <script
-      type="text/javascript"
-      src="./node_modules/sweetalert/dist/sweetalert.min.js"
-    ></script>
+    <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     <!-- Initializations -->
     <script type="text/javascript">
       // Animations initialization
@@ -322,14 +325,12 @@
       function checkPID() {
         var getPassport = $("#ipPassport").val();
         if (getPassport === "") {
-          swal("Error!", "Wrong Passport", "error");
+          Swal.fire("Error!", "Wrong Passport", "error");
         } else {
-          swal({
-            html: true,
-            title: "ALOHA…" + getPassport + "",
-            text: "My text with<img src='./images/bg_Head.png'>html included",
-            icon: "success",
-            dangerMode: false
+          Swal.fire({            
+            title: "ALOHA…" + getPassport + "",            
+            type: "success",
+            html: 'WELCOME TO THE MYSTERIOUSE ISLAND<br>THE EXCITED JOUNEY IS ABOUT TO BEGIN',
           }).then(() => {
             window.location.href = "firstsignin.html";
           });
