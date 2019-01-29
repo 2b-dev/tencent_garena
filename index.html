@@ -25,6 +25,10 @@
       href="./node_modules/sweetalert2/dist/sweetalert2.min.css"
       rel="stylesheet"
     />
+    <link href="./node_modules/smartwizard/dist/css/smart_wizard.min.css" />
+    <link
+      href="./node_modules/smartwizard/dist/css/smart_wizard_theme_arrows.min.css"
+    />
     <!-- Your custom styles (optional) -->
     <link href="./css/css.css" rel="stylesheet" />
   </head>
@@ -264,6 +268,7 @@
       type="text/javascript"
       src="./node_modules/mdbootstrap/js/jquery-3.3.1.min.js"
     ></script>
+    <script src="./node_modules/smartwizard/dist/js/jquery.smartWizard.min.js"></script>
     <!-- Bootstrap tooltips -->
     <script
       type="text/javascript"
@@ -282,6 +287,7 @@
     <!-- Sweet Alert -->
     <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+
     <!-- Initializations -->
     <script type="text/javascript">
       // Animations initialization
@@ -327,10 +333,11 @@
         if (getPassport === "") {
           Swal.fire("Error!", "Wrong Passport", "error");
         } else {
-          Swal.fire({            
-            title: "ALOHA…" + getPassport + "",            
+          Swal.fire({
+            title: "ALOHA…" + getPassport + "",
             type: "success",
-            html: 'WELCOME TO THE MYSTERIOUSE ISLAND<br>THE EXCITED JOUNEY IS ABOUT TO BEGIN',
+            html:
+              "WELCOME TO THE MYSTERIOUSE ISLAND<br>THE EXCITED JOUNEY IS ABOUT TO BEGIN"
           }).then(() => {
             window.location.href = "firstsignin.html";
           });
