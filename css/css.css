@@ -99,6 +99,10 @@ body.index-bg{
   border-color: #ff0000;
   background-color: #ff0000;
 }
+table.table-hover tbody tr:hover{
+  background-color: #ff0000;
+  color: #fff;
+}
 
 @media only screen and (max-width: 768px) {
   .navbar {

@@ -33,6 +33,10 @@
       href="./node_modules/smartwizard/dist/css/smart_wizard_theme_arrows.min.css"
       rel="stylesheet"
     />
+    <link
+      href="./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css"
+      rel="stylesheet"
+    />
     <!-- Your custom styles (optional) -->
     <link href="./css/css.css" rel="stylesheet" />
   </head>
@@ -54,21 +58,21 @@
                 <li>
                   <a href="#step-2"
                     >Step 2<br /><small class="d-none d-md-block"
-                      >Step description</small
+                      >Agenda day 1</small
                     ></a
                   >
                 </li>
                 <li>
                   <a href="#step-3"
                     >Step 3<br /><small class="d-none d-md-block"
-                      >Step description</small
+                      >Agenda day 2</small
                     ></a
                   >
                 </li>
                 <li>
                   <a href="#step-4"
                     >Step 4<br /><small class="d-none d-md-block"
-                      >Step description</small
+                      >Activity day 3</small
                     ></a
                   >
                 </li>
@@ -276,7 +280,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-12 text-center">
+                      <div class="col-12 text-center text-md-right">
                         <button class="btn btn-primary" onclick="submitPI();">
                           SUBMIT & NEXT STEP
                         </button>
@@ -286,18 +290,427 @@
                 </div>
                 <div id="step-2" class="">
                   <div class="container py-4">
-                      <div class="row">
-                          <div class="col-12">
-                              
-                          </div>
-                          <div class="col-12">
-                              <h4 class="red-text font-weight-bolder"><i>You can see the above data again after finish all step</i></h4>
-                          </div>
+                    <div class="row">
+                      <div class="col-12 text-center">
+                        <h3 class="red-text font-weight-bolder">
+                          AGENDA DAY 1
+                        </h3>
+                      </div>
+                      <div class="col-12">
+                        <div class="table-responsive text-nowrap">
+                          <table
+                            class="table table-hover table-bordered table-striped"
+                          >
+                            <thead
+                              style="background-color: #ff0000; color: #fff;"
+                            >
+                              <tr>
+                                <th class="text-center" scope="col">Time</th>
+                                <th class="text-center" scope="col">
+                                  Activity
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class="text-center">09:30</td>
+                                <td>TEAM GROUPING</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">09:35</td>
+                                <td>OPENING SHOW</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">09:45</td>
+                                <td>INTRODUCTION</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">10:00</td>
+                                <td>TEAM MEETNG</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">10:30</td>
+                                <td>TEAM ICE BREAKING</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">11:00</td>
+                                <td>TEAM PRESENTATION</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">12:00</td>
+                                <td>LUNCH BREAK</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">13:00</td>
+                                <td>MISSION 1</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">13:30</td>
+                                <td>MISSION 2</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">14:00</td>
+                                <td>MISSION 3</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">14:30</td>
+                                <td>MISSION 4</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">15:00</td>
+                                <td>MISSION 5</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">15:30</td>
+                                <td>MISSION 6</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">16:00</td>
+                                <td>MISSION 7</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">16:30</td>
+                                <td>MISSION 8</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">17:00</td>
+                                <td>GROUP PHOTO</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="col-12 text-center">
+                        <h4 class="red-text font-weight-bolder">
+                          <i
+                            >You can see the above data again after finish all
+                            step</i
+                          >
+                        </h4>
+                      </div>
+                      <div class="col-12 text-center text-md-right">
+                        <button class="btn btn-primary" onclick="nextd2();">
+                          NEXT STEP
+                        </button>
                       </div>
                     </div>
+                  </div>
                 </div>
-                <div id="step-3" class="">Step Content3</div>
-                <div id="step-4" class="">Step Content4</div>
+                <div id="step-3" class="">
+                  <div class="container py-4">
+                    <div class="row">
+                      <div class="col-12 text-center">
+                        <h3 class="red-text font-weight-bolder">
+                          AGENDA DAY 2
+                        </h3>
+                      </div>
+                      <div class="col-12">
+                        <div class="table-responsive text-nowrap">
+                          <table
+                            class="table table-hover table-bordered table-striped"
+                          >
+                            <thead
+                              style="background-color: #ff0000; color: #fff;"
+                            >
+                              <tr>
+                                <th class="text-center" scope="col">Time</th>
+                                <th class="text-center" scope="col">
+                                  Activity
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class="text-center">18:30</td>
+                                <td>SEAFOOD BBQ PARTY</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">19:30</td>
+                                <td>CABARET SHOW</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">20:30</td>
+                                <td>TEAMBUILDING WINNER ANOUNCEMNET</td>
+                              </tr>
+                              <tr>
+                                <td class="text-center">21:00</td>
+                                <td>MUSC CHILL OUT</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="col-12 text-center">
+                        <h4 class="red-text font-weight-bolder">
+                          <i
+                            >You can see the above data again after finish all
+                            step</i
+                          >
+                        </h4>
+                      </div>
+                      <div class="col-12 text-center text-md-right">
+                        <button class="btn btn-primary" onclick="nextd3();">
+                          NEXT STEP
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="step-4" class="">
+                  <div class="container py-4">
+                    <div class="row">
+                      <div class="col-12 text-center">
+                        <h3 class="red-text font-weight-bolder">
+                          LEISURE & RETREAT ACTIVITY
+                        </h3>
+                        <ul class="text-left">
+                          <li>
+                            ATTENDEE CAN ONLY SELECT ONE PROGRAMD ACTIVITY
+                          </li>
+                          <li>
+                            AND NEED TO CONFIRM IN PRE-EVENT WEBSITE FOR
+                            RESERVATION
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-12">
+                        <div class="row">
+                          <div class="col-12 col-md-6 my-2">
+                            <div class="card">
+                              <!-- Card image -->
+                              <div class="view overlay">
+                                <img
+                                  class="card-img-top"
+                                  src="./images/step4_card1.png"
+                                  alt="A. ZIPLINE"
+                                />
+                                <a
+                                  href="./images/step4_card1.png"
+                                  data-fancybox
+                                  data-caption="A. ZIPLINE"
+                                >
+                                  <div class="mask rgba-white-slight"></div>
+                                </a>
+                              </div>
+                              <div class="card-body">
+                                <!-- Title -->
+                                <h5 class="card-title red-text">
+                                  PROGRAM A. ZIPLINE
+                                </h5>
+                                <p class="card-text">
+                                  ACTIVITIES ARE NOT RECOMMENDED FOR ANYONE
+                                  WHOMAY HAVE A HEART CONDITION,NECK BACK
+                                  ISSUES, PREGNANCYOR OTHER MEDICAL CONCERNS
+                                  WHICH WOULD LIMIT PARTICIPATION AND WEIGHT
+                                  LESS THAN 120 KG
+                                </p>
+                              </div>
+                            </div>
+                            <!-- Card -->
+                          </div>
+                          <div class="col-12 col-md-6 my-2">
+                            <div class="card">
+                              <!-- Card image -->
+                              <div class="view overlay">
+                                <img
+                                  class="card-img-top"
+                                  src="./images/step4_card2.png"
+                                  alt="B. PHI PHI ISLAND AND SNORKELING"
+                                />
+                                <a
+                                  href="./images/step4_card2.png"
+                                  data-fancybox
+                                  data-caption="B. PHI PHI ISLAND AND SNORKELING"
+                                >
+                                  <div class="mask rgba-white-slight"></div>
+                                </a>
+                              </div>
+                              <div class="card-body">
+                                <!-- Title -->
+                                <h5 class="card-title red-text">
+                                  PROGRAM B. PHI PHI ISLAND AND SNORKELING
+                                </h5>
+                                <p class="card-text">
+                                  ACTIVITIES ARE NOT RECOMMENDED FOR ANYONE WHO
+                                  PREGNANCY OR OTHER MEDICAL CONCERNS WHICH
+                                  WOULD LIMIT PARTICIPATION
+                                </p>
+                              </div>
+                            </div>
+                            <!-- Card -->
+                          </div>
+                          <div class="col-12 col-md-6 my-2">
+                            <div class="card">
+                              <!-- Card image -->
+                              <div class="view overlay">
+                                <img
+                                  class="card-img-top"
+                                  src="./images/step4_card3.png"
+                                  alt="C. THAI MASSAGE AND SPA"
+                                />
+                                <a
+                                  href="./images/step4_card3.png"
+                                  data-fancybox
+                                  data-caption="C. THAI MASSAGE AND SPA"
+                                >
+                                  <div class="mask rgba-white-slight"></div>
+                                </a>
+                              </div>
+                              <div class="card-body">
+                                <!-- Title -->
+                                <h5 class="card-title red-text">
+                                  PROGRAM C. THAI MASSAGE AND SPA
+                                </h5>
+                                <p class="card-text">
+                                  ACTIVITIES ARE NOT RECOMMENDED FOR ANYONE WHO
+                                  FEVER AND SKIN DISEASES
+                                </p>
+                              </div>
+                            </div>
+                            <!-- Card -->
+                          </div>
+                          <div class="col-12 col-md-6 my-2">
+                            <div class="card">
+                              <!-- Card image -->
+                              <div class="view overlay">
+                                <img
+                                  class="card-img-top"
+                                  src="./images/step4_card4.png"
+                                  alt="D. SIDESEEING & SHOPPING CITY TOUR"
+                                />
+                                <a
+                                  href="./images/step4_card4.png"
+                                  data-fancybox
+                                  data-caption="D. SIDESEEING & SHOPPING CITY TOUR"
+                                >
+                                  <div class="mask rgba-white-slight"></div>
+                                </a>
+                              </div>
+                              <div class="card-body">
+                                <!-- Title -->
+                                <h5 class="card-title red-text">
+                                  PROGRAM D. SIDESEEING & SHOPPING CITY TOUR
+                                </h5>
+                                <p class="card-text">
+                                  ACTIVITIES IS SUITABLE FOR EVERYONE
+                                </p>
+                              </div>
+                            </div>
+                            <!-- Card -->
+                          </div>
+                          <div class="col-12 col-md-6 my-2">
+                            <div class="card">
+                              <!-- Card image -->
+                              <div class="view overlay">
+                                <img
+                                  class="card-img-top"
+                                  src="./images/step4_card5.png"
+                                  alt="E. WAKE BOARD"
+                                />
+                                <a
+                                  href="./images/step4_card5.png"
+                                  data-fancybox
+                                  data-caption="E. WAKE BOARD"
+                                >
+                                  <div class="mask rgba-white-slight"></div>
+                                </a>
+                              </div>
+                              <div class="card-body">
+                                <!-- Title -->
+                                <h5 class="card-title red-text">
+                                  PROGRAM E. WAKE BOARD
+                                </h5>
+                                <p class="card-text">
+                                  ACTIVITIES ARE NOT RECOMMENDED FOR ANYONE WHO
+                                  MAY HAVE A HEART CONDITION,NECK BACK ISSUES,
+                                  PREGNANCY OR OTHER MEDICAL CONCERNS WHICH
+                                  WOULD LIMIT PARTICIPATION
+                                </p>
+                              </div>
+                            </div>
+                            <!-- Card -->
+                          </div>
+                          <div class="col-12 col-md-6 my-2">
+                            <div class="card">
+                              <!-- Card image -->
+                              <div class="view overlay">
+                                <img
+                                  class="card-img-top"
+                                  src="./images/step4_card6.png"
+                                  alt="F. RAFTING ACTIVITY"
+                                />
+                                <a
+                                  href="./images/step4_card6.png"
+                                  data-fancybox
+                                  data-caption="F. RAFTING ACTIVITY"
+                                >
+                                  <div class="mask rgba-white-slight"></div>
+                                </a>
+                              </div>
+                              <div class="card-body">
+                                <!-- Title -->
+                                <h5 class="card-title red-text">
+                                  PROGRAM F. RAFTING ACTIVITY
+                                </h5>
+                                <p class="card-text">
+                                  ACTIVITIES ARE NOT RECOMMENDED FOR ANYONE WHO
+                                  MAY HAVE A HEART CONDITION,NECK BACK ISSUES,
+                                  PREGNANCYOR OTHER MEDICAL CONCERNS WHICH WOULD
+                                  LIMIT PARTICIPATION
+                                </p>
+                              </div>
+                            </div>
+                            <!-- Card -->
+                          </div>
+                          <div class="col-12 col-md-6 my-2">
+                            <div class="card">
+                              <!-- Card image -->
+                              <div class="view overlay">
+                                <img
+                                  class="card-img-top"
+                                  src="./images/step4_card8.png"
+                                  alt="H. HYPE CRUISE"
+                                />
+                                <a
+                                  href="./images/step4_card8.png"
+                                  data-fancybox
+                                  data-caption="H. HYPE CRUISE"
+                                >
+                                  <div class="mask rgba-white-slight"></div>
+                                </a>
+                              </div>
+                              <div class="card-body">
+                                <!-- Title -->
+                                <h5 class="card-title red-text">
+                                  PROGRAM H. HYPE CRUISE
+                                </h5>
+                                <p class="card-text">
+                                  ACTIVITIES ARE NOT RECOMMENDED FOR ANYONE WHO
+                                  PREGNANCY OR OTHER MEDICAL CONCERNS WHICH
+                                  WOULD LIMIT PARTICIPATION
+                                </p>
+                              </div>
+                            </div>
+                            <!-- Card -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 text-center">
+                        <h4 class="red-text font-weight-bolder">
+                          <i
+                            >You can see the above data again after finish all
+                            step</i
+                          >
+                        </h4>
+                      </div>
+                      <div class="col-12 text-center text-md-right">
+                        <a href="home.html" class="btn btn-primary">
+                          GO TO HOMEPAGE
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -335,6 +748,10 @@
     <!-- Sweet Alert -->
     <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script
+      type="text/javascript"
+      src="./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js"
+    ></script>
     <!-- Initializations -->
     <script type="text/javascript">
       // Animations initialization
@@ -388,6 +805,12 @@
     <script>
       function submitPI() {
         window.location.hash = "#step-2";
+      }
+      function nextd2() {
+        window.location.hash = "#step-3";
+      }
+      function nextd3() {
+        window.location.hash = "#step-4";
       }
     </script>
   </body>
