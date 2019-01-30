@@ -79,6 +79,10 @@ body.index-bg {
   right: 0;
   bottom: 0;
 }
+.layer-kv img{
+  width: 80%;
+  margin: 0 auto;
+}
 .layer-kv-test {
   width: 100%;
   height: auto;
@@ -118,12 +122,42 @@ table.table-hover.table-web tbody tr:hover {
 main.main {
   min-height: 100vh;
 }
+.container_laithai_left{
+  position: fixed;
+  width: 30vh;
+  height: 30vh;
+  left: 5%;
+  top: 60%;
+  background-color: transparent;
+}
+.container_laithai_right{
+  position: fixed;
+  width: 30vh;
+  height: 30vh;
+  right: 5%;
+  top: 60%;
+  background-color: transparent;
+}
 @media only screen and (max-width: 768px) {
   .navbar {
     background-color: #639efc;
   }
   .sw-theme-arrows > ul.step-anchor {
     background-color: #ffadad !important;
+  }
+  .container_laithai_left{    
+    width: 30vh;
+    height: 30vh;
+    left: -15vh;
+    top: 60%;
+    background-color: transparent;
+  }
+  .container_laithai_right{    
+    width: 30vh;
+    height: 30vh;
+    right: -15vh;
+    top: 60%;
+    background-color: transparent;
   }
 }
 
@@ -175,5 +209,19 @@ main.main {
   }
   #time-counter {
     font-size: 1.5rem;
+  }
+  .container_laithai_left{    
+    width: 20vh;
+    height: 20vh;
+    left: -10vh;
+    top: 59%;
+    background-color: transparent;
+  }
+  .container_laithai_right{    
+    width: 20vh;
+    height: 20vh;
+    right: -10vh;
+    top: 59%;
+    background-color: transparent;
   }
 }

@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      /* codepen template */
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        font: normal 11px "Helvetica Neue", Helvetica, sans-serif;
+        user-select: none;
+        color: #888;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+        background: #969696;
+        background: -moz-radial-gradient(
+          center,
+          ellipse cover,
+          #969696 0%,
+          #595959 100%
+        );
+        background: -webkit-gradient(
+          radial,
+          center center,
+          0px,
+          center center,
+          100%,
+          color-stop(0%, #969696),
+          color-stop(100%, #595959)
+        );
+        background: -webkit-radial-gradient(
+          center,
+          ellipse cover,
+          #969696 0%,
+          #595959 100%
+        );
+        background: -o-radial-gradient(
+          center,
+          ellipse cover,
+          #969696 0%,
+          #595959 100%
+        );
+        background: -ms-radial-gradient(
+          center,
+          ellipse cover,
+          #969696 0%,
+          #595959 100%
+        );
+        background: radial-gradient(
+          ellipse at center,
+          #969696 0%,
+          #595959 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#969696', endColorstr = '#595959', GradientType = 1);
+      }
+
+      .container {
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 650px;
+        height: 90px;
+        margin: -80px 0 0 -275px;
+      }
+
+      /*##################################*/
+      .countdown {
+        height: 100%;
+        /* Reset */
+        /* Skeleton */
+        /* Colon Seperator - IE */
+        /* Colon Seperator */
+      }
+      .countdown * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .countdown .countdownFix {
+        z-index: 3 !important;
+      }
+      .countdown .clockFix {
+        z-index: 1 !important;
+      }
+      .countdown li span .inn {
+        /*backface-visibility*/
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+      .countdown ul {
+        list-style: none;
+      }
+      .countdown li {
+        line-height: 87px;
+      }
+      .countdown ul.flip {
+        position: relative;
+        float: left;
+        margin-right: 2px;
+        height: 100%;
+        width: 40px;
+        font-size: 50px;
+        font-weight: bold;
+        /*border-radius*/
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        border-radius: 6px;
+        /*box-shadow*/
+        -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+        -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+        -ms-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+      }
+      @media only screen and (max-width: 540px) {
+        .countdown ul.flip {
+          width: 25px !important;
+          font-size: 29px !important;
+          height: 83% !important;
+        }
+        .countdown ul.flip li {
+          line-height: 37px !important;
+        }
+        .countdown ul.flip:nth-child(2n + 2):not(:last-child):after {
+          top: -24% !important;
+        }
+      }
+      @media only screen and (max-width: 440px) {
+        .countdown ul.flip {
+          width: 22px !important;
+          font-size: 23px !important;
+          height: 66% !important;
+        }
+        .countdown ul.flip li {
+          line-height: 30px !important;
+        }
+        .countdown ul.flip:nth-child(2n + 2):not(:last-child):after {
+          font-size: 28px !important;
+        }
+      }
+      .countdown ul.nth-child-2np2-notlast:after,
+      .countdown ul.flip:nth-child(2n + 2):not(:last-child):after {
+        position: absolute;
+        top: 20%;
+        right: -13px;
+        content: ":";
+        display: block;
+        color: #fff;
+        font-size: 46px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+      }
+      .countdown ul.nth-child-2np2-notlast {
+        margin-right: 14px;
+      }
+      .countdown ul.flip:nth-child(2n + 2) {
+        margin-right: 12px;
+      }
+      .countdown ul.flip li {
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        line-height: 60px;
+      }
+      .countdown ul.flip li span {
+        display: block;
+        height: 100%;
+        /*perspective*/
+        -webkit-perspective: 200px;
+        -moz-perspective: 200px;
+        -ms-perspective: 200px;
+        -o-perspective: 200px;
+        perspective: 200px;
+      }
+      .countdown ul.flip li span div {
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
+      }
+      .countdown ul.flip li span div .shadow {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+      }
+      .countdown ul.flip li span div.up {
+        /*transform-origin*/
+        -webkit-transform-origin: 50% 100%;
+        -moz-transform-origin: 50% 100%;
+        -ms-transform-origin: 50% 100%;
+        -o-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        top: 0;
+      }
+      .countdown ul.flip li span div.up:after {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        z-index: 5;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+      .countdown ul.flip li span div.down {
+        /*transform-origin*/
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -ms-transform-origin: 50% 0%;
+        -o-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        bottom: 0;
+      }
+      .countdown ul.flip li span div div.inn {
+        position: absolute;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 200%;
+        color: #ccc;
+        text-shadow: 0 1px 2px #000;
+        text-align: center;
+        background-color: #127c02;
+        /*border-radius*/
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        border-radius: 6px;
+      }
+      .countdown ul.flip li span div.up div.inn {
+        top: 0;
+      }
+      .countdown ul.flip li span div.down div.inn {
+        bottom: 0;
+      }
+
+      /* PLAY */
+      .play ul li.previous {
+        z-index: 2;
+      }
+
+      .play ul li.current {
+        /*animation*/
+        -webkit-animation: asd 0.5s 0.5s linear both;
+        -moz-animation: asd 0.5s 0.5s linear both;
+        -ms-animation: asd 0.5s 0.5s linear both;
+        -o-animation: asd 0.5s 0.5s linear both;
+        animation: asd 0.5s 0.5s linear both;
+        z-index: 3;
+      }
+
+      @-webkit-keyframes asd {
+        0% {
+          z-index: 2;
+        }
+        5% {
+          z-index: 4;
+        }
+        100% {
+          z-index: 4;
+        }
+      }
+      @-moz-keyframes asd {
+        0% {
+          z-index: 2;
+        }
+        5% {
+          z-index: 4;
+        }
+        100% {
+          z-index: 4;
+        }
+      }
+      @-ms-keyframes asd {
+        0% {
+          z-index: 2;
+        }
+        5% {
+          z-index: 4;
+        }
+        100% {
+          z-index: 4;
+        }
+      }
+      @-o-keyframes asd {
+        0% {
+          z-index: 2;
+        }
+        5% {
+          z-index: 4;
+        }
+        100% {
+          z-index: 4;
+        }
+      }
+      @keyframes asd {
+        0% {
+          z-index: 2;
+        }
+        5% {
+          z-index: 4;
+        }
+        100% {
+          z-index: 4;
+        }
+      }
+      .play ul li.current .down {
+        z-index: 2;
+        /*animation*/
+        -webkit-animation: turn 0.5s 0.5s linear both;
+        -moz-animation: turn 0.5s 0.5s linear both;
+        -ms-animation: turn 0.5s 0.5s linear both;
+        -o-animation: turn 0.5s 0.5s linear both;
+        animation: turn 0.5s 0.5s linear both;
+      }
+
+      @-webkit-keyframes turn {
+        0% {
+          -webkit-transform: rotateX(90deg);
+        }
+        100% {
+          -webkit-transform: rotateX(0deg);
+        }
+      }
+      @-moz-keyframes turn {
+        0% {
+          -moz-transform: rotateX(90deg);
+        }
+        100% {
+          -moz-transform: rotateX(0deg);
+        }
+      }
+      @-ms-keyframes turn {
+        0% {
+          -ms-transform: rotateX(90deg);
+        }
+        100% {
+          -ms-transform: rotateX(0deg);
+        }
+      }
+      @-o-keyframes turn {
+        0% {
+          -o-transform: rotateX(90deg);
+        }
+        100% {
+          -o-transform: rotateX(0deg);
+        }
+      }
+      @keyframes turn {
+        0% {
+          transform: rotateX(90deg);
+        }
+        100% {
+          transform: rotateX(0deg);
+        }
+      }
+      .play ul li.previous .up {
+        z-index: 2;
+        /*animation*/
+        -webkit-animation: turn2 0.5s linear both;
+        -moz-animation: turn2 0.5s linear both;
+        -ms-animation: turn2 0.5s linear both;
+        -o-animation: turn2 0.5s linear both;
+        animation: turn2 0.5s linear both;
+      }
+
+      @-webkit-keyframes turn2 {
+        0% {
+          -webkit-transform: rotateX(0deg);
+        }
+        100% {
+          -webkit-transform: rotateX(-90deg);
+        }
+      }
+      @-moz-keyframes turn2 {
+        0% {
+          -moz-transform: rotateX(0deg);
+        }
+        100% {
+          -moz-transform: rotateX(-90deg);
+        }
+      }
+      @-ms-keyframes turn2 {
+        0% {
+          -ms-transform: rotateX(0deg);
+        }
+        100% {
+          -ms-transform: rotateX(-90deg);
+        }
+      }
+      @-o-keyframes turn2 {
+        0% {
+          -o-transform: rotateX(0deg);
+        }
+        100% {
+          -o-transform: rotateX(-90deg);
+        }
+      }
+      @keyframes turn2 {
+        0% {
+          transform: rotateX(0deg);
+        }
+        100% {
+          transform: rotateX(-90deg);
+        }
+      }
+      /* SHADOW */
+      .play ul li.previous .up .shadow {
+        /*linear-gradient*/
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          color-stop(rgba(0, 0, 0, 0.1), 0),
+          color-stop(black, 1)
+        );
+        background: -webkit-linear-gradient(
+          top,
+          rgba(0, 0, 0, 0.1) 0%,
+          black 100%
+        );
+        background: -moz-linear-gradient(
+          top,
+          rgba(0, 0, 0, 0.1) 0%,
+          black 100%
+        );
+        background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1) 0%,
+          #000000 100%
+        );
+        /*@@prefixmycss->No equivalent*/
+        background: -webkit-linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1) 0%,
+          black 100%
+        );
+        background: -moz-linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1) 0%,
+          black 100%
+        );
+        background: -o-linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1) 0%,
+          black 100%
+        );
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1) 0%,
+          #000000 100%
+        );
+        /*animation*/
+        -webkit-animation: show 0.5s linear both;
+        -moz-animation: show 0.5s linear both;
+        -ms-animation: show 0.5s linear both;
+        -o-animation: show 0.5s linear both;
+        animation: show 0.5s linear both;
+      }
+
+      .play ul li.current .up .shadow {
+        /*linear-gradient*/
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          color-stop(rgba(0, 0, 0, 0.1), 0),
+          color-stop(black, 1)
+        );
+        background: -webkit-linear-gradient(
+          top,
+          rgba(0, 0, 0, 0.1) 0%,
+          black 100%
+        );
+        background: -moz-linear-gradient(
+          top,
+          rgba(0, 0, 0, 0.1) 0%,
+          black 100%
+        );
+        background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1) 0%,
+          #000000 100%
+        );
+        /*@@prefixmycss->No equivalent*/
+        background: -webkit-linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1) 0%,
+          black 100%
+        );
+        background: -moz-linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1) 0%,
+          black 100%
+        );
+        background: -o-linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1) 0%,
+          black 100%
+        );
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1) 0%,
+          #000000 100%
+        );
+        /*animation*/
+        -webkit-animation: hide 0.5s 0.3s linear both;
+        -moz-animation: hide 0.5s 0.3s linear both;
+        -ms-animation: hide 0.5s 0.3s linear both;
+        -o-animation: hide 0.5s 0.3s linear both;
+        animation: hide 0.5s 0.3s linear both;
+      }
+
+      /*DOWN*/
+      .play ul li.previous .down .shadow {
+        /*linear-gradient*/
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          color-stop(black, 0),
+          color-stop(rgba(0, 0, 0, 0.1), 1)
+        );
+        background: -webkit-linear-gradient(
+          top,
+          black 0%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        background: -moz-linear-gradient(
+          top,
+          black 0%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        background: -o-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+        background: linear-gradient(
+          to bottom,
+          #000000 0%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        /*@@prefixmycss->No equivalent*/
+        background: -webkit-linear-gradient(
+          to bottom,
+          black 0%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        background: -moz-linear-gradient(
+          to bottom,
+          black 0%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        background: -o-linear-gradient(
+          to bottom,
+          black 0%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        background: linear-gradient(
+          to bottom,
+          #000000 0%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        /*animation*/
+        -webkit-animation: show 0.5s linear both;
+        -moz-animation: show 0.5s linear both;
+        -ms-animation: show 0.5s linear both;
+        -o-animation: show 0.5s linear both;
+        animation: show 0.5s linear both;
+      }
+
+      .play ul li.current .down .shadow {
+        /*linear-gradient*/
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          color-stop(black, 0),
+          color-stop(rgba(0, 0, 0, 0.1), 1)
+        );
+        background: -webkit-linear-gradient(
+          top,
+          black 0%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        background: -moz-linear-gradient(
+          top,
+          black 0%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        background: -o-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+        background: linear-gradient(
+          to bottom,
+          #000000 0%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        /*@@prefixmycss->No equivalent*/
+        background: -webkit-linear-gradient(
+          to bottom,
+          black 0%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        background: -moz-linear-gradient(
+          to bottom,
+          black 0%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        background: -o-linear-gradient(
+          to bottom,
+          black 0%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        background: linear-gradient(
+          to bottom,
+          #000000 0%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        /*animation*/
+        -webkit-animation: hide 0.5s 0.3s linear both;
+        -moz-animation: hide 0.5s 0.3s linear both;
+        -ms-animation: hide 0.5s 0.3s linear both;
+        -o-animation: hide 0.5s 0.3s linear both;
+        animation: hide 0.5s 0.3s linear both;
+      }
+
+      @-webkit-keyframes show {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @-moz-keyframes show {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @-ms-keyframes show {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @-o-keyframes show {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes show {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes hide {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      @-moz-keyframes hide {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      @-ms-keyframes hide {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      @-o-keyframes hide {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      @keyframes hide {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+        <div class="container">
+            <div class="countdown" style="height:100px;"/>
+        </div>
+    <script type="text/javascript" src="./node_modules/mdbootstrap/js/jquery-3.3.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        var flip = new FlipClock({
+          isCountdown: true,
+          startTime: "31:00:00:05",
+          containerElement: $(".countdown"),
+          face: {
+            days: {
+              maxValue: 31
+            },
+            hours: {
+              maxValue: 23
+            },
+            minutes: {
+              maxValue: 59
+            },
+            seconds: {
+              maxValue: 59
+            }
+          }
+        });
+      });
+
+      /**
+       * FlipClock
+       * @param options
+       * @constructor
+       */
+      FlipClock = function(options) {
+        this.tickInterval = false;
+        this.digitSelectors = [];
+        this.options = this.createConfig(options);
+
+        this.init();
+      };
+
+      /**
+       * returns merged config based on passed config + default config
+       * @param options - config object
+       * @returns options merged config objects
+       */
+      FlipClock.prototype.createConfig = function(options) {
+        return $.extend({}, this.getDefaultConfig(), options);
+      };
+
+      /**
+       * returns default config object
+       */
+      FlipClock.prototype.getDefaultConfig = function() {
+        return {
+          tickDuration: 1000,
+          isCountdown: false,
+          startTime: "23:59:51",
+          maxTime: "23:59:59",
+          minTime: "00:00:00",
+          containerElement: $(".container"),
+          segmentSelectorPrefix: "flipclock-",
+          face: {
+            hours: {
+              maxValue: 23
+            },
+            minutes: {
+              maxValue: 59
+            },
+            seconds: {
+              maxValue: 59
+            }
+          }
+        };
+      };
+
+      /**
+       * check browser feature support
+       */
+      FlipClock.prototype.initFeatureDetection = function() {
+        $.support.transition = (function() {
+          var thisBody = document.body || document.documentElement,
+            thisStyle = thisBody.style,
+            support =
+              thisStyle.transition !== undefined ||
+              thisStyle.WebkitTransition !== undefined ||
+              thisStyle.MozTransition !== undefined ||
+              thisStyle.MsTransition !== undefined ||
+              thisStyle.OTransition !== undefined;
+          return support;
+        })();
+      };
+
+      /**
+       * return browser support for given feature
+       * @param feature
+       * @returns {*}
+       */
+      FlipClock.prototype.isFeatureSupported = function(feature) {
+        if (
+          feature &&
+          typeof $.support !== undefined &&
+          typeof $.support[feature] !== undefined
+        ) {
+          return $.support[feature];
+        }
+
+        return false;
+      };
+
+      /**
+       * init
+       */
+      FlipClock.prototype.init = function() {
+        this.options.containerElement.empty();
+
+        if (this.tickInterval !== false) {
+          clearInterval(this.tickInterval);
+          this.tickInterval = false;
+        }
+
+        this.appendMarkupToContainer();
+        this.setDimensions();
+
+        this.setupFallbacks();
+
+        this.start();
+      };
+
+      /**
+       * setupFallbacks
+       */
+      FlipClock.prototype.setupFallbacks = function() {
+        this.initFeatureDetection();
+
+        if (this.isFeatureSupported("transition")) {
+          $("ul.flip li:first-child", this.options.containerElement).css(
+            "z-index",
+            2
+          );
+        } else {
+          // < IE9 can't do css animations (@keyframe) - need to fix z-index here since we're setting z-indices inside the keyframe-steps
+          $("ul.flip li:first-child", this.options.containerElement).css(
+            "z-index",
+            3
+          );
+
+          // < IE9 doesn't understand nth-child css selector => fallback class that has to be addressed via css separatly
+          $(
+            "ul.flip:nth-child(2n+2):not(:last-child)",
+            this.options.containerElement
+          ).addClass("nth-child-2np2-notlast");
+        }
+      };
+
+      /**
+       * Sets digit dimensions based on its containers height
+       */
+      FlipClock.prototype.setDimensions = function() {
+        var flipHeight = this.options.containerElement.height(),
+          flipWidth = flipHeight / 1.5;
+
+        $("ul.flip", this.options.containerElement)
+          .css({
+            width: flipWidth,
+            fontSize: flipHeight - 10 + "px"
+          })
+          .find("li")
+          .css({
+            lineHeight: flipHeight + "px"
+          });
+      };
+
+      /**
+       * Creates segments out of 'digits', calculates ticks per digit based on segment maxValue
+       * @param faceSegmentGroupName
+       * @returns {Array}
+       */
+      FlipClock.prototype.createSegment = function(faceSegmentGroupName) {
+        var faceSegmentGroup = this.options.face[faceSegmentGroupName],
+          segmentSelectorAddons = ["-ten", "-one"],
+          rounded = Math.ceil(faceSegmentGroup.maxValue / 10),
+          segment = [];
+
+        if (faceSegmentGroup.maxValue / 10 > 1) {
+          segment = [
+            {
+              selector:
+                this.options.segmentSelectorPrefix +
+                faceSegmentGroupName +
+                segmentSelectorAddons[0],
+              ticks: rounded
+            },
+            {
+              selector:
+                this.options.segmentSelectorPrefix +
+                faceSegmentGroupName +
+                segmentSelectorAddons[1],
+              ticks: 10
+            }
+          ];
+        } else {
+          segment = [
+            {
+              selector:
+                this.options.segmentSelectorPrefix +
+                faceSegmentGroupName +
+                segmentSelectorAddons[1],
+              ticks: 10
+            }
+          ];
+        }
+
+        return segment;
+      };
+
+      /**
+       * Appends the markup for each digit to the container
+       */
+      FlipClock.prototype.appendMarkupToContainer = function() {
+        var baseZIndex = 0;
+
+        for (var faceSegmentGroup in this.options.face) {
+          this.options.face[faceSegmentGroup].segments = this.createSegment(
+            faceSegmentGroup
+          );
+
+          for (
+            var i = 0;
+            i < this.options.face[faceSegmentGroup].segments.length;
+            i++
+          ) {
+            var faceSegmentElement = this.createFaceSegment(
+              this.options.face[faceSegmentGroup].segments[i]
+            );
+
+            this.digitSelectors.push(
+              this.options.face[faceSegmentGroup].segments[i].selector
+            );
+            this.options.containerElement.append(faceSegmentElement);
+
+            // assign common data-attribute to segments of the same group
+            faceSegmentElement.data("face-segment-group", faceSegmentGroup);
+            faceSegmentElement.addClass(faceSegmentGroup);
+            faceSegmentElement.css("z-index", baseZIndex++);
+          }
+        }
+
+        this.digitSelectors.reverse();
+
+        //    var self = this;
+        //    $(document).on('keyup', function(e) {
+        //        if(e.keyCode === 13) {
+        //            self.stop();
+        //        }
+        //    });
+      };
+
+      /**
+       * Creates face segments
+       * @param faceSegment
+       * @returns {*|jQuery|HTMLElement}
+       */
+      FlipClock.prototype.createFaceSegment = function(faceSegment) {
+        var faceElement = $("<ul>", {
+          class: "flip " + faceSegment.selector
+        });
+
+        for (var i = 0; i < faceSegment.ticks; i++) {
+          var digit = i;
+
+          faceElement.append(this.createFaceDigit(digit));
+        }
+
+        return faceElement;
+      };
+
+      /**
+       * Creates digit markup
+       * @param digit
+       * @returns {string}
+       */
+      FlipClock.prototype.createFaceDigit = function(digit) {
+        var digitInnerFragment =
+          '<div class="shadow"></div><div class="inn">' + digit + "</div>";
+
+        return (
+          "<li data-digit=" +
+          digit +
+          " ><span>" +
+          '<div class="up">' +
+          digitInnerFragment +
+          "</div>" +
+          '<div class="down">' +
+          digitInnerFragment +
+          "</div>" +
+          "</span></li>"
+        );
+      };
+
+      /**
+       * Starts the clock
+       */
+      FlipClock.prototype.start = function() {
+        this.setToTime(this.options.startTime);
+
+        var self = this;
+
+        this.tickInterval = setInterval(function() {
+          self.tick();
+        }, this.options.tickDuration);
+      };
+
+      /**
+       * Stops the Clock after the current interval is finished
+       */
+      FlipClock.prototype.stop = function() {
+        clearInterval(this.tickInterval);
+      };
+
+      /**
+       * Resets to 00:00:00....
+       * needed when using this as an actual clock - e.g. can reset to 0 after 23:59:59
+       */
+      FlipClock.prototype.resetDigits = function() {
+        this.options.containerElement.removeClass("play");
+
+        for (var i = 0; i < this.digitSelectors.length; i++) {
+          var active = $(
+              this.getDigitSelectorByIndex(i) + ".current",
+              this.options.containerElement
+            ),
+            all = $(
+              this.getDigitSelectorByIndex(i),
+              this.options.containerElement
+            ),
+            first = $(
+              this.getDigitSelectorByIndex(i) + ":first-child",
+              this.options.containerElement
+            );
+
+          all.eq(0).addClass("clockFix");
+          all.removeClass("current");
+
+          first.addClass("current");
+
+          all.removeClass("previous");
+          active.addClass("previous");
+        }
+
+        this.options.containerElement.addClass("play");
+      };
+
+      /**
+       * Sets the clock to a time based on passed string
+       * @param time {string} 00:00:00...
+       */
+      FlipClock.prototype.setToTime = function(time) {
+        var timeArray = time
+          .replace(/:/g, "")
+          .split("")
+          .reverse();
+
+        for (var i = 0; i < this.digitSelectors.length; i++) {
+          var digit = $(
+            this.getDigitSelectorByIndex(i),
+            this.options.containerElement
+          ).eq(parseInt(timeArray[i]));
+
+          this.options.containerElement.removeClass("play");
+
+          digit.addClass("current");
+          this.options.containerElement.addClass("play");
+        }
+      };
+
+      /**
+       * Set Segment to its maximum value
+       * @param segmentGroupName
+       */
+      FlipClock.prototype.setFaceSegmentGroupMaxValue = function(
+        segmentGroupName
+      ) {
+        var self = this;
+        var group = this.getFaceSegmentGroupDom(segmentGroupName);
+
+        group.each(function(idx) {
+          self.options.containerElement.removeClass("play");
+
+          var maxValue = self.options.face[segmentGroupName].maxValue
+            .toString()
+            .split("");
+
+          $(this)
+            .find("li.current")
+            .removeClass("current");
+          $(this)
+            .find('li[data-digit="' + maxValue[idx] + '"]')
+            .addClass("current");
+
+          self.options.containerElement.addClass("play");
+        });
+      };
+
+      /**
+       * actual callback for the tick/interval
+       */
+      FlipClock.prototype.tick = function() {
+        this.doTick(0);
+      };
+
+      /**
+       * Returns current time as int
+       * @returns {Number}
+       */
+      FlipClock.prototype.getCurrentTime = function() {
+        var currentTime = [];
+
+        $("li.current", this.options.containerElement).each(function() {
+          currentTime.push($(this).data("digit"));
+        });
+
+        return parseInt(currentTime.join(""), 10);
+      };
+
+      /**
+       * gets digit selector string for the given index in the digitselectors array
+       * @param digitIndex
+       * @returns {string}
+       */
+      FlipClock.prototype.getDigitSelectorByIndex = function(digitIndex) {
+        return "ul." + this.digitSelectors[digitIndex] + " li";
+      };
+
+      /**
+       * Return the segment group name for a passed digit element
+       * @param digitElement
+       * @returns {*}
+       */
+      FlipClock.prototype.getFaceSegmentGroupNameByDigitElement = function(
+        digitElement
+      ) {
+        return digitElement.parent().data("face-segment-group");
+      };
+
+      /**
+       * Return the segment group object for a passed digit element
+       * @param digitElement
+       * @returns {*}
+       */
+      FlipClock.prototype.getFaceSegmentByDigitElement = function(
+        digitElement
+      ) {
+        return this.options.face[
+          this.getFaceSegmentGroupNameByDigitElement(digitElement)
+        ];
+      };
+
+      /**
+       * Return segment group dom objects by segment group name
+       * @param segmentGroupName
+       * @returns {*|jQuery|HTMLElement}
+       */
+      FlipClock.prototype.getFaceSegmentGroupDom = function(segmentGroupName) {
+        return $("." + segmentGroupName, this.options.containerElement);
+      };
+
+      /**
+       * Return dom object for the currently active digit for a segment group name
+       * @param segmentGroupName
+       * @returns {*|jQuery|HTMLElement}
+       */
+      FlipClock.prototype.getCurrentDigitDom = function(segmentGroupName) {
+        return $(
+          "." + segmentGroupName + " li.current",
+          this.options.containerElement
+        );
+      };
+
+      /**
+       * Returns the value a segment group is currently representing selected by digit element
+       * @param digitElement
+       * @returns {string}
+       */
+      FlipClock.prototype.getCurrentFaceSegmentGroupValue = function(
+        digitElement
+      ) {
+        var segmentGroupName = this.getFaceSegmentGroupNameByDigitElement(
+            digitElement
+          ),
+          values = [];
+
+        this.getCurrentDigitDom(segmentGroupName).each(function(idx) {
+          values[idx] = $(this).data("digit");
+        });
+
+        return values.join("");
+      };
+
+      /**
+       * handles the tick logic
+       * @param digitIndex
+       */
+      FlipClock.prototype.doTick = function(digitIndex) {
+        var nextDigit, pseudoSelector;
+
+        // check if we reached maxTime and start over at 00:00:00
+        if (this.options.isCountdown === false && this.isMaxTimeReached()) {
+          this.resetDigits();
+          return;
+        }
+
+        this.options.containerElement.removeClass("play");
+
+        if (this.options.isCountdown === true) {
+          pseudoSelector = ":first-child";
+        } else {
+          pseudoSelector = ":last-child";
+        }
+
+        var activeDigit = $(
+          this.getDigitSelectorByIndex(digitIndex) + ".current",
+          this.options.containerElement
+        );
+
+        if (activeDigit.html() == undefined) {
+          if (this.options.isCountdown) {
+            activeDigit = $(
+              this.getDigitSelectorByIndex(digitIndex) + ":last-child",
+              this.options.containerElement
+            );
+            nextDigit = activeDigit.prev("li");
+          } else {
+            activeDigit = $(
+              this.getDigitSelectorByIndex(digitIndex),
+              this.options.containerElement
+            ).eq(0);
+            nextDigit = activeDigit.next("li");
+          }
+
+          activeDigit.addClass("previous").removeClass("current");
+
+          nextDigit.addClass("current");
+        } else if (activeDigit.is(pseudoSelector)) {
+          $(
+            this.getDigitSelectorByIndex(digitIndex),
+            this.options.containerElement
+          ).removeClass("previous");
+
+          // countdown target reached, halt
+          if (this.options.isCountdown === true && this.isMinTimeReached()) {
+            this.stop();
+            return;
+          }
+
+          activeDigit.addClass("previous").removeClass("current");
+
+          if (this.options.isCountdown === true) {
+            activeDigit.addClass("countdownFix");
+            activeDigit = $(
+              this.getDigitSelectorByIndex(digitIndex) + ":last-child",
+              this.options.containerElement
+            );
+          } else {
+            activeDigit = $(
+              this.getDigitSelectorByIndex(digitIndex),
+              this.options.containerElement
+            ).eq(0);
+            activeDigit.addClass("clockFix");
+          }
+
+          activeDigit.addClass("current");
+
+          // animate the next segment once (if there is one)
+          if (typeof this.digitSelectors[digitIndex + 1] !== "undefined") {
+            this.doTick(digitIndex + 1);
+          }
+        } else {
+          $(
+            this.getDigitSelectorByIndex(digitIndex),
+            this.options.containerElement
+          ).removeClass("previous");
+
+          activeDigit.addClass("previous").removeClass("current");
+
+          if (this.options.isCountdown === true) {
+            nextDigit = activeDigit.prev("li");
+          } else {
+            nextDigit = activeDigit.next("li");
+          }
+
+          nextDigit.addClass("current");
+        }
+
+        // set segment to maxValue if it would move past it
+        var group = this.getFaceSegmentByDigitElement(activeDigit);
+        if (
+          this.getCurrentFaceSegmentGroupValue(activeDigit) > group.maxValue
+        ) {
+          this.setFaceSegmentGroupMaxValue(
+            this.getFaceSegmentGroupNameByDigitElement(activeDigit)
+          );
+        }
+
+        this.options.containerElement.addClass("play");
+        this.cleanZIndexFix(activeDigit, this.digitSelectors[digitIndex]);
+      };
+
+      /**
+       * isMaxTimeReached
+       * @returns {boolean}
+       */
+      FlipClock.prototype.isMaxTimeReached = function() {
+        return (
+          this.getCurrentTime() >=
+          parseInt(this.options.maxTime.replace(/:/g, ""), 10)
+        );
+      };
+
+      /**
+       * isMinTimeReached
+       * @returns {boolean}
+       */
+      FlipClock.prototype.isMinTimeReached = function() {
+        return (
+          this.getCurrentTime() <=
+          parseInt(this.options.minTime.replace(/:/g, ""), 10)
+        );
+      };
+
+      /**
+       * Fixes flickering top half of digit
+       *
+       * @param activeDigit
+       * @param selector
+       */
+      FlipClock.prototype.cleanZIndexFix = function(activeDigit, selector) {
+        if (this.options.isCountdown === true) {
+          var fix = $(
+            "." + selector + " .countdownFix",
+            this.options.containerElement
+          );
+
+          if (
+            fix.length > 0 &&
+            !fix.hasClass("previous") &&
+            !fix.hasClass("current")
+          ) {
+            fix.removeClass("countdownFix");
+          }
+        } else {
+          activeDigit.siblings().removeClass("clockFix");
+        }
+      };
+    </script>
+  </body>
+</html>
