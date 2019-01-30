@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Gotham-Light";
-  src: url("../fonts/gotham-light/Gotham-Light.eot?#iefix") format("embedded-opentype"),
+  src: url("../fonts/gotham-light/Gotham-Light.eot?#iefix")
+      format("embedded-opentype"),
     url("../fonts/gotham-light/Gotham-Light.otf") format("opentype"),
     url("../fonts/gotham-light/Gotham-Light.woff") format("woff"),
     url("../fonts/gotham-light/Gotham-Light.ttf") format("truetype"),
@@ -9,8 +10,8 @@
   font-style: normal;
 }
 
-*{
-  font-family: "Gotham-Light", Tahoma, sans-serif
+* {
+  font-family: "Gotham-Light", Tahoma, sans-serif;
 }
 .carousel,
 .carousel .carousel-inner,
@@ -23,52 +24,53 @@ body,
 }
 
 .navbar {
-  background-color: rgba(0, 0, 0, 0.2);
+  /*background-color: rgba(0, 0, 0, 0.2);*/
+  background-color: #639efc;
 }
 
 .top-nav-collapse {
-  background-color: #1c2331;
+  background-color: #639efc;
 }
 
-.kv-card{
-    max-width: 350px;
+.kv-card {
+  max-width: 350px;
 }
-body.index-bg{
+body.index-bg {
   background-color: #fff;
   /*background-image: url('../images/onlyBG.png'), url('../images/bg_bottom.png');
   background-size: 100% auto, 100% auto;
   background-position: center center, center center;
   background-repeat: no-repeat, repeat-y;*/
-  background-image: url('../images/bg_bottom.png');
+  background-image: url("../images/bg_bottom.png");
   background-size: 100% auto;
   background-position: center center;
   background-repeat: repeat-y;
 }
-.bg-head{
+.bg-head {
   background-color: #fff;
-  background-image: url('../images/bg_Head_desktop.png');
+  background-image: url("../images/bg_Head_desktop.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-.bg-index-bottom{
-  background-image: url('../images/bg-index-bottom.png');
+.bg-index-bottom {
+  background-image: url("../images/bg-index-bottom.png");
   background-size: 100% auto;
   background-position: top center;
   background-repeat: no-repeat;
 }
-.container-kv{
+.container-kv {
   width: 100%;
   height: auto;
-  position: relative
+  position: relative;
 }
-.container-animate{
+.container-animate {
   width: 100%;
   height: auto;
   background-color: red;
   position: relative;
 }
-.layer-kv{
+.layer-kv {
   width: 100%;
   height: auto;
   position: absolute;
@@ -77,49 +79,56 @@ body.index-bg{
   right: 0;
   bottom: 0;
 }
-.layer-kv-test{
+.layer-kv-test {
   width: 100%;
   height: auto;
   position: absolute;
   display: none;
 }
-.main-firstsignin{
+.main-firstsignin {
   min-height: 100vh;
 }
-/*Smart wizard*/
-.sw-theme-arrows>ul.step-anchor>li.active>a{
-  border-color: #ff0000!important;
-  background-color: #ff0000!important;
+.card-comments img {
+  width: 4rem;
 }
-.sw-theme-arrows>ul.step-anchor>li.active>a:after{
-  border-left: 30px solid #ff0000!important;
+/*Smart wizard*/
+.sw-theme-arrows > ul.step-anchor > li.active > a {
+  border-color: #ff0000 !important;
+  background-color: #ff0000 !important;
+}
+.sw-theme-arrows > ul.step-anchor > li.active > a:after {
+  border-left: 30px solid #ff0000 !important;
 }
 
-.btn.disabled.label{
+.btn.disabled.label {
   opacity: 1;
 }
-.custom-control-input:checked~.custom-control-label::before{
+.custom-control-input:checked ~ .custom-control-label::before {
   border-color: #ff0000;
   background-color: #ff0000;
 }
-table.table-hover tbody tr:hover{
+table.table-hover tbody tr:hover {
   background-color: #ff0000;
   color: #fff;
 }
-main.main{
+table.table-hover.table-web tbody tr:hover {
+  background-color: #639efc;
+  color: #fff;
+}
+main.main {
   min-height: 100vh;
 }
 @media only screen and (max-width: 768px) {
   .navbar {
-    background-color: #1c2331;
+    background-color: #639efc;
   }
-  .sw-theme-arrows>ul.step-anchor{
-    background-color: #ffadad!important;
+  .sw-theme-arrows > ul.step-anchor {
+    background-color: #ffadad !important;
   }
 }
 
 .page-footer {
-  background-color: #1c2331;
+  background-color: #639efc;
 }
 
 #time-counter {
@@ -127,37 +136,39 @@ main.main{
 }
 @media (min-width: 800px) and (max-width: 850px) {
   .navbar:not(.top-nav-collapse) {
-    background: #1c2331 !important;
+    background: #639efc !important;
   }
 }
-@media (max-width:768px){
-  .bg-index-bottom{
-    background-image: url('../images/bg-index-bottom.png');
+@media (max-width: 768px) {
+  .bg-index-bottom {
+    background-image: url("../images/bg-index-bottom.png");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  .sw-theme-arrows>ul.step-anchor>li>a ,.sw-theme-arrows>ul.step-anchor>li>a, .sw-theme-arrows>ul.step-anchor>li>a:hover{
+  .sw-theme-arrows > ul.step-anchor > li > a,
+  .sw-theme-arrows > ul.step-anchor > li > a,
+  .sw-theme-arrows > ul.step-anchor > li > a:hover {
     padding-right: 15px;
   }
 }
-@media (max-width:515px){
-  body.index-bg{
-    background-color: #fff;    
-    background-image: url('../images/bg_bottom.png');
+@media (max-width: 515px) {
+  body.index-bg {
+    background-color: #fff;
+    background-image: url("../images/bg_bottom.png");
     background-size: 100% auto;
     background-position: center center;
     background-repeat: repeat-y;
   }
-  .bg-head{
+  .bg-head {
     background-color: aqua;
-    background-image: url('../images/onlyBG.png');
+    background-image: url("../images/onlyBG.png");
     background-size: auto 100%;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  .bg-index-bottom{
-    background-image: url('../images/bg_bottom.png');
+  .bg-index-bottom {
+    background-image: url("../images/bg_bottom.png");
     background-size: 100% auto;
     background-position: center center;
     background-repeat: repeat-y;
@@ -165,6 +176,4 @@ main.main{
   #time-counter {
     font-size: 1.5rem;
   }
-  
-
 }
