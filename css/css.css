@@ -138,6 +138,14 @@ main.main {
   top: 60%;
   background-color: transparent;
 }
+.btnplusinput{
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  font-size: 20px;
+}
 @media only screen and (max-width: 768px) {
   .navbar {
     background-color: #639efc;
@@ -158,6 +166,9 @@ main.main {
     right: -15vh;
     top: 60%;
     background-color: transparent;
+  }
+  .btnplusinput{
+    right: 10px;
   }
 }
 
