@@ -146,6 +146,16 @@ main.main {
   bottom: 2px;
   font-size: 20px;
 }
+.progress{
+  
+}
+.text-progress{  
+  width: 100%;
+  top: -3px;
+  text-align: center;
+  font-size: 16px;
+  color: #ff0000;
+}
 @media only screen and (max-width: 768px) {
   .navbar {
     background-color: #639efc;

@@ -189,6 +189,7 @@
                   aria-valuemax="100"
                 ></div>
               </div>
+              <p class="text-progress">XX AVAILABLE</p>
               <a
                 href="activities_detail.html"
                 class="btn btn-primary btn-md float-right"
@@ -228,12 +229,15 @@
                 <div
                   class="progress-bar"
                   role="progressbar"
-                  style="width: 50%"
-                  aria-valuenow="50"
+                  style="width: 100%"
+                  aria-valuenow="100"
                   aria-valuemin="0"
                   aria-valuemax="100"
                 ></div>
               </div>
+              <p class="text-progress">
+                SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY
+              </p>
               <a
                 href="activities_detail.html"
                 class="btn btn-primary btn-md float-right"
@@ -279,6 +283,7 @@
                   aria-valuemax="100"
                 ></div>
               </div>
+              <p class="text-progress">XX AVAILABLE</p>
               <a
                 href="activities_detail.html"
                 class="btn btn-primary btn-md float-right"
@@ -323,6 +328,7 @@
                   aria-valuemax="100"
                 ></div>
               </div>
+              <p class="text-progress">XX AVAILABLE</p>
               <a
                 href="activities_detail.html"
                 class="btn btn-primary btn-md float-right"
@@ -368,6 +374,7 @@
                   aria-valuemax="100"
                 ></div>
               </div>
+              <p class="text-progress">XX AVAILABLE</p>
               <a
                 href="activities_detail.html"
                 class="btn btn-primary btn-md float-right"
@@ -413,6 +420,7 @@
                   aria-valuemax="100"
                 ></div>
               </div>
+              <p class="text-progress">XX AVAILABLE</p>
               <a
                 href="activities_detail.html"
                 class="btn btn-primary btn-md float-right"
@@ -458,6 +466,7 @@
                   aria-valuemax="100"
                 ></div>
               </div>
+              <p class="text-progress">XX AVAILABLE</p>
               <a
                 href="activities_detail.html"
                 class="btn btn-primary btn-md float-right"
@@ -512,7 +521,15 @@
     <script type="text/javascript">
       // Animations initialization
       new WOW().init();
+    </script>    
+    <script
+      type="text/javascript"
+      src="./node_modules/smartwizard/dist/js/jquery.smartWizard.min.js"
+    ></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        Swal.fire("No Activity Select", "", "warning");
+      });
     </script>
-    <script src="./node_modules/smartwizard/dist/js/jquery.smartWizard.min.js"></script>
   </body>
 </html>

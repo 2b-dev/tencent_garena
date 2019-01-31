@@ -173,7 +173,10 @@
                       <td>
                         CHECK OUT<br />
                         ( PLEASE SEE THE TRANSPORTION AND FLIGHT DETAILS AT THE
-                        PROFILE INFOMATION )
+                        <a href="profile_info.html"
+                          ><u>PROFILE INFOMATION</u></a
+                        >
+                        )
                       </td>
                     </tr>
                   </tbody>
@@ -226,6 +229,14 @@
       // Animations initialization
       new WOW().init();
     </script>
-    <script src="./node_modules/smartwizard/dist/js/jquery.smartWizard.min.js"></script>
+    <script
+      type="text/javascript"
+      src="./node_modules/smartwizard/dist/js/jquery.smartWizard.min.js"
+    ></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        Swal.fire("No Activity Select", "", "warning");
+      });
+    </script>
   </body>
 </html>
