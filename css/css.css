@@ -103,7 +103,13 @@ body.index-bg {
 .sw-theme-arrows > ul.step-anchor > li.active > a:after {
   border-left: 30px solid #ff0000 !important;
 }
-
+.bg-first{
+  background-color: #fff;
+  background-image: url('../images/bg_first.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
 .btn.disabled.label {
   opacity: 1;
 }
