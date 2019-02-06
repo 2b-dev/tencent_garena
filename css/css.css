@@ -25,13 +25,19 @@ body,
 
 .navbar {
   /*background-color: rgba(0, 0, 0, 0.2);*/
-  background-color: #639efc;
+  background-color: #fff;
+  background-image: url('../images/bg_head_table.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 .def-font-color{
   color: #54361e;
 }
 .top-nav-collapse {
-  background-color: #639efc;
+  background-color: #fff;
+  background-image: url('../images/bg_head_table.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .kv-card {
@@ -141,6 +147,12 @@ body.index-bg {
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
+.title-hili-img{
+  max-width: 400px;
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
 .card-body-paper{
   background-color: #fff;
   background-image: url('../images/bg_table_hover.png');
@@ -244,8 +256,20 @@ table.table-hover.table-web tbody tr:hover {
   background-color: #639efc;
   color: #fff;
 }
+body.main-body-option1{
+  background-image: url('../images/bg_option1.png'), url('../images/bg_option2.png'), url('../images/bg_first.png');
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: 18% auto, 18% auto, cover;
+  background-attachment: fixed, fixed, fixed;
+  background-position: left bottom, right bottom, center center;
+}
+
 main.main {
   min-height: 100vh;
+  /*background-image: url('../images/bg_first.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;*/
 }
 .container_laithai_left{
   position: fixed;
@@ -283,7 +307,11 @@ main.main {
 }
 @media only screen and (max-width: 768px) {
   .navbar {
-    background-color: #639efc;
+    background-color: #fff;
+    background-image: url('../images/bg_head_table.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
   }
   .sw-theme-arrows > ul.step-anchor {
     background-color: transparent !important;
@@ -311,7 +339,14 @@ main.main {
 }
 
 .page-footer {
-  background-color: #639efc;
+  background-color: transparent;
+}
+footer.page-footer .footer-copyright{
+  background-color: transparent;
+  color: #000;
+}
+footer.page-footer a{
+  color: #000;
 }
 
 #time-counter {
