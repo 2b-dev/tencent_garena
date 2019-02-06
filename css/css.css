@@ -27,7 +27,9 @@ body,
   /*background-color: rgba(0, 0, 0, 0.2);*/
   background-color: #639efc;
 }
-
+.def-font-color{
+  color: #54361e;
+}
 .top-nav-collapse {
   background-color: #639efc;
 }
@@ -95,13 +97,123 @@ body.index-bg {
 .card-comments img {
   width: 4rem;
 }
-/*Smart wizard*/
-.sw-theme-arrows > ul.step-anchor > li.active > a {
-  border-color: #ff0000 !important;
-  background-color: #ff0000 !important;
+.title-step1{
+  color: #fd5b17;
+  font-size: 35px;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
-.sw-theme-arrows > ul.step-anchor > li.active > a:after {
-  border-left: 30px solid #ff0000 !important;
+.flower-title{
+  background-image: url('../images/flower_title_step1.png'), url('../images/flower_title_step1.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left center, right center;
+  background-size: 40px auto, 40px auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.btn-wood{
+  background-color: transparent;
+  background-image: url('../images/btn_wood.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 23px;
+}
+.btn-img-wood{
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.btn_wood_tiki{
+  background-color: transparent;
+  background-image: url('../images/btn_wood_tiki.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  min-width: 200px;
+  min-height: 50px;
+}
+.title-agenda-img{
+  max-width: 500px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.title-lra-img{
+  max-width: 600px;
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.card-body-paper{
+  background-color: #fff;
+  background-image: url('../images/bg_table_hover.png');
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+.bg-paper{
+  /*background-image: url('../images/paper.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding-top: 5rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 4rem;
+  max-height: 750px;
+  overflow: hidden;
+  overflow-y: auto; */
+}
+/*Smart wizard*/
+.sw-theme-arrows>ul.step-anchor{
+  background-color: transparent;
+  border-bottom: none;
+}
+
+.sw-theme-arrows > ul.step-anchor > li.active > a , .sw-theme-arrows>ul.step-anchor>li.done>a {
+  border-color: none !important;
+  background-color: transparent !important;
+  background-image: url('../images/step_pass.png')!important;
+  background-repeat: no-repeat!important;
+  background-size: 100% 100%!important;
+  color: #fff;
+  padding: 5px 45px 5px 45px;
+  margin-left: 5px;
+  margin-right: 5px;
+  position: relative;
+}
+.sw-theme-arrows > ul.step-anchor > li.active > a::before, .sw-theme-arrows>ul.step-anchor>li>a::before{
+  border-left: none !important;  
+}
+.sw-theme-arrows > ul.step-anchor > li.active > a::before, .sw-theme-arrows>ul.step-anchor>li>a:before {
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 30px!important;
+  height: 30px!important;
+  background-color: transparent;
+  background-image: url('../images/tiki_icon.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: left center;
+  display: block;
+  top: 0!important;
+  bottom: 0!important;
+  border-left: none!important;
+  border-right: none!important;
+
+}
+.sw-theme-arrows > ul.step-anchor > li.active > a::after, .sw-theme-arrows>ul.step-anchor>li>a::after {
+  border-left: none !important;
+}
+.sw-theme-arrows ,.sw-theme-arrows .step-content{
+  background-color: transparent;
+  border: none;
+}
+.sw-theme-arrows>ul.step-anchor>li>a, .sw-theme-arrows>ul.step-anchor>li>a:hover{
+  background-color: transparent;
+  background-image: url('../images/step.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: #fff;
+  padding: 5px 45px 5px 45px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .bg-first{
   background-color: #fff;
@@ -109,17 +221,24 @@ body.index-bg {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
+  background-attachment: fixed;
 }
 .btn.disabled.label {
   opacity: 1;
 }
+.plus_wood{
+  width: 18px;
+}
 .custom-control-input:checked ~ .custom-control-label::before {
-  border-color: #ff0000;
-  background-color: #ff0000;
+  border-color: #4a290f;
+  background-color: #4a290f;
 }
 table.table-hover tbody tr:hover {
-  background-color: #ff0000;
-  color: #fff;
+  background-color: transparent;
+  background-image: url('../images/bg_table_hover.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #000;
 }
 table.table-hover.table-web tbody tr:hover {
   background-color: #639efc;
@@ -167,7 +286,7 @@ main.main {
     background-color: #639efc;
   }
   .sw-theme-arrows > ul.step-anchor {
-    background-color: #ffadad !important;
+    background-color: transparent !important;
   }
   .container_laithai_left{    
     width: 30vh;
@@ -186,6 +305,9 @@ main.main {
   .btnplusinput{
     right: 10px;
   }
+  .sw-theme-arrows > ul.step-anchor > li.active > a, .sw-theme-arrows>ul.step-anchor>li.done>a, .sw-theme-arrows>ul.step-anchor>li>a, .sw-theme-arrows>ul.step-anchor>li>a:hover{
+    padding: 5px 20px 5px 20px;
+  }
 }
 
 .page-footer {
@@ -194,6 +316,12 @@ main.main {
 
 #time-counter {
   font-size: 3rem;
+}
+@media (min-width: 769px) and (max-width: 1366px){
+  .container-kv{
+    max-width: 70%;
+    margin: 0 auto;
+  }
 }
 @media (min-width: 800px) and (max-width: 850px) {
   .navbar:not(.top-nav-collapse) {
@@ -250,5 +378,9 @@ main.main {
     right: -10vh;
     top: 59%;
     background-color: transparent;
+  }
+  .icon_q{
+    display: block;
+    margin: 0 auto;
   }
 }
