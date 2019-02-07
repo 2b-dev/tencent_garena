@@ -263,6 +263,13 @@ body.main-body-option1{
   background-attachment: fixed, fixed, fixed;
   background-position: left bottom, right bottom, center center;
 }
+body.main-body-option2{
+  background-image: url('../images/bg_option5.png'), url('../images/bg_option6.png'), url('../images/bg_option3.png'), url('../images/bg_first.png');
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 15% auto, 15% auto, 18% auto, cover;
+  background-attachment: fixed, fixed, fixed, fixed;
+  background-position: top left, top right, right bottom, center center;
+}
 
 main.main {
   min-height: 100vh;
@@ -356,6 +363,11 @@ footer.page-footer a{
   .container-kv{
     max-width: 70%;
     margin: 0 auto;
+  }
+}
+@media (min-width: 769px){
+  .h-fluid{
+    max-height: 100%;
   }
 }
 @media (min-width: 800px) and (max-width: 850px) {
