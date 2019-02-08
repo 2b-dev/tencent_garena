@@ -101,10 +101,10 @@
                 aria-labelledby="navbarDropdownAgenda"
               >
                 <a class="dropdown-item" href="hotel.html"
-                  >PHUKET PAGUANA HOTEL</a
+                  >Phuket Angsana Hotel</a
                 >
                 <a class="dropdown-item" href="mim.html"
-                  >MYSTERIOS ISLAND MAP</a
+                  >Mysterious Island Map</a
                 >
               </div>
             </li>
@@ -237,10 +237,10 @@
               <!--/.Featured Image-->
               <div class="row mb-4">
                 <div class="col-6 text-left">
-                  <a href="#!" class="btn btn-wood"><< Previous program</a>
+                  <a href="#!" class="btn btn-wood"><i class="fas fa-angle-double-left mr-1"></i>Previous</a>
                 </div>
                 <div class="col-6 text-right">
-                  <a href="#!" class="btn btn-wood">Next program >></a>
+                  <a href="#!" class="btn btn-wood">Next <i class="fas fa-angle-double-right ml-1"></i></a>
                 </div>
               </div>
               <!--Card-->
@@ -265,7 +265,9 @@
                   <hr />
 
                   <img src="./images/physical.png" class="img-fluid my-3" />
-                  <button class="btn btn-wood">Reserve Your Slot in This Activity</button>
+                  <button class="btn btn-wood">
+                    Reserve Your Slot in This Activity
+                  </button>
                 </div>
               </div>
               <!--/.Card-->
@@ -281,8 +283,10 @@
                       <li>WEIGHT LESS THAN 120 KG</li>
                       <li>WHO HAVE A HEART CONDITION</li>
                       <li>NECK OR BACK ISSUES</li>
-                      <li>PREGNANCY </li>
-                      <li>OTHER MEDICAL CONCERNS WHICH WOULD LIMIT PARTICIPATION</li>
+                      <li>PREGNANCY</li>
+                      <li>
+                        OTHER MEDICAL CONCERNS WHICH WOULD LIMIT PARTICIPATION
+                      </li>
                     </ul>
                   </blockquote>
 
@@ -313,9 +317,9 @@
                     <table
                       class="table table-hover table-bordered table-striped"
                     >
-                        <thead
-                          style="background-image: url('./images/bg_head_table.png'); background-repeat: no-repeat; background-size: 100% 100%; color: #fff;"
-                        >
+                      <thead
+                        style="background-image: url('./images/bg_head_table.png'); background-repeat: no-repeat; background-size: 100% 100%; color: #fff;"
+                      >
                         <tr>
                           <th class="text-center" scope="col">Time</th>
                           <th class="text-center" scope="col">Activity</th>
@@ -417,10 +421,13 @@
       // Animations initialization
       new WOW().init();
     </script>
-    <script type="text/javascript" src="./node_modules/smartwizard/dist/js/jquery.smartWizard.min.js"></script>
+    <script
+      type="text/javascript"
+      src="./node_modules/smartwizard/dist/js/jquery.smartWizard.min.js"
+    ></script>
     <script type="text/javascript">
       $(document).ready(function() {
-        Swal.fire("No Activity Select", "", "warning");
+        Swal.fire("No Activity Selected", "", "warning");
       });
     </script>
   </body>
