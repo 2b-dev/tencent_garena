@@ -123,6 +123,10 @@ body.index-bg {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   border-radius: 23px;
+  color: #fff;
+}
+.btn-wood:hover{
+  color: #fff;
 }
 .btn-img-wood{
   padding-top: 2px;
@@ -344,7 +348,9 @@ main.main {
     padding: 5px 20px 5px 20px;
   }
 }
-
+.img-activity-icon{
+  width: 60px;
+}
 .page-footer {
   background-color: transparent;
 }
@@ -355,13 +361,12 @@ footer.page-footer .footer-copyright{
 footer.page-footer a{
   color: #000;
 }
-
 #time-counter {
   font-size: 3rem;
 }
 @media (min-width: 769px) and (max-width: 1366px){
   .container-kv{
-    max-width: 70%;
+    max-width: 52%;
     margin: 0 auto;
   }
 }
