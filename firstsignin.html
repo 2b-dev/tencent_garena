@@ -85,6 +85,13 @@
                     ><small class="d-none d-lg-block">Activity day 4</small></a
                   >
                 </li>
+                <li style="display:none;">
+                  <a href="#step-6"
+                    ><span class="d-none d-md-block">Step 6<br /></span
+                    ><span class="d-block d-md-none"># 5</span
+                    ><small class="d-none d-lg-block">QR code</small></a
+                  >
+                </li>
               </ul>
 
               <div>
@@ -92,8 +99,10 @@
                   <div class="container py-4">
                     <div class="row">
                       <div class="col-12 text-center">
-                        <span class="title-step1 font-weight-bolder flower-title">
-                          Personal Information                          
+                        <span
+                          class="title-step1 font-weight-bolder flower-title"
+                        >
+                          Personal Information
                         </span>
                       </div>
                       <div class="col-12">
@@ -102,7 +111,7 @@
                             <button
                               class="btn btn-wood btn-img-wood disabled label btn-block text-center text-md-left"
                             >
-                              <img src="./images/icon_q1.png" class="icon_q">
+                              <img src="./images/icon_q1.png" class="icon_q" />
                               <i>Which organization are you from</i>
                             </button>
                           </div>
@@ -142,7 +151,7 @@
                             <button
                               class="btn btn-wood btn-img-wood disabled label btn-block text-center text-md-left"
                             >
-                            <img src="./images/icon_q2.png" class="icon_q">
+                              <img src="./images/icon_q2.png" class="icon_q" />
                               <i>Where are you flying from</i>
                             </button>
                           </div>
@@ -152,7 +161,7 @@
                             <select class="browser-default custom-select">
                               <option selected disabled
                                 >--Select the region--</option
-                              >                              
+                              >
                               <option value="2">SHANGHAI</option>
                               <option value="3">SHENZHEN</option>
                               <option value="4">INDONESIA</option>
@@ -168,7 +177,7 @@
                             <button
                               class="btn btn-wood btn-img-wood disabled label btn-block text-center text-md-left"
                             >
-                              <img src="./images/icon_q3.png" class="icon_q">
+                              <img src="./images/icon_q3.png" class="icon_q" />
                               <i>T-SHIRT SIZE</i>
                             </button>
                           </div>
@@ -248,7 +257,7 @@
                             </div>
                           </div>
                           <div
-                            class="col-6 col-md-1 col-lg-1 mb-2 align-self-center text-left pl-lg-5"
+                            class="col-6 col-md-2 col-lg-1 mb-2 align-self-center text-left pl-lg-5"
                           >
                             <div class="custom-control custom-radio">
                               <input
@@ -262,20 +271,32 @@
                               >
                             </div>
                           </div>
+                          <div
+                            class="col-12 col-md-12 col-lg-3 align-self-center text-center"
+                          >
+                            <a
+                              data-toggle="modal"
+                              data-target="#basicExampleModal"
+                              ><p>
+                                <i class="fas fa-info-circle mr-1"></i>See size
+                                detail
+                              </p></a
+                            >
+                          </div>
                         </div>
                         <div class="form-row mt-2">
                           <div class="col-12 col-md-12 col-lg-5 mb-2">
                             <button
                               class="btn btn-wood btn-img-wood disabled label btn-block text-center text-md-left"
                             >
-                              <img src="./images/icon_q4.png" class="icon_q">
+                              <img src="./images/icon_q4.png" class="icon_q" />
                               <i>Your email address</i>
                             </button>
                           </div>
                           <div
                             id=""
                             class="col-12 col-md-12 col-lg-6 mb-2 align-self-center pl-lg-5"
-                          >  
+                          >
                             <input
                               id="iemail"
                               class="form-control"
@@ -288,7 +309,7 @@
                             <button
                               class="btn btn-wood btn-img-wood disabled label btn-block text-center text-md-left"
                             >
-                              <img src="./images/icon_q4.png" class="icon_q">
+                              <img src="./images/icon_q4.png" class="icon_q" />
                               <i>Food preference / allergies</i>
                             </button>
                           </div>
@@ -300,7 +321,10 @@
                               class="btnplusinput"
                               onclick="plusfoodlimit();"
                             >
-                              <img src="./images/plus_wood.png" class="plus_wood">
+                              <img
+                                src="./images/plus_wood.png"
+                                class="plus_wood"
+                              />
                             </button>
                             <input
                               id="food"
@@ -314,8 +338,10 @@
                             <button
                               class="btn btn-wood btn-img-wood disabled label btn-block text-center text-md-left"
                             >
-                              <img src="./images/icon_q5.png" class="icon_q">
-                              <i>Phobia, physical limitation or health issues</i>
+                              <img src="./images/icon_q5.png" class="icon_q" />
+                              <i
+                                >Phobia, physical limitation or health issues</i
+                              >
                             </button>
                           </div>
                           <div
@@ -326,7 +352,10 @@
                               class="btnplusinput"
                               onclick="plusphobialimit();"
                             >
-                            <img src="./images/plus_wood.png" class="plus_wood">
+                              <img
+                                src="./images/plus_wood.png"
+                                class="plus_wood"
+                              />
                             </button>
                             <input
                               id="phobia"
@@ -340,7 +369,7 @@
                             <button
                               class="btn btn-wood btn-img-wood disabled label btn-block text-center text-md-left"
                             >
-                              <img src="./images/icon_q6.png" class="icon_q">
+                              <img src="./images/icon_q6.png" class="icon_q" />
                               <i
                                 >WOULD YOU REQUIRE ANY EXTRA ASSISTANCE ON
                                 ANYTHING ?</i
@@ -352,7 +381,10 @@
                             class="col-12 col-md-12 col-lg-12 mb-2 align-self-center pr-2 pr-lg-5"
                           >
                             <button class="btnplusinput" onclick="plusreq();">
-                              <img src="./images/plus_wood.png" class="plus_wood">
+                              <img
+                                src="./images/plus_wood.png"
+                                class="plus_wood"
+                              />
                             </button>
                             <input
                               id="extrareq"
@@ -366,28 +398,16 @@
                             <button
                               class="btn btn-wood btn-img-wood disabled label btn-block text-center text-md-left"
                             >
-                              <img src="./images/icon_q7.png" class="icon_q">
-                              <i
-                                >Do you have any room mate preference?</i
-                              >
+                              <img src="./images/icon_q7.png" class="icon_q" />
+                              <i>Do you have any room mate preference?</i>
                             </button>
                           </div>
                           <div
                             id=""
                             class="col-12 col-md-12 col-lg-12 mb-2 align-self-center"
-                          >                            
+                          >
                             <input
                               id="extrafriend1"
-                              class="form-control"
-                              placeholder=""
-                            />
-                          </div>
-                          <div
-                            id=""
-                            class="col-12 col-md-12 col-lg-12 mb-2 align-self-center"
-                          >                            
-                            <input
-                              id="extrafriend2"
                               class="form-control"
                               placeholder=""
                             />
@@ -406,7 +426,10 @@
                   <div class="container py-4">
                     <div class="row">
                       <div class="col-12 text-center">
-                        <img src="./images/title_agenda_d1.png" class="img-fluid title-agenda-img">
+                        <img
+                          src="./images/title_agenda_d1.png"
+                          class="img-fluid title-agenda-img"
+                        />
                       </div>
                       <div class="col-12">
                         <div class="">
@@ -441,7 +464,10 @@
                       </div>
                       <div class="col-12 text-center">
                         <p class="red-text font-weight-bolder">
-                          <i>You can see the above data again after finishing all steps</i>
+                          <i
+                            >You can see the above data again after finishing
+                            all steps</i
+                          >
                         </p>
                       </div>
                       <div class="col-12 text-center text-md-right">
@@ -456,7 +482,10 @@
                   <div class="container py-4">
                     <div class="row">
                       <div class="col-12 text-center">
-                        <img src="./images/title_agenda_d2.png" class="img-fluid title-agenda-img">
+                        <img
+                          src="./images/title_agenda_d2.png"
+                          class="img-fluid title-agenda-img"
+                        />
                       </div>
                       <div class="col-12">
                         <div class="">
@@ -513,8 +542,10 @@
                       <div class="col-12">
                         <div class="row">
                           <div class="col-12 text-center">
-                            <img src="./images/team.png" class="img-fluid title-lra-img">
-                            
+                            <img
+                              src="./images/team.png"
+                              class="img-fluid title-lra-img"
+                            />
                           </div>
                           <div class="col-12 mb-3">
                             <div class="row">
@@ -584,7 +615,10 @@
                       </div>
                       <div class="col-12 text-center">
                         <p class="red-text font-weight-bolder">
-                          <i>You can see the above data again after finishing all steps</i>
+                          <i
+                            >You can see the above data again after finishing
+                            all steps</i
+                          >
                         </p>
                       </div>
                       <div class="col-12 text-center text-md-right">
@@ -599,7 +633,10 @@
                   <div class="container py-4">
                     <div class="row">
                       <div class="col-12 text-center">
-                        <img src="./images/title_agenda_d3.png" class="img-fluid title-agenda-img">
+                        <img
+                          src="./images/title_agenda_d3.png"
+                          class="img-fluid title-agenda-img"
+                        />
                       </div>
                       <div class="col-12">
                         <div class="">
@@ -644,13 +681,19 @@
                       <div class="col-12">
                         <div class="row">
                           <div class="col-12 text-center">
-                            <img src="./images/title_lra.png" class="img-fluid title-lra-img">
+                            <img
+                              src="./images/title_lra.png"
+                              class="img-fluid title-lra-img"
+                            />
                             <ul class="text-left">
                               <li>
-                                Attendees can only select <span class="red-text">ONE</span> activity program
+                                Attendees can only select
+                                <span class="red-text">ONE</span> activity
+                                program
                               </li>
                               <li>
-                                Please confirm in the event website for reservation
+                                Please confirm in the event website for
+                                reservation
                               </li>
                             </ul>
                           </div>
@@ -679,7 +722,9 @@
                                       PROGRAM A. ZIPLINE
                                     </h5>
                                     <p class="card-text">
-                                      Face your fear of heights by going on a zipline from tree to tree and also walking across a sky bridge
+                                      Face your fear of heights by going on a
+                                      zipline from tree to tree and also walking
+                                      across a sky bridge
                                     </p>
                                   </div>
                                 </div>
@@ -708,7 +753,8 @@
                                       PROGRAM B. PHI PHI ISLAND AND SNORKELING
                                     </h5>
                                     <p class="card-text">
-                                      Go snorkeling with fishes in the beautiful ocean and have a relaxing time by beach
+                                      Go snorkeling with fishes in the beautiful
+                                      ocean and have a relaxing time by beach
                                     </p>
                                   </div>
                                 </div>
@@ -737,7 +783,9 @@
                                       PROGRAM C. THAI MASSAGE AND SPA
                                     </h5>
                                     <p class="card-text">
-                                      Have a nice relaxing 2-hour long Thai massage to calm your body and a nice walk around Phuket Old town after that
+                                      Have a nice relaxing 2-hour long Thai
+                                      massage to calm your body and a nice walk
+                                      around Phuket Old town after that
                                     </p>
                                   </div>
                                 </div>
@@ -763,10 +811,12 @@
                                   <div class="card-body card-body-paper">
                                     <!-- Title -->
                                     <h5 class="card-title red-text">
-                                      PROGRAM D. SIGHTSEEING & SHOPPING CITY TOUR
+                                      PROGRAM D. SIGHTSEEING & SHOPPING CITY
+                                      TOUR
                                     </h5>
                                     <p class="card-text">
-                                      Explore Phuket Old Town and the beauty temples around it
+                                      Explore Phuket Old Town and the beauty
+                                      temples around it
                                     </p>
                                   </div>
                                 </div>
@@ -795,7 +845,8 @@
                                       PROGRAM E. WAKEBOARD
                                     </h5>
                                     <p class="card-text">
-                                      Feel the force of the water and the wind in your hair as you surf on a wakeboard
+                                      Feel the force of the water and the wind
+                                      in your hair as you surf on a wakeboard
                                     </p>
                                   </div>
                                 </div>
@@ -824,7 +875,9 @@
                                       PROGRAM F. RAFTING
                                     </h5>
                                     <p class="card-text">
-                                      Paddle your way down a gushing river with your friends and experience the adrenaline rush
+                                      Paddle your way down a gushing river with
+                                      your friends and experience the adrenaline
+                                      rush
                                     </p>
                                   </div>
                                 </div>
@@ -853,7 +906,8 @@
                                       PROGRAM G. HYPE CRUISE
                                     </h5>
                                     <p class="card-text">
-                                      Party and relax on the luxury yacht that sails along the shores of the beach
+                                      Party and relax on the luxury yacht that
+                                      sails along the shores of the beach
                                     </p>
                                   </div>
                                 </div>
@@ -882,7 +936,8 @@
                                       PROGRAM H. FLOW HOUSE & JET SKI
                                     </h5>
                                     <p class="card-text">
-                                      Party and relax on the luxury yacht that sails along the shores of the beach
+                                      Party and relax on the luxury yacht that
+                                      sails along the shores of the beach
                                     </p>
                                   </div>
                                 </div>
@@ -894,7 +949,10 @@
                       </div>
                       <div class="col-12 text-center">
                         <p class="red-text font-weight-bolder">
-                          <i>You can see the above data again after finishing all steps</i>
+                          <i
+                            >You can see the above data again after finishing
+                            all steps</i
+                          >
                         </p>
                       </div>
                       <div class="col-12 text-center text-md-right">
@@ -909,16 +967,19 @@
                   <div class="container py-4">
                     <div class="row">
                       <div class="col-12 text-center">
-                        <img src="./images/title_agenda_d4.png" class="img-fluid title-agenda-img">
+                        <img
+                          src="./images/title_agenda_d4.png"
+                          class="img-fluid title-agenda-img"
+                        />
                       </div>
                       <div class="col-12">
                         <div class="">
                           <table
                             class="table table-hover table-bordered table-striped"
                           >
-                              <thead
-                                style="background-image: url('./images/bg_head_table.png'); background-repeat: no-repeat; background-size: 100% 100%; color: #fff;"
-                              >
+                            <thead
+                              style="background-image: url('./images/bg_head_table.png'); background-repeat: no-repeat; background-size: 100% 100%; color: #fff;"
+                            >
                               <tr>
                                 <th class="text-center" scope="col">Time</th>
                                 <th class="text-center" scope="col">
@@ -931,7 +992,8 @@
                                 <td class="text-center">13:00 - 22:00</td>
                                 <td>
                                   CHECK OUT<br />
-                                  ( PLEASE SEE THE TRANSPORTION AND FLIGHT DETAILS AT THE PROFILE INFOMATION )
+                                  ( PLEASE SEE THE TRANSPORTION AND FLIGHT
+                                  DETAILS AT THE PROFILE INFOMATION )
                                 </td>
                               </tr>
                             </tbody>
@@ -940,11 +1002,25 @@
                       </div>
                       <div class="col-12 text-center">
                         <p class="red-text font-weight-bolder">
-                          <i>You can see the above data again after finishing all steps</i>
+                          <i
+                            >You can see the above data again after finishing
+                            all steps</i
+                          >
                         </p>
                       </div>
                       <div class="col-12 text-center text-md-right">
-                        <a href="home.html" class="btn btn-primary">
+                        <button class="btn btn-wood" onclick="nextd5();">
+                          NEXT STEP
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="step-6" class="">
+                  <div class="container py-4">
+                    <div class="row">
+                      <div class="col-12 text-center text-md-right">
+                        <a href="home.html" class="btn btn-wood">
                           GO TO HOMEPAGE
                         </a>
                       </div>
@@ -957,7 +1033,42 @@
         </div>
       </div>
     </main>
-    
+    <div
+      class="modal fade"
+      id="basicExampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Size detail</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-wood"
+              data-dismiss="modal"
+            >
+              Close
+            </button>            
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- SCRIPTS -->
     <!-- JQuery -->
     <script
@@ -1086,6 +1197,9 @@
       }
       function nextd4() {
         window.location.hash = "#step-5";
+      }
+      function nextd5() {
+        window.location.hash = "#step-6";
       }
       function plusfoodlimit() {
         $("#contain-foodlimit").append(
