@@ -278,8 +278,8 @@
                               data-toggle="modal"
                               data-target="#basicExampleModal"
                               ><p>
-                                <i class="fas fa-info-circle mr-1"></i>See size
-                                detail
+                                <i class="fas fa-info-circle mr-1"></i>T-shirt
+                                size chart
                               </p></a
                             >
                           </div>
@@ -1019,6 +1019,12 @@
                 <div id="step-6" class="">
                   <div class="container py-4">
                     <div class="row">
+                      <div class="col-12 my-3 text-center">
+                        <div id="qrcodeCanvas"></div>
+                      </div>
+                      <div class="col-12 my-3 text-center">
+                        <h5>Your QR Code</h5>
+                      </div>
                       <div class="col-12 text-center text-md-right">
                         <a href="home.html" class="btn btn-wood">
                           GO TO HOMEPAGE
@@ -1044,7 +1050,9 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Size detail</h5>
+            <h5 class="modal-title" id="exampleModalLabel">
+              T-shirt size chart
+            </h5>
             <button
               type="button"
               class="close"
@@ -1055,16 +1063,14 @@
             </button>
           </div>
           <div class="modal-body">
-            ...
+            <a href="./images/size_shirt.jpg" data-fancybox>
+              <img src="./images/size_shirt.jpg" class="img-fluid w-100" />
+            </a>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-wood"
-              data-dismiss="modal"
-            >
+            <button type="button" class="btn btn-wood" data-dismiss="modal">
               Close
-            </button>            
+            </button>
           </div>
         </div>
       </div>
@@ -1097,6 +1103,8 @@
       type="text/javascript"
       src="./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js"
     ></script>
+    <script type="text/javascript" src="./js/jquery.qrcode.js"></script>
+    <script type="text/javascript" src="./js/qrcode.js"></script>
     <!-- Initializations -->
     <script type="text/javascript">
       // Animations initialization
@@ -1216,6 +1224,12 @@
           '<input class="form-control mt-2" placeholder="" />'
         );
       }
+    </script>
+    <script>
+      var idpass = 'test'
+      jQuery("#qrcodeCanvas").qrcode({
+        text: "http://www.aov-trip.com/checkin.php?id="+idpass+""
+      });
     </script>
   </body>
 </html>
