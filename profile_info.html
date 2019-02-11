@@ -151,13 +151,75 @@
                 <!--Card content-->
                 <div class="card-body text-left">
                   <p class="h3 mt-4 mb-2 text-center">Profile Infomation</p>
-
+                  <div class="row">
+                    <div class="col-12 text-center my-3">
+                        <div id="qrcodeCanvas"></div>
+                    </div>
+                  </div>
                   <p class="text-center">Mr. XXXX XXXXXXXX</p>
                   <hr />
                   <p class="">
-                    Flight Detail : XXXXXXXXXXXXXXXXX
-                    <a href="#!" target="_blank">Download PDF</a>
+                    Flight Detail :
+                    <a href="#!" target="_blank">Download your e-ticket here</a>
                   </p>
+                  <div class="table-responsive">
+                    <table
+                      class="table table-hover table-bordered table-striped"
+                    >
+                      <thead
+                        style="background-image: url('./images/bg_head_table.png'); background-repeat: no-repeat; background-size: 100% 100%; color: #fff;"
+                      >
+                        <tr>
+                          <th class="text-center" scope="col">Date</th>
+                          <th class="text-center" scope="col">From - To</th>
+                          <th class="text-center" scope="col">Flight</th>
+                          <th class="text-center" scope="col">
+                            Departure Time
+                          </th>
+                          <th class="text-center" scope="col">Arrive Time</th>
+                          <th class="text-center" scope="col">Airline</th>
+                          <th class="text-center" scope="col">Remark</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-center"></td>
+                          <td class="text-center"></td>
+                          <td class="text-center"></td>
+                          <td class="text-center"></td>
+                          <td class="text-center"></td>
+                          <td class="text-center"></td>
+                          <td class="text-center"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p class="">
+                    Transportations @ Phuket: <a href="#!" target="_blank">Download Transportations here</a>
+                  </p>
+                  <div class="table-responsive" style="display: none;">
+                    <table
+                      class="table table-hover table-bordered table-striped"
+                    >
+                      <thead
+                        style="background-image: url('./images/bg_head_table.png'); background-repeat: no-repeat; background-size: 100% 100%; color: #fff;"
+                      >
+                        <tr>
+                          <th class="text-center" scope="col">Date</th>
+                          <th class="text-center" scope="col" colspan="2">
+                            Transportations
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-center"></td>
+                          <td class="text-center"></td>
+                          <td class="text-center"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                   <p class="">Tribe Color : XXXXXXXXXXXXXXXXX</p>
                   <p class="">Activity Selection : XXXXXXXXXXXXXX</p>
                 </div>
@@ -237,9 +299,17 @@
       type="text/javascript"
       src="./node_modules/smartwizard/dist/js/jquery.smartWizard.min.js"
     ></script>
+    <script type="text/javascript" src="./js/jquery.qrcode.js"></script>
+    <script type="text/javascript" src="./js/qrcode.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
         Swal.fire("No Activity Selected", "", "warning");
+      });
+    </script>
+    <script>
+      var idpass = "test";
+      jQuery("#qrcodeCanvas").qrcode({
+        text: "http://www.aov-trip.com/checkin.php?id=" + idpass + ""
       });
     </script>
   </body>
