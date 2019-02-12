@@ -162,9 +162,9 @@
                     style="background-image: url('./images/bg_head_table.png'); background-repeat: no-repeat; background-size: 100% 100%; color: #fff;"
                   >
                     <tr>
-                      <th class="text-center" scope="col">Time</th>
+                      <th class="text-center" scope="col">Time 时间</th>
                       <th class="text-center" scope="col">
-                        Activity
+                        Activity 活动
                       </th>
                     </tr>
                   </thead>
@@ -172,21 +172,21 @@
                     <tr>
                       <td class="text-center">09:30 - 16:00</td>
                       <td>
-                        LEISURE AND RETREAT ACTIVITY <br />
+                        LEISURE AND RETREAT ACTIVITY 休闲活动<br />
                         ( Agenda will depend on the activity you select )
                       </td>
                     </tr>
                     <tr>
                       <td class="text-center">16:00 - 18.00</td>
-                      <td>REFRESHMENT</td>
+                      <td>REFRESHMENT 休息时间</td>
                     </tr>
                     <tr>
                       <td class="text-center">18:00 - 20:30</td>
-                      <td>BEACH DINNER</td>
+                      <td>BEACH DINNER 海边晚餐</td>
                     </tr>
                     <tr>
                       <td class="text-center">20:30 - 22:30</td>
-                      <td>BEACH PARTY</td>
+                      <td>BEACH PARTY 沙滩派对</td>
                     </tr>
                   </tbody>
                 </table>
@@ -249,31 +249,22 @@
     </script>
     <script>
       logout = () => {
+        sessionStorage.removeItem("user_payload");
 
-        sessionStorage.removeItem('user_payload')
-
-        if(sessionStorage.getItem('user_payload')) {
-
-          return null
-
+        if (sessionStorage.getItem("user_payload")) {
+          return null;
         } else {
-
-          window.location = 'index.html'
-
+          window.location = "index.html";
         }
-
-      }
+      };
 
       checkPayload = () => {
-
-          if(!sessionStorage.getItem('user_payload')) {
-
-            window.location = 'index.html'
-
+        if (!sessionStorage.getItem("user_payload")) {
+          window.location = "index.html";
         }
-      }
+      };
 
-      checkPayload()
+      checkPayload();
     </script>
   </body>
 </html>

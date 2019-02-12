@@ -162,44 +162,44 @@
                     style="background-image: url('./images/bg_head_table.png'); background-repeat: no-repeat; background-size: 100% 100%; color: #fff;"
                   >
                     <tr>
-                      <th class="text-center" scope="col">Time</th>
+                      <th class="text-center" scope="col">Time 时间</th>
                       <th class="text-center" scope="col">
-                        Activity
+                        Activity 活动
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td class="text-center">09:30 - 10:00</td>
-                      <td>TEAM TRIBE ACTIVITY</td>
+                      <td>TEAM TRIBE ACTIVITY 部落活动</td>
                     </tr>
                     <tr>
                       <td class="text-center">10:00 - 10.40</td>
-                      <td>TEAM TRIBE MEETNG</td>
+                      <td>TEAM TRIBE MEETNG 部落会议</td>
                     </tr>
                     <tr>
                       <td class="text-center">10:40 - 12:00</td>
-                      <td>TEAM PRESENTATION</td>
+                      <td>TEAM PRESENTATION 部落介绍</td>
                     </tr>
                     <tr>
                       <td class="text-center">12:00 - 13:00</td>
-                      <td>LUNCH BREAK</td>
+                      <td>LUNCH BREAK 午饭时间</td>
                     </tr>
                     <tr>
                       <td class="text-center">13:00 - 17:00</td>
-                      <td>TEAM TRIBE BATTLE</td>
+                      <td>TEAM TRIBE BATTLE 部落战斗</td>
                     </tr>
                     <tr>
                       <td class="text-center">17:00 - 17:15</td>
-                      <td>GROUP PHOTO</td>
+                      <td>GROUP PHOTO 大合照</td>
                     </tr>
                     <tr>
                       <td class="text-center">17:15 - 18:30</td>
-                      <td>REFRESHMENT</td>
+                      <td>REFRESHMENT 休息时间</td>
                     </tr>
                     <tr>
                       <td class="text-center">18:30 - 22:00</td>
-                      <td>DINNER IN THE MYTH CAVE</td>
+                      <td>DINNER IN THE MYTH CAVE 神话晚饭</td>
                     </tr>
                   </tbody>
                 </table>
@@ -208,8 +208,10 @@
             <div class="col-12 mt-2">
               <div class="row">
                 <div class="col-12 text-center">
-                  <img src="./images/team.png" class="img-fluid title-lra-img">
-                  
+                  <img
+                    src="./images/team.png"
+                    class="img-fluid title-lra-img"
+                  />
                 </div>
                 <div class="col-12 mb-3">
                   <div class="row">
@@ -334,31 +336,22 @@
     </script>
     <script>
       logout = () => {
+        sessionStorage.removeItem("user_payload");
 
-        sessionStorage.removeItem('user_payload')
-
-        if(sessionStorage.getItem('user_payload')) {
-
-          return null
-
+        if (sessionStorage.getItem("user_payload")) {
+          return null;
         } else {
-
-          window.location = 'index.html'
-
+          window.location = "index.html";
         }
-
-      }
+      };
 
       checkPayload = () => {
-
-          if(!sessionStorage.getItem('user_payload')) {
-
-            window.location = 'index.html'
-
+        if (!sessionStorage.getItem("user_payload")) {
+          window.location = "index.html";
         }
-      }
+      };
 
-      checkPayload()
+      checkPayload();
     </script>
   </body>
 </html>

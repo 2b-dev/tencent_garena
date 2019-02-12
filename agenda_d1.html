@@ -162,10 +162,8 @@
                     style="background-image: url('./images/bg_head_table.png'); background-repeat: no-repeat; background-size: 100% 100%; color: #fff;"
                   >
                     <tr>
-                      <th class="text-center" scope="col">Time</th>
-                      <th class="text-center" scope="col">
-                        Activity
-                      </th>
+                      <th class="text-center" scope="col">Time 时间</th>
+                      <th class="text-center" scope="col">Activity 活动</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -174,9 +172,9 @@
                       <td>
                         6 March 2019
                         <ul>
-                          <li>ARRIVAL</li>
-                          <li>CHECK IN</li>
-                          <li>FREE TIME</li>
+                          <li>ARRIVAL 抵达</li>
+                          <li>CHECK IN 酒店入住</li>
+                          <li>FREE TIME 自由活动</li>
                         </ul>
                       </td>
                     </tr>
@@ -241,31 +239,22 @@
     </script>
     <script>
       logout = () => {
+        sessionStorage.removeItem("user_payload");
 
-        sessionStorage.removeItem('user_payload')
-
-        if(sessionStorage.getItem('user_payload')) {
-
-          return null
-
+        if (sessionStorage.getItem("user_payload")) {
+          return null;
         } else {
-
-          window.location = 'index.html'
-
+          window.location = "index.html";
         }
-
-      }
+      };
 
       checkPayload = () => {
-
-          if(!sessionStorage.getItem('user_payload')) {
-
-            window.location = 'index.html'
-
+        if (!sessionStorage.getItem("user_payload")) {
+          window.location = "index.html";
         }
-      }
+      };
 
-      checkPayload()
+      checkPayload();
     </script>
   </body>
 </html>

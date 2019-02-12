@@ -162,9 +162,9 @@
                     style="background-image: url('./images/bg_head_table.png'); background-repeat: no-repeat; background-size: 100% 100%; color: #fff;"
                   >
                     <tr>
-                      <th class="text-center" scope="col">Time</th>
+                      <th class="text-center" scope="col">Time 时间</th>
                       <th class="text-center" scope="col">
-                        Activity
+                        Activity 活动
                       </th>
                     </tr>
                   </thead>
@@ -238,31 +238,22 @@
     </script>
     <script>
       logout = () => {
+        sessionStorage.removeItem("user_payload");
 
-        sessionStorage.removeItem('user_payload')
-
-        if(sessionStorage.getItem('user_payload')) {
-
-          return null
-
+        if (sessionStorage.getItem("user_payload")) {
+          return null;
         } else {
-
-          window.location = 'index.html'
-
+          window.location = "index.html";
         }
-
-      }
+      };
 
       checkPayload = () => {
-
-          if(!sessionStorage.getItem('user_payload')) {
-
-            window.location = 'index.html'
-
+        if (!sessionStorage.getItem("user_payload")) {
+          window.location = "index.html";
         }
-      }
+      };
 
-      checkPayload()
+      checkPayload();
     </script>
   </body>
 </html>
