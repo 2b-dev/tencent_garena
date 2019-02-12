@@ -124,6 +124,7 @@
                                 class="custom-control-input"
                                 id="garena"
                                 name="fromCompany"
+                                value="Garena"
                               />
                               <label class="custom-control-label" for="garena"
                                 >GARENA</label
@@ -139,6 +140,7 @@
                                 class="custom-control-input"
                                 id="tencent"
                                 name="fromCompany"
+                                value="Tencent"
                               />
                               <label class="custom-control-label" for="tencent"
                                 >TENCENT</label
@@ -158,17 +160,17 @@
                           <div
                             class="col-12 col-md-12 col-lg-6 mb-2 align-self-center px-lg-5"
                           >
-                            <select class="browser-default custom-select">
+                            <select class="browser-default custom-select" id="region" name="region">
                               <option selected disabled
                                 >--Select the region--</option
                               >
-                              <option value="2">SHANGHAI</option>
-                              <option value="3">SHENZHEN</option>
-                              <option value="4">INDONESIA</option>
-                              <option value="5">SINGAPORE</option>
-                              <option value="6">TAIWAN</option>
-                              <option value="7">THAILAND</option>
-                              <option value="8">VIETNAM</option>
+                              <option value="SHANGHAI">SHANGHAI</option>
+                              <option value="SHENZHEN">SHENZHEN</option>
+                              <option value="INDONESIA">INDONESIA</option>
+                              <option value="SINGAPORE">SINGAPORE</option>
+                              <option value="TAIWAN">TAIWAN</option>
+                              <option value="THAILAND">THAILAND</option>
+                              <option value="VIETNAM">VIETNAM</option>
                             </select>
                           </div>
                         </div>
@@ -190,6 +192,7 @@
                                 class="custom-control-input"
                                 id="t-xs"
                                 name="tshirst"
+                                value="XS"
                               />
                               <label class="custom-control-label" for="t-xs"
                                 >XS</label
@@ -205,6 +208,7 @@
                                 class="custom-control-input"
                                 id="t-s"
                                 name="tshirst"
+                                value="S"
                               />
                               <label class="custom-control-label" for="t-s"
                                 >S</label
@@ -220,6 +224,7 @@
                                 class="custom-control-input"
                                 id="t-m"
                                 name="tshirst"
+                                value="M"
                               />
                               <label class="custom-control-label" for="t-m"
                                 >M</label
@@ -235,6 +240,7 @@
                                 class="custom-control-input"
                                 id="t-l"
                                 name="tshirst"
+                                value="L"
                               />
                               <label class="custom-control-label" for="t-l"
                                 >L</label
@@ -250,6 +256,7 @@
                                 class="custom-control-input"
                                 id="t-xl"
                                 name="tshirst"
+                                value="XL"
                               />
                               <label class="custom-control-label" for="t-xl"
                                 >XL</label
@@ -265,6 +272,7 @@
                                 class="custom-control-input"
                                 id="t-xxl"
                                 name="tshirst"
+                                value="XXL"
                               />
                               <label class="custom-control-label" for="t-xxl"
                                 >XXL</label
@@ -301,6 +309,7 @@
                               id="iemail"
                               class="form-control"
                               placeholder="Your email address"
+                              name="email"
                             />
                           </div>
                         </div>
@@ -313,6 +322,7 @@
                               <i>Food preference / allergies</i>
                             </button>
                           </div>
+                          
                           <div
                             id="contain-foodlimit"
                             class="col-12 col-md-12 col-lg-6 mb-2 align-self-center pr-2 px-lg-5"
@@ -326,12 +336,16 @@
                                 class="plus_wood"
                               />
                             </button>
+                            
                             <input
                               id="food"
                               class="form-control"
                               placeholder="Food preference / allergies"
+                              name="food[]"
                             />
+                            
                           </div>
+                        
                         </div>
                         <div class="form-row mt-2">
                           <div class="col-12 col-md-12 col-lg-12 mb-2">
@@ -361,6 +375,7 @@
                               id="phobia"
                               class="form-control"
                               placeholder="Phobia, physical limitation or health issues"
+                              name="pho[]"
                             />
                           </div>
                         </div>
@@ -390,6 +405,7 @@
                               id="extrareq"
                               class="form-control"
                               placeholder=""
+                              name="req[]"
                             />
                           </div>
                         </div>
@@ -410,12 +426,13 @@
                               id="extrafriend1"
                               class="form-control"
                               placeholder=""
+                              name="room_mate"
                             />
                           </div>
                         </div>
                       </div>
                       <div class="col-12 text-center text-md-right">
-                        <button class="btn btn-wood" onclick="submitPI();">
+                        <button class="btn btn-wood" onclick="loadData()">
                           SUBMIT
                         </button>
                       </div>
@@ -1211,27 +1228,156 @@
       function nextd5() {
         window.location.hash = "#step-6";
       }
+      
       function plusfoodlimit() {
+        
         $("#contain-foodlimit").append(
-          '<input class="form-control mt-2" placeholder="Food preference / allergies" />'
+          '<input class="form-control mt-2" name="food[]" placeholder="Food preference / allergies" />'
         );
       }
       function plusphobialimit() {
+        
         $("#contain-phobialimit").append(
-          '<input class="form-control mt-2" placeholder="Phobia, physical limitation or health issues" />'
+          '<input class="form-control mt-2" name="pho[]" placeholder="Phobia, physical limitation or health issues" />'
         );
       }
       function plusreq() {
+        
         $("#contain-req").append(
-          '<input class="form-control mt-2" placeholder="" />'
+          '<input class="form-control mt-2" name="req[]" placeholder="" />'
         );
       }
     </script>
     <script>
-      var idpass = "test";
+      const user_payload = []
+      user_payload.push(JSON.parse(sessionStorage.getItem('user_payload')))
       jQuery("#qrcodeCanvas").qrcode({
-        text: "http://www.aov-trip.com/checkin.php?id=" + idpass + ""
+        text: "http://www.aov-trip.com/checkin.php?id=" + user_payload.map(data => (data.passport_id)) + ""
       });
     </script>
+    <script>
+      loadData = () => {
+
+        
+
+        const reqArray = []
+        $('input[name^=req]').each(function (index , value){
+          reqArray.push($(this).val())
+        })
+
+        const phoArray = []
+        $('input[name^=pho]').each(function (index , value) {
+          phoArray.push($(this).val())
+        })
+
+        const foodArray = []
+        $('input[name^=food]').each(function (index , value) {
+          foodArray.push($(this).val())
+        })
+
+        const company = $('input[name^=fromCompany]').val()
+        const region = $('#region').val()
+        const tshirst = $('input[name^=tshirst]').val()
+        const email = $('input[name^=email]').val()
+        const room_mate = $('input[name^=room_mate]').val()
+
+        const user_payload = []
+        user_payload.push(JSON.parse(sessionStorage.getItem('user_payload')))
+        const id = user_payload.map(data => data.id)
+
+        const obj = {
+          user_id : parseInt(id[0]),
+          company : company,
+          region : region,
+          tshirst : tshirst,
+          email : email,
+          req : Object.assign({}, reqArray),
+          pho : Object.assign({}, phoArray),
+          food : Object.assign({}, foodArray),
+          room_mate : room_mate
+
+        }
+
+        var resultFood = Object.keys(obj.food).map(function(key) {
+          return [Number(key), obj.food[key]];
+        });
+
+        var resultPho = Object.keys(obj.pho).map(function(key) {
+          return [Number(key), obj.pho[key]];
+        });
+
+        var resultReq = Object.keys(obj.req).map(function(key) {
+          return [Number(key), obj.req[key]];
+        });
+
+
+        
+
+        Swal.fire({
+          title: "“Confirmation”",
+          type: "info",
+          showConfirmButton: true,
+          confirmButtonText: "Confirm",
+          showCancelButton: true,
+          allowOutsideClick: false,
+          html:
+            '<div class="w-100 text-left">' +
+            "<p>Which organization are you from :" +  obj.company + "</p>" +
+            "<p>Where are you flying from : " + obj.region  + "</p>" +
+            "<p>T-shirt size : " + obj.tshirst + "</p>" +
+            "<p>Food preference / allergies : </p>"+
+            "<ul>"
+             + resultFood.map((data , index) => (
+              "<li>" + data[1] + "</li>"
+            )) + "</ul>"+
+            "<p>Phobia, physical limitation or health issues : </p>" +
+            "<ul>" + resultPho.map((data , index) => {
+              
+             return (
+              "<li>" + data[1] + "</li>"
+            )
+            }) + "</ul>" +
+            "<p>Would you require any extra assistance on anything : </p>" +
+            "<ul>" + resultReq.map((data , index) => (
+              "<li>" + data[1] + "</li>"
+            )) + "</ul>" +
+            "<p>Do you have any room mate preference : </p>" +
+            "<ul><li>" + room_mate + "</li>" +
+            "</div>",
+          preConfirm: () => {
+
+            const test = JSON.stringify(obj)
+
+            console.table(test)
+
+            axios.post('http://aov-trip.com/tencent_web_api/api/v1/insertUserRequire.php' , JSON.stringify(obj))
+              .then(res => {console.table(res.data)})
+              .catch(err => console.log(err))
+              .then(() => {window.location.hash = "#step-2";})
+                
+              }
+        });
+        
+        
+      }
+
+      checkUserRegister = () => {
+
+        const user_payload = []
+        user_payload.push(JSON.parse(sessionStorage.getItem('user_payload')))
+
+        var register_date = user_payload[0]['register_date']
+
+        if(register_date !== "") { 
+          window.location = 'home.html'
+        }
+        
+
+      }
+
+      checkUserRegister()
+
+    </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </body>
 </html>

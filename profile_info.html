@@ -130,7 +130,7 @@
                 <a class="dropdown-item" href="profile_info.html"
                   >PROFILE INFO</a
                 >
-                <a class="dropdown-item" href="index.html">LOG OUT</a>
+                <a class="dropdown-item" onclick="logout()">LOG OUT</a>
               </div>
             </li>
           </ul>
@@ -156,11 +156,11 @@
                         <div id="qrcodeCanvas"></div>
                     </div>
                   </div>
-                  <p class="text-center">Mr. XXXX XXXXXXXX</p>
+                  <p id="user_name" class="text-center"></p>
                   <hr />
                   <p class="">
                     Flight Detail :
-                    <a href="#!" target="_blank">Download your e-ticket here</a>
+                    <a href="#!" class="d-none" target="_blank">Download your e-ticket here</a>
                   </p>
                   <div class="table-responsive">
                     <table
@@ -183,19 +183,28 @@
                       </thead>
                       <tbody>
                         <tr>
+                          <td class="text-center">6-Mar-19</td>
+                          <td class="text-center">SINGAPORE - PHUKET</td>
+                          <td class="text-center">MI 754</td>
+                          <td class="text-center">13:05</td>
+                          <td class="text-center">13:40</td>
+                          <td class="text-center">SILKAIR</td>
                           <td class="text-center"></td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">9-Mar-19</td>
+                          <td class="text-center">PHUKET - SINGAPORE</td>
+                          <td class="text-center">MI 753</td>
+                          <td class="text-center">14:30</td>
+                          <td class="text-center">17:40</td>
+                          <td class="text-center">SILKAIR</td>
+                          <td class="text-center">Departure From Hotel  11:30* (9 Mar 19)</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
                   <p class="">
-                    Transportations @ Phuket: <a href="#!" target="_blank">Download Transportations here</a>
+                    Transportations @ Phuket: <a href="./images/transportation.pdf" target="_blank">Download Transportations here</a>
                   </p>
                   <div class="table-responsive" style="display: none;">
                     <table
@@ -220,14 +229,14 @@
                       </tbody>
                     </table>
                   </div>
-                  <p class="">Tribe Color : XXXXXXXXXXXXXXXXX</p>
-                  <p class="">Activity Selection : XXXXXXXXXXXXXX</p>
+                  <p class="d-none">Tribe Color : </p>
+                  <p class="">Activity Selection : </p>
                 </div>
               </div>
               <!--/.Card-->
 
               <!--Card-->
-              <div class="card mb-4 wow fadeIn">
+              <div class="card mb-4 wow fadeIn d-none">
                 <!--Card content-->
                 <div class="card-body text-left">
                   <p class="h5 my-4 text-center">Personal Requriment</p>
@@ -307,10 +316,45 @@
       });
     </script>
     <script>
-      var idpass = "test";
+      const user_payload = []
+      user_payload.push(JSON.parse(sessionStorage.getItem('user_payload')))
       jQuery("#qrcodeCanvas").qrcode({
-        text: "http://www.aov-trip.com/checkin.php?id=" + idpass + ""
+        text: "http://www.aov-trip.com/checkin.php?id=" + user_payload.map(data => (data.passport_id)) + ""
       });
     </script>
+    <script>
+      const user_payload = []
+      user_payload.push(JSON.parse(sessionStorage.getItem('user_payload')))
+      console.table(user_payload)
+      $('#user_name').text('Mr. ' + user_payload.map(data => (data.firstname)))
+    </script>
+    <script>
+        logout = () => {
+  
+          sessionStorage.removeItem('user_payload')
+  
+          if(sessionStorage.getItem('user_payload')) {
+  
+            return null
+  
+          } else {
+  
+            window.location = 'index.html'
+  
+          }
+  
+        }
+  
+        checkPayload = () => {
+  
+            if(!sessionStorage.getItem('user_payload')) {
+  
+              window.location = 'index.html'
+  
+          }
+        }
+  
+        checkPayload()
+      </script>
   </body>
 </html>

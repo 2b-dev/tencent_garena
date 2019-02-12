@@ -130,7 +130,7 @@
                 <a class="dropdown-item" href="profile_info.html"
                   >PROFILE INFO</a
                 >
-                <a class="dropdown-item" href="index.html">LOG OUT</a>
+                <a class="dropdown-item" onclick="logout()">LOG OUT</a>
               </div>
             </li>
           </ul>
@@ -178,19 +178,12 @@
               <p class="grey-text">
                 Face your fear of heights by going on a zipline from tree to tree and also walking across a sky bridge
               </p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 25%"
-                  aria-valuenow="25"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
+              <div class="progress" id="zipline_progress">
+                
               </div>
-              <p class="text-progress">XX AVAILABLE</p>
+              <p class="text-progress" id="av_zipline">XX AVAILABLE</p>
               <a
-                href="activities_detail.html"
+                onclick="activitySelectId(0 , 5)"
                 class="btn btn-wood btn-md float-right"
                 >See more detail <i class="fas fa-play ml-2"></i>
               </a>
@@ -223,21 +216,14 @@
               <p class="grey-text">
                 Go snorkeling with fishes in the beautiful ocean and have a relaxing time by beach
               </p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
+              <div class="progress" id="progress_phi">
+
               </div>
-              <p class="text-progress">
+              <p class="text-progress" id="av_phi">
                 SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY
               </p>
               <a
-                href="activities_detail.html"
+                onclick="activitySelectId(1 , 6)"
                 class="btn btn-wood btn-md float-right"
                 >See more detail <i class="fas fa-play ml-2"></i>
               </a>
@@ -270,19 +256,12 @@
               <p class="grey-text">
                 Have a nice relaxing 2-hour long Thai massage to calm your body and a nice walk around Phuket Old town after that
               </p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 50%"
-                  aria-valuenow="50"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
+              <div class="progress" id="progress_massage">
+
               </div>
-              <p class="text-progress">XX AVAILABLE</p>
+              <p class="text-progress" id="av_massage">XX AVAILABLE</p>
               <a
-                href="activities_detail.html"
+                onclick="activitySelectId(2 , 9)"
                 class="btn btn-wood btn-md float-right"
                 >See more detail <i class="fas fa-play ml-2"></i>
               </a>
@@ -314,19 +293,12 @@
               <p class="grey-text">
                 Explore Phuket Old Town and the beauty temples around it
               </p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 10%"
-                  aria-valuenow="10"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
+              <div class="progress" id="progress_sightseeing">
+
               </div>
-              <p class="text-progress">XX AVAILABLE</p>
+              <p class="text-progress" id="av_sight">XX AVAILABLE</p>
               <a
-                href="activities_detail.html"
+                onclick="activitySelectId(3 , 10)"
                 class="btn btn-wood btn-md float-right"
                 >See more detail <i class="fas fa-play ml-2"></i>
               </a>
@@ -359,19 +331,12 @@
               <p class="grey-text">
                 Feel the force of the water and the wind in your hair as you surf on a wakeboard
               </p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 50%"
-                  aria-valuenow="50"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
+              <div class="progress" id="progress_wakeboard">
+
               </div>
-              <p class="text-progress">XX AVAILABLE</p>
+              <p class="text-progress" id="av_wakeboard">XX AVAILABLE</p>
               <a
-                href="activities_detail.html"
+                onclick="activitySelectId(4 , 13)"
                 class="btn btn-wood btn-md float-right"
                 >See more detail <i class="fas fa-play ml-2"></i>
               </a>
@@ -404,19 +369,12 @@
               <p class="grey-text">
                 Paddle your way down a gushing river with your friends and experience the adrenaline rush
               </p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 50%"
-                  aria-valuenow="50"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
+              <div class="progress" id="progress_rafting">
+
               </div>
-              <p class="text-progress">XX AVAILABLE</p>
+              <p class="text-progress" id="av_rafting">XX AVAILABLE</p>
               <a
-                href="activities_detail.html"
+                onclick="activitySelectId(5 , 14)"
                 class="btn btn-wood btn-md float-right"
                 >See more detail <i class="fas fa-play ml-2"></i>
               </a>
@@ -449,19 +407,12 @@
               <p class="grey-text">
                 Party and relax on the luxury yacht that sails along the shores of the beach
               </p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 50%"
-                  aria-valuenow="50"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
+              <div class="progress" id="progress_hype">
+ 
               </div>
-              <p class="text-progress">XX AVAILABLE</p>
+              <p class="text-progress" id="av_hype">XX AVAILABLE</p>
               <a
-                href="activities_detail.html"
+                onclick="activitySelectId(6 , 17)"
                 class="btn btn-wood btn-md float-right"
                 >See more detail <i class="fas fa-play ml-2"></i>
               </a>
@@ -494,19 +445,12 @@
               <p class="grey-text">
                 Surf up in the Flow House and ride alongside the ocean waves on a jet ski
               </p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 50%"
-                  aria-valuenow="50"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
+              <div class="progress" id="progress_jetski">
+                
               </div>
-              <p class="text-progress">XX AVAILABLE</p>
+              <p class="text-progress" id="av_jetski">XX AVAILABLE</p>
               <a
-                href="activities_detail.html"
+                onclick="activitySelectId(7 , 18)"
                 class="btn btn-wood btn-md float-right"
                 >See more detail <i class="fas fa-play ml-2"></i>
               </a>
@@ -564,10 +508,199 @@
       type="text/javascript"
       src="./node_modules/smartwizard/dist/js/jquery.smartWizard.min.js"
     ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
         Swal.fire("No activity selected", "", "warning");
       });
+    </script>
+    <script>
+      logout = () => {
+
+        sessionStorage.removeItem('user_payload')
+
+        if(sessionStorage.getItem('user_payload')) {
+
+          return null
+
+        } else {
+
+          window.location = 'index.html'
+
+        }
+
+      }
+
+      checkPayload = () => {
+
+          if(!sessionStorage.getItem('user_payload')) {
+
+            window.location = 'index.html'
+
+        }
+      }
+
+      activityLoadData = () => {
+
+        const activityArray = []
+        axios.get('http://aov-trip.com/tencent_web_api/api/v1/activitysFetch.php')
+          .then(res => {
+
+            activityArray.push(res.data)
+            
+           
+            var activityMaxUser_1 = activityArray[0][0]['max_user']
+            var activityCurrentUser_1 = activityArray[0][0]['current_user']
+
+            var activityMaxUser_2 = activityArray[0][1]['max_user']
+            var activityCurrentUser_2 = activityArray[0][1]['current_user']
+
+            var activityMaxUser_3 = activityArray[0][2]['max_user']
+            var activityCurrentUser_3 = activityArray[0][2]['current_user']
+
+            var activityMaxUser_4 = activityArray[0][3]['max_user']
+            var activityCurrentUser_4 = activityArray[0][3]['current_user']
+
+            var activityMaxUser_5 = activityArray[0][4]['max_user']
+            var activityCurrentUser_5 = activityArray[0][4]['current_user']
+
+            var activityMaxUser_6 = activityArray[0][5]['max_user']
+            var activityCurrentUser_6 = activityArray[0][5]['current_user']
+
+            var activityMaxUser_7 = activityArray[0][6]['max_user']
+            var activityCurrentUser_7 = activityArray[0][6]['current_user']
+
+            var activityMaxUser_8 = activityArray[0][7]['max_user']
+            var activityCurrentUser_8 = activityArray[0][7]['current_user']
+
+
+            $('#zipline_progress').append(
+              `<div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width:`+ (activityCurrentUser_1 / activityMaxUser_1) * 100 +`%"
+                      aria-valuenow="` + activityCurrentUser_1 +`"
+                      aria-valuemin="0"
+                      aria-valuemax="` + activityMaxUser_1 + `"
+                    ></div>`
+              
+            )
+
+            $('#av_zipline').text((activityMaxUser_1 - activityCurrentUser_1) + 'Avaliable')
+
+            $('#progress_phi').append(
+              `<div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width:`+ (activityCurrentUser_2 / activityMaxUser_2) * 100 +`%"
+                      aria-valuenow="` + activityCurrentUser_2 +`"
+                      aria-valuemin="0"
+                      aria-valuemax="` + activityMaxUser_2 + `"
+                    ></div>`
+              
+            )
+
+            $('#av_phi').text((activityMaxUser_2 - activityCurrentUser_2) + 'Avaliable')
+
+            $('#progress_massage').append(
+              `<div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width:`+ (activityCurrentUser_3 / activityMaxUser_3) * 100 +`%"
+                      aria-valuenow="` + activityCurrentUser_3 +`"
+                      aria-valuemin="0"
+                      aria-valuemax="` + activityMaxUser_3 + `"
+                    ></div>`
+              
+            )
+
+            $('#av_massage').text((activityMaxUser_3 - activityCurrentUser_3) + 'Avaliable')
+
+            $('#progress_sightseeing').append(
+              `<div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width:`+ (activityCurrentUser_4 / activityMaxUser_4) * 100 +`%"
+                      aria-valuenow="` + activityCurrentUser_4 +`"
+                      aria-valuemin="0"
+                      aria-valuemax="` + activityMaxUser_4 + `"
+                    ></div>`
+              
+            )
+
+            $('#av_sight').text((activityMaxUser_4 - activityCurrentUser_4) + 'Avaliable')
+
+            $('#progress_wakeboard').append(
+              `<div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width:`+ (activityCurrentUser_5 / activityMaxUser_5) * 100 +`%"
+                      aria-valuenow="` + activityCurrentUser_5 +`"
+                      aria-valuemin="0"
+                      aria-valuemax="` + activityMaxUser_5 + `"
+                    ></div>`
+              
+            )
+
+            $('#av_wakeboard').text((activityMaxUser_5 - activityCurrentUser_5) + 'Avaliable')
+
+            $('#progress_rafting').append(
+              `<div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width:`+ (activityCurrentUser_6 / activityMaxUser_6) * 100 +`%"
+                      aria-valuenow="` + activityCurrentUser_6 +`"
+                      aria-valuemin="0"
+                      aria-valuemax="` + activityMaxUser_6 + `"
+                    ></div>`
+              
+            )
+
+            $('#av_rafting').text((activityMaxUser_6 - activityCurrentUser_6) + 'Avaliable')
+
+            $('#progress_hype').append(
+              `<div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width:`+ (activityCurrentUser_7 / activityMaxUser_7) * 100 +`%"
+                      aria-valuenow="` + activityCurrentUser_7 +`"
+                      aria-valuemin="0"
+                      aria-valuemax="` + activityMaxUser_7 + `"
+                    ></div>`
+              
+            )
+
+            $('#av_hype').text((activityMaxUser_7 - activityCurrentUser_7) + 'Avaliable')
+
+            $('#progress_jetski').append(
+              `<div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width:`+ (activityCurrentUser_8 / activityMaxUser_8) * 100 +`%"
+                      aria-valuenow="` + activityCurrentUser_8 +`"
+                      aria-valuemin="0"
+                      aria-valuemax="` + activityMaxUser_8 + `"
+                    ></div>`
+              
+            )
+
+            $('#av_jetski').text((activityMaxUser_8 - activityCurrentUser_8) + 'Avaliable')
+
+          })
+          .catch(err => console.log(err))
+
+      }
+
+      activitySelectId = (id , ac_id) => {
+       
+        sessionStorage.setItem('ac_id' , ac_id)
+        sessionStorage.setItem('activity_id' , id)
+        window.location = 'activities_detail.html'
+
+      }
+
+      activityLoadData()
+      checkPayload()
     </script>
   </body>
 </html>

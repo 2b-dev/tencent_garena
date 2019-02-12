@@ -130,7 +130,7 @@
                 <a class="dropdown-item" href="profile_info.html"
                   >PROFILE INFO</a
                 >
-                <a class="dropdown-item" href="index.html">LOG OUT</a>
+                <a class="dropdown-item" onclick="logout()">LOG OUT</a>
               </div>
             </li>
           </ul>
@@ -238,6 +238,34 @@
       $(document).ready(function() {
         Swal.fire("No Activity Selected", "", "warning");
       });
+    </script>
+    <script>
+      logout = () => {
+
+        sessionStorage.removeItem('user_payload')
+
+        if(sessionStorage.getItem('user_payload')) {
+
+          return null
+
+        } else {
+
+          window.location = 'index.html'
+
+        }
+
+      }
+
+      checkPayload = () => {
+
+          if(!sessionStorage.getItem('user_payload')) {
+
+            window.location = 'index.html'
+
+        }
+      }
+
+      checkPayload()
     </script>
   </body>
 </html>

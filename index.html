@@ -214,7 +214,7 @@
                   class="btn btn-lg btn-danger m-0 px-3 py-2 z-depth-0 waves-effect"
                   type="button"
                   id="button-addon3"
-                  onclick="checkPID();"
+                  onclick="checkPassportId();"
                 >
                   Login
                 </button>
@@ -273,13 +273,77 @@
       type="text/javascript"
       src="./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js"
     ></script>
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- Initializations -->
+
+    <!-- axios -->
+
+    <script>
+
+      checkPassportId = () => {
+
+        const id_txt = document.getElementById("ipPassport").value
+
+        const postData = {
+
+          passport_id : id_txt
+
+        }
+
+        axios.post('http://aov-trip.com/tencent_web_api/api/v1/passportLogin.php' , JSON.stringify(postData))
+          .then(res => {
+            if(res.data.error == false && res.data.register_date == null) {
+
+              sessionStorage.setItem('user_payload' , JSON.stringify(res.data))
+              Swal.fire({
+                title: "" + res.data.firstname + "",
+                type: "success",
+                html:
+                "WELCOME TO THE MYSTERIOUS ISLAND<br>LET’S START YOUR EXTRAORDINARY JOURNEY"
+              }).then(() => {
+                window.location.href = "firstsignin.html";
+              })
+
+            }
+
+            if(res.data.error == false && res.data.register_date !== null) {
+
+              sessionStorage.setItem('user_payload' , JSON.stringify(res.data))
+              Swal.fire({
+                title: "" + res.data.firstname + "",
+                type: "success",
+                html:
+                "WELCOME TO THE MYSTERIOUS ISLAND<br>LET’S START YOUR EXTRAORDINARY JOURNEY"
+              }).then(() => {
+                window.location.href = "home.html";
+              })
+
+            }
+
+          })
+          .catch(err => console.log(err))
+          
+
+      }
+
+      checkLogin = () => {
+
+        if(sessionStorage.getItem('user_payload')) {
+
+          window.location = 'home.html'
+
+        }
+
+      }
+
+      checkLogin()
+
+    </script>
+
     <script type="text/javascript">
       // Animations initialization
       new WOW().init();
     </script>
-
     <!-- Time Counter -->
     <script type="text/javascript">
       $(document).ready(function() {
