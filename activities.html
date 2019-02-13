@@ -556,7 +556,7 @@
       activityLoadData = () => {
 
         const activityArray = []
-        axios.get('http://aov-trip.com/tencent_web_api/api/v1/activitysFetch.php')
+        axios.get('http://aov-trip.com/aov_api/api/v1/activitysFetch.php')
           .then(res => {
 
             activityArray.push(res.data)

@@ -291,7 +291,7 @@
 
         }
 
-        axios.post('http://aov-trip.com/tencent_web_api/api/v1/passportLogin.php' , JSON.stringify(postData))
+        axios.post('http://aov-trip.com/aov_api/api/v1/passportLogin.php' , JSON.stringify(postData))
           .then(res => {
             if(res.data.error == false && res.data.register_date == null) {
 

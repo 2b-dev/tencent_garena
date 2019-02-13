@@ -440,7 +440,7 @@
       activityLoadData = () => {
 
         const activityArray = []
-        axios.get('http://aov-trip.com/tencent_web_api/api/v1/activitysFetch.php')
+        axios.get('http://aov-trip.com/aov_api/api/v1/activitysFetch.php')
           .then(res => {
 
             activityArray.push(res.data)
@@ -459,7 +459,7 @@
             var arrayAgendaActivity = JSON.parse(activityArray[0][sessionStorage.getItem('activity_id')]['agenda_activity'])
             
             $('#activityName').text(activityName)
-            if(activityMaxUser === 322){
+            if(activityMaxUser == 322){
               $('#pax').text('Unlimited')
             }else{
               $('#pax').text('Max ' + activityMaxUser + ' Pax')
@@ -575,7 +575,7 @@
 
         console.table(postData)
         const limArr = []
-        axios.post('http://aov-trip.com/tencent_web_api/api/v1/limitationFetch.php' , JSON.stringify(postData))
+        axios.post('http://aov-trip.com/aov_api/api/v1/limitationFetch.php' , JSON.stringify(postData))
           .then(res => {
             limArr.push(res.data)
             console.log(limArr[0][0]['lm_1'])
