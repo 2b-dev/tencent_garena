@@ -1042,7 +1042,11 @@
                 </div>
                 <div id="step-6" class="">
                   <div class="container py-4">
-                    <div class="row">
+                    <div class="row mt-3">
+                      <div class="col-12 text-center">
+                        <h3>Your number</h1>
+                        <h1 id="num" style="font-size: 150px;"></h1>
+                      </div>
                       <div class="col-12 my-3 text-center">
                         <div id="qrcodeCanvas"></div>
                       </div>
@@ -1260,6 +1264,7 @@
       jQuery("#qrcodeCanvas").qrcode({
         text: "http://www.aov-trip.com/checkin.php?id=" + user_payload.map(data => (data.passport_id)) + ""
       });
+      $('#num').text(user_payload.map(data => (data.id)));
     </script>
     <script>
       loadData = () => {
