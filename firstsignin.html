@@ -1386,7 +1386,15 @@
         }
         
       }
+      checkPayload = () => {
 
+      if(!sessionStorage.getItem('user_payload')) {
+
+        window.location = 'index.html'
+
+       }
+      }
+      checkPayload()
       checkUserRegister()
 
     </script>

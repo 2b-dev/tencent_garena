@@ -357,11 +357,7 @@
       src="./node_modules/smartwizard/dist/js/jquery.smartWizard.min.js"
     ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        Swal.fire("No activity selected", "", "warning");
-      });
-    </script>
+    
     <script>
       logout = () => {
 
@@ -421,13 +417,14 @@
 
         if(re_payload[0][0]['activity_id'] == null) {
 
-        Swal.fire("No Activity Selected" , "" , "warning")
+          Swal.fire("No Activity Selected" , "" , "warning")
+
+        }
+        
 
       }
-
-      }
-      _initData()
       checkPayload()
+      _initData()
     </script>
   </body>
 </html>
