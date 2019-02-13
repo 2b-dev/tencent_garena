@@ -39,6 +39,7 @@
     />
     <!-- Your custom styles (optional) -->
     <link href="./css/css.css" rel="stylesheet" />
+        
   </head>
 
   <body class="main-body-option2">
@@ -487,273 +488,309 @@
     <!-- SCRIPTS -->
     <!-- JQuery -->
     <script
-      type="text/javascript"
-      src="./node_modules/mdbootstrap/js/jquery-3.3.1.min.js"
-    ></script>
-    <!-- Bootstrap tooltips -->
-    <script
-      type="text/javascript"
-      src="./node_modules/mdbootstrap/js/popper.min.js"
-    ></script>
-    <!-- Bootstrap core JavaScript -->
-    <script
-      type="text/javascript"
-      src="./node_modules/mdbootstrap/js/bootstrap.min.js"
-    ></script>
-    <!-- MDB core JavaScript -->
-    <script
-      type="text/javascript"
-      src="./node_modules/mdbootstrap/js/mdb.min.js"
-    ></script>
-    <!-- Sweet Alert -->
-    <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-    <script
-      type="text/javascript"
-      src="./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js"
-    ></script>
-    <!-- Initializations -->
-    <script type="text/javascript">
-      // Animations initialization
-      new WOW().init();
-    </script>    
-    <script
-      type="text/javascript"
-      src="./node_modules/smartwizard/dist/js/jquery.smartWizard.min.js"
-    ></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        Swal.fire("No activity selected", "", "warning");
-      });
-    </script>
-    <script>
-      logout = () => {
+    type="text/javascript"
+    src="./node_modules/mdbootstrap/js/jquery-3.3.1.min.js"
+  ></script>
+  <!-- Bootstrap tooltips -->
+  <script
+    type="text/javascript"
+    src="./node_modules/mdbootstrap/js/popper.min.js"
+  ></script>
+  <!-- Bootstrap core JavaScript -->
+  <script
+    type="text/javascript"
+    src="./node_modules/mdbootstrap/js/bootstrap.min.js"
+  ></script>
+  <!-- MDB core JavaScript -->
+  <script
+    type="text/javascript"
+    src="./node_modules/mdbootstrap/js/mdb.min.js"
+  ></script>
+  <!-- Sweet Alert -->
+  <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+  <script
+    type="text/javascript"
+    src="./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js"
+  ></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>    
+  <script
+    type="text/javascript"
+    src="./node_modules/smartwizard/dist/js/jquery.smartWizard.min.js"
+  ></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+        
 
-        sessionStorage.removeItem('user_payload')
+    });
+  </script>
+  <script>
+    logout = () => {
 
-        if(sessionStorage.getItem('user_payload')) {
+      sessionStorage.removeItem('user_payload')
 
-          return null
+      if(sessionStorage.getItem('user_payload')) {
 
-        } else {
+        return null
+
+      } else {
+
+        window.location = 'index.html'
+
+      }
+
+    }
+
+    checkPayload = () => {
+
+        if(!sessionStorage.getItem('user_payload')) {
 
           window.location = 'index.html'
 
-        }
-
       }
+    }
 
-      checkPayload = () => {
+    activityLoadData = () => {
 
-          if(!sessionStorage.getItem('user_payload')) {
+      const activityArray = []
+      axios.get('http://aov-trip.com/aov_api/api/v1/activitysFetch.php')
+        .then(res => {
 
-            window.location = 'index.html'
+          activityArray.push(res.data)
+          
+         
+          var activityMaxUser_1 = activityArray[0][0]['max_user']
+          var activityCurrentUser_1 = activityArray[0][0]['current_user']
 
-        }
-      }
+          var activityMaxUser_2 = activityArray[0][1]['max_user']
+          var activityCurrentUser_2 = activityArray[0][1]['current_user']
 
-      activityLoadData = () => {
+          var activityMaxUser_3 = activityArray[0][2]['max_user']
+          var activityCurrentUser_3 = activityArray[0][2]['current_user']
 
-        const activityArray = []
-        axios.get('http://aov-trip.com/aov_api/api/v1/activitysFetch.php')
-          .then(res => {
+          var activityMaxUser_4 = activityArray[0][3]['max_user']
+          var activityCurrentUser_4 = activityArray[0][3]['current_user']
 
-            activityArray.push(res.data)
+          var activityMaxUser_5 = activityArray[0][4]['max_user']
+          var activityCurrentUser_5 = activityArray[0][4]['current_user']
+
+          var activityMaxUser_6 = activityArray[0][5]['max_user']
+          var activityCurrentUser_6 = activityArray[0][5]['current_user']
+
+          var activityMaxUser_7 = activityArray[0][6]['max_user']
+          var activityCurrentUser_7 = activityArray[0][6]['current_user']
+
+          var activityMaxUser_8 = activityArray[0][7]['max_user']
+          var activityCurrentUser_8 = activityArray[0][7]['current_user']
+
+
+          $('#zipline_progress').append(
+            `<div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width:`+ (activityCurrentUser_1 / activityMaxUser_1) * 100 +`%"
+                    aria-valuenow="` + activityCurrentUser_1 +`"
+                    aria-valuemin="0"
+                    aria-valuemax="` + activityMaxUser_1 + `"
+                  ></div>`
             
-           
-            var activityMaxUser_1 = activityArray[0][0]['max_user']
-            var activityCurrentUser_1 = activityArray[0][0]['current_user']
+          )
 
-            var activityMaxUser_2 = activityArray[0][1]['max_user']
-            var activityCurrentUser_2 = activityArray[0][1]['current_user']
+          if(activityCurrentUser_1 == activityMaxUser_1){
+            $('#av_zipline').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
+          }else{
+            //$('#av_zipline').text((activityMaxUser_1 - activityCurrentUser_1) + ' Avaliable')
+            $('#av_zipline').text('Avaliable')
+          }
+          
 
-            var activityMaxUser_3 = activityArray[0][2]['max_user']
-            var activityCurrentUser_3 = activityArray[0][2]['current_user']
-
-            var activityMaxUser_4 = activityArray[0][3]['max_user']
-            var activityCurrentUser_4 = activityArray[0][3]['current_user']
-
-            var activityMaxUser_5 = activityArray[0][4]['max_user']
-            var activityCurrentUser_5 = activityArray[0][4]['current_user']
-
-            var activityMaxUser_6 = activityArray[0][5]['max_user']
-            var activityCurrentUser_6 = activityArray[0][5]['current_user']
-
-            var activityMaxUser_7 = activityArray[0][6]['max_user']
-            var activityCurrentUser_7 = activityArray[0][6]['current_user']
-
-            var activityMaxUser_8 = activityArray[0][7]['max_user']
-            var activityCurrentUser_8 = activityArray[0][7]['current_user']
-
-
-            $('#zipline_progress').append(
-              `<div
-                      class="progress-bar"
-                      role="progressbar"
-                      style="width:`+ (activityCurrentUser_1 / activityMaxUser_1) * 100 +`%"
-                      aria-valuenow="` + activityCurrentUser_1 +`"
-                      aria-valuemin="0"
-                      aria-valuemax="` + activityMaxUser_1 + `"
-                    ></div>`
-              
-            )
-
-            if(activityCurrentUser_1 == activityMaxUser_1){
-              $('#av_zipline').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
-            }else{
-              //$('#av_zipline').text((activityMaxUser_1 - activityCurrentUser_1) + ' Avaliable')
-              $('#av_zipline').text('Avaliable')
-            }
+          $('#progress_phi').append(
+            `<div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width:`+ (activityCurrentUser_2 / activityMaxUser_2) * 100 +`%"
+                    aria-valuenow="` + activityCurrentUser_2 +`"
+                    aria-valuemin="0"
+                    aria-valuemax="` + activityMaxUser_2 + `"
+                  ></div>`
             
+          )
 
-            $('#progress_phi').append(
-              `<div
-                      class="progress-bar"
-                      role="progressbar"
-                      style="width:`+ (activityCurrentUser_2 / activityMaxUser_2) * 100 +`%"
-                      aria-valuenow="` + activityCurrentUser_2 +`"
-                      aria-valuemin="0"
-                      aria-valuemax="` + activityMaxUser_2 + `"
-                    ></div>`
-              
-            )
+          if(activityCurrentUser_2 == activityMaxUser_2){
+            $('#av_phi').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
+          }else{
+            //$('#av_phi').text((activityMaxUser_2 - activityCurrentUser_2) + ' Avaliable')
+            $('#av_phi').text('Avaliable')
+          }
 
-            if(activityCurrentUser_2 == activityMaxUser_2){
-              $('#av_phi').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
-            }else{
-              //$('#av_phi').text((activityMaxUser_2 - activityCurrentUser_2) + ' Avaliable')
-              $('#av_phi').text('Avaliable')
-            }
+          
 
+          $('#progress_massage').append(
+            `<div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width:`+ (activityCurrentUser_3 / activityMaxUser_3) * 100 +`%"
+                    aria-valuenow="` + activityCurrentUser_3 +`"
+                    aria-valuemin="0"
+                    aria-valuemax="` + activityMaxUser_3 + `"
+                  ></div>`
             
-
-            $('#progress_massage').append(
-              `<div
-                      class="progress-bar"
-                      role="progressbar"
-                      style="width:`+ (activityCurrentUser_3 / activityMaxUser_3) * 100 +`%"
-                      aria-valuenow="` + activityCurrentUser_3 +`"
-                      aria-valuemin="0"
-                      aria-valuemax="` + activityMaxUser_3 + `"
-                    ></div>`
-              
-            )
-            if(activityCurrentUser_3 == activityMaxUser_3){
-              $('#av_massage').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
-            }else{
-              //$('#av_massage').text((activityMaxUser_3 - activityCurrentUser_3) + ' Avaliable')
-              $('#av_massage').text('Avaliable')
-            }
+          )
+          if(activityCurrentUser_3 == activityMaxUser_3){
+            $('#av_massage').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
+          }else{
+            //$('#av_massage').text((activityMaxUser_3 - activityCurrentUser_3) + ' Avaliable')
+            $('#av_massage').text('Avaliable')
+          }
 
 
-            $('#progress_sightseeing').append(
-              `<div
-                      class="progress-bar"
-                      role="progressbar"
-                      style="width:`+ (activityCurrentUser_4 / activityMaxUser_4) * 100 +`%"
-                      aria-valuenow="` + activityCurrentUser_4 +`"
-                      aria-valuemin="0"
-                      aria-valuemax="` + activityMaxUser_4 + `"
-                    ></div>`
-              
-            )
+          $('#progress_sightseeing').append(
+            `<div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width:`+ (activityCurrentUser_4 / activityMaxUser_4) * 100 +`%"
+                    aria-valuenow="` + activityCurrentUser_4 +`"
+                    aria-valuemin="0"
+                    aria-valuemax="` + activityMaxUser_4 + `"
+                  ></div>`
+            
+          )
 
-            if(activityCurrentUser_4 == activityMaxUser_4){
-              $('#av_sight').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
-            }else{
-              //$('#av_sight').text((activityMaxUser_4 - activityCurrentUser_4) + ' Avaliable')
-              $('#av_sight').text('Avaliable')
-            }
+          if(activityCurrentUser_4 == activityMaxUser_4){
+            $('#av_sight').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
+          }else{
+            //$('#av_sight').text((activityMaxUser_4 - activityCurrentUser_4) + ' Avaliable')
+            $('#av_sight').text('Avaliable')
+          }
 
 
-            $('#progress_wakeboard').append(
-              `<div
-                      class="progress-bar"
-                      role="progressbar"
-                      style="width:`+ (activityCurrentUser_5 / activityMaxUser_5) * 100 +`%"
-                      aria-valuenow="` + activityCurrentUser_5 +`"
-                      aria-valuemin="0"
-                      aria-valuemax="` + activityMaxUser_5 + `"
-                    ></div>`
-              
-            )
-            if(activityCurrentUser_5 == activityMaxUser_5){
-              $('#av_wakeboard').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
-            }else{
-              //$('#av_wakeboard').text((activityMaxUser_5 - activityCurrentUser_5) + ' Avaliable')
-              $('#av_wakeboard').text('Avaliable')
-            }
+          $('#progress_wakeboard').append(
+            `<div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width:`+ (activityCurrentUser_5 / activityMaxUser_5) * 100 +`%"
+                    aria-valuenow="` + activityCurrentUser_5 +`"
+                    aria-valuemin="0"
+                    aria-valuemax="` + activityMaxUser_5 + `"
+                  ></div>`
+            
+          )
+          if(activityCurrentUser_5 == activityMaxUser_5){
+            $('#av_wakeboard').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
+          }else{
+            //$('#av_wakeboard').text((activityMaxUser_5 - activityCurrentUser_5) + ' Avaliable')
+            $('#av_wakeboard').text('Avaliable')
+          }
 
-            $('#progress_rafting').append(
-              `<div
-                      class="progress-bar"
-                      role="progressbar"
-                      style="width:`+ (activityCurrentUser_6 / activityMaxUser_6) * 100 +`%"
-                      aria-valuenow="` + activityCurrentUser_6 +`"
-                      aria-valuemin="0"
-                      aria-valuemax="` + activityMaxUser_6 + `"
-                    ></div>`
-              
-            )
-            if(activityCurrentUser_6 == activityMaxUser_6){
-              $('#av_rafting').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
-            }else{
-              //$('#av_rafting').text((activityMaxUser_6 - activityCurrentUser_6) + ' Avaliable')
-              $('#av_rafting').text('Avaliable')
-            }
+          $('#progress_rafting').append(
+            `<div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width:`+ (activityCurrentUser_6 / activityMaxUser_6) * 100 +`%"
+                    aria-valuenow="` + activityCurrentUser_6 +`"
+                    aria-valuemin="0"
+                    aria-valuemax="` + activityMaxUser_6 + `"
+                  ></div>`
+            
+          )
+          if(activityCurrentUser_6 == activityMaxUser_6){
+            $('#av_rafting').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
+          }else{
+            //$('#av_rafting').text((activityMaxUser_6 - activityCurrentUser_6) + ' Avaliable')
+            $('#av_rafting').text('Avaliable')
+          }
 
-            $('#progress_hype').append(
-              `<div
-                      class="progress-bar"
-                      role="progressbar"
-                      style="width:`+ (activityCurrentUser_7 / activityMaxUser_7) * 100 +`%"
-                      aria-valuenow="` + activityCurrentUser_7 +`"
-                      aria-valuemin="0"
-                      aria-valuemax="` + activityMaxUser_7 + `"
-                    ></div>`
-              
-            )
-            if(activityCurrentUser_7 == activityMaxUser_7){
-              $('#av_hype').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
-            }else{
-              //$('#av_hype').text((activityMaxUser_7 - activityCurrentUser_7) + ' Avaliable')
-              $('#av_hype').text('Avaliable')
-            }
+          $('#progress_hype').append(
+            `<div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width:`+ (activityCurrentUser_7 / activityMaxUser_7) * 100 +`%"
+                    aria-valuenow="` + activityCurrentUser_7 +`"
+                    aria-valuemin="0"
+                    aria-valuemax="` + activityMaxUser_7 + `"
+                  ></div>`
+            
+          )
+          if(activityCurrentUser_7 == activityMaxUser_7){
+            $('#av_hype').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
+          }else{
+            //$('#av_hype').text((activityMaxUser_7 - activityCurrentUser_7) + ' Avaliable')
+            $('#av_hype').text('Avaliable')
+          }
 
-            $('#progress_jetski').append(
-              `<div
-                      class="progress-bar"
-                      role="progressbar"
-                      style="width:`+ (activityCurrentUser_8 / activityMaxUser_8) * 100 +`%"
-                      aria-valuenow="` + activityCurrentUser_8 +`"
-                      aria-valuemin="0"
-                      aria-valuemax="` + activityMaxUser_8 + `"
-                    ></div>`
-              
-            )
-            if(activityCurrentUser_8 == activityMaxUser_8){
-              $('#av_jetski').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
-            }else{
-              //$('#av_jetski').text((activityMaxUser_8 - activityCurrentUser_8) + ' Avaliable')
-              $('#av_jetski').text('Avaliable')
-            }
+          $('#progress_jetski').append(
+            `<div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width:`+ (activityCurrentUser_8 / activityMaxUser_8) * 100 +`%"
+                    aria-valuenow="` + activityCurrentUser_8 +`"
+                    aria-valuemin="0"
+                    aria-valuemax="` + activityMaxUser_8 + `"
+                  ></div>`
+            
+          )
+          if(activityCurrentUser_8 == activityMaxUser_8){
+            $('#av_jetski').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
+          }else{
+            //$('#av_jetski').text((activityMaxUser_8 - activityCurrentUser_8) + ' Avaliable')
+            $('#av_jetski').text('Avaliable')
+          }
 
-          })
-          .catch(err => console.log(err))
+        })
+        .catch(err => console.log(err))
+
+    }
+    
+
+    activitySelectId = (id , ac_id) => {
+     
+      sessionStorage.setItem('ac_id' , ac_id)
+      sessionStorage.setItem('activity_id' , id)
+      window.location = 'activities_detail.html'
+
+    }
+    
+    _initData = () => {
+
+      const user_payload = []
+      user_payload.push(JSON.parse(sessionStorage.getItem('user_payload')))
+      
+      const user_id = user_payload[0]['id']
+      const postData = {
+
+        user_id : user_id
+
+      }
+      
+
+      axios.post('http://aov-trip.com/aov_api/api/v1/reUserData.php' , JSON.stringify(postData))
+        .then(res => {
+
+          
+          sessionStorage.setItem('user_payload_activity' , JSON.stringify(res.data))
+
+        })
+        .catch(err => console.log(err))
+
+      const re_payload = []
+      re_payload.push(JSON.parse(sessionStorage.getItem('user_payload_activity')))
+      
+      if(re_payload[0][0]['activity_id'] == null) {
+
+        Swal.fire("No Activity Selected" , "" , "warning")
 
       }
 
-      activitySelectId = (id , ac_id) => {
-       
-        sessionStorage.setItem('ac_id' , ac_id)
-        sessionStorage.setItem('activity_id' , id)
-        window.location = 'activities_detail.html'
+    }
+    _initData()
 
-      }
-
-      activityLoadData()
-      checkPayload()
-    </script>
+    activityLoadData()
+    checkPayload()
+  </script>
   </body>
 </html>

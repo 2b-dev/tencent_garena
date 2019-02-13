@@ -214,11 +214,6 @@
       type="text/javascript"
       src="./node_modules/smartwizard/dist/js/jquery.smartWizard.min.js"
     ></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        Swal.fire("No Activity Selected", "", "warning");
-      });
-    </script>
     <script>
       logout = () => {
 
@@ -244,6 +239,40 @@
 
         }
       }
+
+            _initData = () => {
+
+      const user_payload = []
+      user_payload.push(JSON.parse(sessionStorage.getItem('user_payload')))
+      
+      const user_id = user_payload[0]['id']
+      const postData = {
+
+        user_id : user_id
+
+      }
+      
+
+      axios.post('http://aov-trip.com/aov_api/api/v1/reUserData.php' , JSON.stringify(postData))
+        .then(res => {
+
+          
+          sessionStorage.setItem('user_payload_activity' , JSON.stringify(res.data))
+
+        })
+        .catch(err => console.log(err))
+
+      const re_payload = []
+      re_payload.push(JSON.parse(sessionStorage.getItem('user_payload_activity')))
+      
+      if(re_payload[0][0]['activity_id'] == null) {
+
+        Swal.fire("No Activity Selected" , "" , "warning")
+
+      }
+
+    }
+    _initData()
 
       checkPayload()
     </script>

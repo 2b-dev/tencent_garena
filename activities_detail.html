@@ -406,11 +406,6 @@
       src="./node_modules/smartwizard/dist/js/jquery.smartWizard.min.js"
     ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        Swal.fire("No Activity Selected", "", "warning");
-      });
-    </script>
     <script>
       logout = () => {
 
@@ -516,20 +511,28 @@
               $('#avaliable').text('Avaliable')
             }
             
-            for(i = 0; i < arrayRec.length; i++) {
+            if(arrayRec !== null) {
+
+              for(i = 0; i < arrayRec.length; i++) {
               $('#rec_text').append(
                 `<li>`+ arrayRec[i] +`</li>`
               )
 
             }
 
-            for(i = 0; i < arrayPretxt.length; i++) {
+            }
+
+            if(arrayPretxt !== null) {
+
+              for(i = 0; i < arrayPretxt.length; i++) {
 
               $('#pre').append(
                 `<li>`+ arrayPretxt[i] +
                     `<img src="./images/icon_activity/`+ arrayPreicon[i] +`" class="img-activity-icon ml-1">
                   </li>`
               )
+
+            }
 
             }
 
@@ -546,7 +549,9 @@
 
             }
 
-            for(i = 0; i < arrayReqtxt.length; i++) {
+            if(arrayReqtxt !== null) {
+
+              for(i = 0; i < arrayReqtxt.length; i++) {
 
               $('#req').append(
 
@@ -555,6 +560,8 @@
                       </li>`
 
               )
+
+            }
 
             }
 
@@ -700,7 +707,39 @@
 
       }
 
+      _initData = () => {
+
+      const user_payload = []
+      user_payload.push(JSON.parse(sessionStorage.getItem('user_payload')))
       
+      const user_id = user_payload[0]['id']
+      const postData = {
+
+        user_id : user_id
+
+      }
+      
+
+      axios.post('http://aov-trip.com/aov_api/api/v1/reUserData.php' , JSON.stringify(postData))
+        .then(res => {
+
+          
+          sessionStorage.setItem('user_payload_activity' , JSON.stringify(res.data))
+
+        })
+        .catch(err => console.log(err))
+
+      const re_payload = []
+      re_payload.push(JSON.parse(sessionStorage.getItem('user_payload_activity')))
+      
+      if(re_payload[0][0]['activity_id'] == null) {
+
+        Swal.fire("No Activity Selected" , "" , "warning")
+
+      }
+
+    }
+    _initData()
 
       checkReserveActivity()
       activityLoadData()

@@ -1281,9 +1281,9 @@
           foodArray.push($(this).val())
         })
 
-        const company = $('input[name^=fromCompany]').val()
+        const company = $('input[name^=fromCompany]:checked').val()
         const region = $('#region').val()
-        const tshirst = $('input[name^=tshirst]').val()
+        const tshirst = $('input[name^=tshirst]:checked').val()
         const email = $('input[name^=email]').val()
         const room_mate = $('input[name^=room_mate]').val()
 
@@ -1374,11 +1374,12 @@
 
         var register_date = user_payload[0]['register_date']
 
-        if(register_date == null) { 
+        console.log(register_date)
+
+        if(register_date !== null) { 
           window.location = 'home.html'
         }
         
-
       }
 
       checkUserRegister()
