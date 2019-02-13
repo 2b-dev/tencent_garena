@@ -459,7 +459,11 @@
             var arrayAgendaActivity = JSON.parse(activityArray[0][sessionStorage.getItem('activity_id')]['agenda_activity'])
             
             $('#activityName').text(activityName)
-            $('#pax').text('Max ' + activityMaxUser + ' Pax')
+            if(activityMaxUser === 322){
+              $('#pax').text('Unlimited')
+            }else{
+              $('#pax').text('Max ' + activityMaxUser + ' Pax')
+            }
 
             for(i = 0; i < arrayImage.length; i++) {
               
