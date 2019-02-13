@@ -266,7 +266,7 @@ if (!$conn) {
                           </tr>';
                         }
 
-                        echo '</tbody><table></div>';
+                        echo '</tbody></table></div>';
                         echo '<p class="">Transportations @ Phuket:<a href="./images/transportation.pdf" target="_blank">Download Transportations here</a></p>';
                         echo '<p class="d-none">Tribe Color :'. $row['tribe_color'] .'</p>';
                         echo '<p class="">Activity Selected : ';
