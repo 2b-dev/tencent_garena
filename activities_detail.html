@@ -288,7 +288,7 @@
                       </div>
                       -->
                     </div>
-                  <button class="btn btn-wood">
+                  <button class="btn btn-wood" id="reserve_button" onclick="reserveActivity()">
                     Reserve Your Slot in This Activity
                   </button>
                 </div>
@@ -625,10 +625,79 @@
 
           })
           .catch(err => console.log(err))
+      }
 
+      reserveActivity = () => {
+
+        const userArr = []
+        
+        userArr.push(JSON.parse(sessionStorage.getItem('user_payload')))
+        
+        const user_id = userArr[0]['id']
+        const activity_id = sessionStorage.getItem('ac_id')
+      
+        
+        
+        const postData = { user_id : user_id , activity_id : activity_id  }
+
+        $.ajax({
+          url : "http://aov-trip.com/aov_api/api/v1/reserveActivity.php",
+          type : 'POST',
+          dataType : 'JSON',
+          data : JSON.stringify(postData),
+          crossDomain: true,
+          success: function(res) {
+            if(res.message == "Updated") {
+              Swal.fire("Reserve activity" , "" , "success")
+                .then(() => { $('#reserve_button').remove()
+                  window.location = 'activities.html'
+                  
+                 })
+            }
+          }
+        })
 
       }
 
+      checkReserveActivity = () => {
+
+        
+        const userArr = []
+
+        userArr.push(JSON.parse(sessionStorage.getItem('user_payload')))
+
+        const user_id = userArr[0]['id']
+
+        const postData = {
+
+          user_id : user_id
+
+        }
+
+        
+
+        axios.post('http://aov-trip.com/aov_api/api/v1/reUserData.php' , JSON.stringify(postData))
+          .then(res => {
+            sessionStorage.setItem('user_payload_redata' , JSON.stringify(res.data))
+          })
+          .catch(err => console.log(err))
+
+        const re_userArr = []
+        re_userArr.push(JSON.parse(sessionStorage.getItem('user_payload_redata')))
+        
+        const user_activity = re_userArr[0][0]['activity_id']
+        if(user_activity !== null) {
+
+          $('#reserve_button').remove()
+
+        }
+        
+
+      }
+
+      
+
+      checkReserveActivity()
       activityLoadData()
       checkPayload()
       limitationPayload()

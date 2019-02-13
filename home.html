@@ -387,6 +387,29 @@
         }
       }
 
+      _initData = () => {
+
+        const user_payload = []
+        user_payload.push(JSON.parse(sessionStorage.getItem('user_payload')))
+        
+        const user_id = user_payload[0]['id']
+        const postData = {
+
+          user_id : user_id
+
+        }
+        
+        axios.post('http://aov-trip.com/aov_api/api/v1/reUserData.php' , JSON.stringify(postData))
+          .then(res => {
+
+            
+            sessionStorage.setItem('user_payload_profile' , JSON.stringify(res.data))
+
+          })
+          .catch(err => console.log(err))
+
+      }
+      _initData()
       checkPayload()
     </script>
   </body>

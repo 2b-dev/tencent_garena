@@ -181,25 +181,8 @@
                           <th class="text-center" scope="col">Remark</th>
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr>
-                          <td class="text-center">6-Mar-19</td>
-                          <td class="text-center">SINGAPORE - PHUKET</td>
-                          <td class="text-center">MI 754</td>
-                          <td class="text-center">13:05</td>
-                          <td class="text-center">13:40</td>
-                          <td class="text-center">SILKAIR</td>
-                          <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                          <td class="text-center">9-Mar-19</td>
-                          <td class="text-center">PHUKET - SINGAPORE</td>
-                          <td class="text-center">MI 753</td>
-                          <td class="text-center">14:30</td>
-                          <td class="text-center">17:40</td>
-                          <td class="text-center">SILKAIR</td>
-                          <td class="text-center">Departure From Hotel  11:30* (9 Mar 19)</td>
-                        </tr>
+                      <tbody id="flight_data">
+                        
                       </tbody>
                     </table>
                   </div>
@@ -230,7 +213,7 @@
                     </table>
                   </div>
                   <p class="d-none">Tribe Color : </p>
-                  <p class="">Activity Selection : </p>
+                  <p class="" id="activity_section"> </p>
                 </div>
               </div>
               <!--/.Card-->
@@ -308,6 +291,7 @@
       type="text/javascript"
       src="./node_modules/smartwizard/dist/js/jquery.smartWizard.min.js"
     ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="./js/jquery.qrcode.js"></script>
     <script type="text/javascript" src="./js/qrcode.js"></script>
     <script type="text/javascript">
@@ -316,45 +300,357 @@
       });
     </script>
     <script>
+      initPayload = () => {
+
+        
+        const user_payload_pro_array = []
+        user_payload_pro_array.push(JSON.parse(sessionStorage.getItem('user_payload_profile')))
+        console.log(user_payload_pro_array)
+        
+        $('#user_name').text(user_payload_pro_array[0][0]['firstname'])
+        
+        if(user_payload_pro_array[0][0]['activity_id'] !== null) { 
+          
+          if(user_payload_pro_array[0][0]['activity_id'] == 5) { $('#activity_section').text('Activity Section : ZIPLINE ACTIVITY') }
+
+          if(user_payload_pro_array[0][0]['activity_id'] == 6) { $('#activity_section').text('Activity Section : PHI PHI ISLAND AND SNORKELING') }
+
+          if(user_payload_pro_array[0][0]['activity_id'] == 9) { $('#activity_section').text('Activity Section : THAI MASSAGE AND SPA') }
+
+          if(user_payload_pro_array[0][0]['activity_id'] == 10) { $('#activity_section').text('Activity Section : SIGHTSEEING & SHOPPING CITY TOUR') }
+
+          if(user_payload_pro_array[0][0]['activity_id'] == 13) { $('#activity_section').text('Activity Section : WAKE BOARD') }
+
+          if(user_payload_pro_array[0][0]['activity_id'] == 14) { $('#activity_section').text('Activity Section : RAFTING ACTIVITY') }
+
+          if(user_payload_pro_array[0][0]['activity_id'] == 17) { $('#activity_section').text('Activity Section : HYPE CRUISE') }
+
+          if(user_payload_pro_array[0][0]['activity_id'] == 18) { $('#activity_section').text('Activity Section : FLOW HOUSE OR JET SKI') }
+
+        } else {
+
+          $('#activity_section').text("Activity Section : -")
+
+        }
+
+        if(user_payload_pro_array[0][0]['flight_pdf'] !== null) {
+
+          if(user_payload_pro_array[0][0]['flight_pdf'] == "1") {
+
+            $('#flight_data').append(
+
+                        `<tr>
+                          <td class="text-center">6-Mar-19</td>
+                          <td class="text-center">SHENZHEN - PHUKET </td>
+                          <td class="text-center">CZ 6093</td>
+                          <td class="text-center">14:40</td>
+                          <td class="text-center">17:20</td>
+                          <td class="text-center">China Southern Airline</td>
+                          <td class="text-center">MEET at SHENZHEN Airport 11:40*</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">9-Mar-19</td>
+                          <td class="text-center">PHUKET - SHENZHEN</td>
+                          <td class="text-center">CZ 6094</td>
+                          <td class="text-center">18:20</td>
+                          <td class="text-center">22:55</td>
+                          <td class="text-center">China Southern Airline</td>
+                          <td class="text-center">Departure From Hotel 15:20*</td>
+                        </tr>`
+          
+            )
+
+          }
+
+          if(user_payload_pro_array[0][0]['flight_pdf'] == "2") {
+
+            $('#flight_data').append(
+
+                        `<tr>
+                          <td class="text-center">6-Mar-19</td>
+                          <td class="text-center">SHENZHEN - PHUKET </td>
+                          <td class="text-center">CZ 6093</td>
+                          <td class="text-center">14:40</td>
+                          <td class="text-center">17:20</td>
+                          <td class="text-center">China Southern Airline</td>
+                          <td class="text-center">MEET at SHENZHEN Airport 11:40*</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">9-Mar-19</td>
+                          <td class="text-center">PHUKET - SHENZHEN</td>
+                          <td class="text-center">KA 213</td>
+                          <td class="text-center">12:20</td>
+                          <td class="text-center">16:50</td>
+                          <td class="text-center">CHATHY DRAGON</td>
+                          <td class="text-center">Departure From Hotel 9:20*</td>
+                        </tr>`
+          
+            )
+
+          }
+
+          if(user_payload_pro_array[0][0]['flight_pdf'] == "3") {
+
+            $('#flight_data').append(
+
+                        `<tr>
+                          <td class="text-center">6-Mar-19</td>
+                          <td class="text-center">HONGKONG - PHUKET </td>
+                          <td class="text-center">WE 609</td>
+                          <td class="text-center">10:25</td>
+                          <td class="text-center">12:55</td>
+                          <td class="text-center">THAI SMILE</td>
+                          <td class="text-center">Bus Pickup @Tencent Shenzhen 5:00*</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">9-Mar-19</td>
+                          <td class="text-center">PHUKET - HONGKONG </td>
+                          <td class="text-center">WE 608</td>
+                          <td class="text-center">15:40</td>
+                          <td class="text-center">20:05</td>
+                          <td class="text-center">THAI SMILE</td>
+                          <td class="text-center">Departure From Hotel 12:40*</td>
+                        </tr>`
+          
+            )
+
+          }
+
+          if(user_payload_pro_array[0][0]['flight_pdf'] == "4") {
+
+            $('#flight_data').append(
+
+                        `<tr>
+                          <td class="text-center">6-Mar-19</td>
+                          <td class="text-center">GUANGZHOU - PHUKET  </td>
+                          <td class="text-center">CZ 6063</td>
+                          <td class="text-center">15:45</td>
+                          <td class="text-center">18:30</td>
+                          <td class="text-center">China Southern Airline</td>
+                          <td class="text-center">Bus Pickup @ Tencent Shenzhen 10:00*</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">9-Mar-19</td>
+                          <td class="text-center">PHUKET - HONGKONG </td>
+                          <td class="text-center">KA 213</td>
+                          <td class="text-center">12:20</td>
+                          <td class="text-center">16:50</td>
+                          <td class="text-center">CHATHY DRAGON</td>
+                          <td class="text-center">Departure From Hotel  9:20* </td>
+                        </tr>`
+          
+            )
+
+          }
+
+          if(user_payload_pro_array[0][0]['flight_pdf'] == "5") {
+
+            $('#flight_data').append(
+
+                        `<tr>
+                          <td class="text-center">6-Mar-19</td>
+                          <td class="text-center">SHANGHAI - HONGKOKN - PHUKET</td>
+                          <td class="text-center">KA 831, KA 214</td>
+                          <td class="text-center">8:40</td>
+                          <td class="text-center">14:45</td>
+                          <td class="text-center">CHATHY DRAGON </td>
+                          <td class="text-center"></td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">9-Mar-19</td>
+                          <td class="text-center">PHUKET - BANGKOK - SHANGHAI</td>
+                          <td class="text-center">PG 274, MU 9856</td>
+                          <td class="text-center">14:50-16:20</td>
+                          <td class="text-center">19:05-00:30</td>
+                          <td class="text-center">Bangkok Airways, China Eastern Airlines</td>
+                          <td class="text-center">Departure From Hotel  11:50* (9 Mar 19)</td>
+                        </tr>`
+          
+            )
+
+          }
+
+          if(user_payload_pro_array[0][0]['flight_pdf'] == "6") {
+
+            $('#flight_data').append(
+
+                        `<tr>
+                          <td class="text-center">6-Mar-19</td>
+                          <td class="text-center">TAIPEI - BANGKOK - PHUKET</td>
+                          <td class="text-center">TG 633, TG 211</td>
+                          <td class="text-center">13:55</td>
+                          <td class="text-center">19:10</td>
+                          <td class="text-center">Thai Airways</td>
+                          <td class="text-center"></td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">9-Mar-19</td>
+                          <td class="text-center">PHUKET - BANGKOK - TAIPEI</td>
+                          <td class="text-center">TG 685, TG 636</td>
+                          <td class="text-center">13:20</td>
+                          <td class="text-center">17:40</td>
+                          <td class="text-center">Thai Airways</td>
+                          <td class="text-center">Departure From Hotel  10:20* (9 Mar 19)</td>
+                        </tr>`
+          
+            )
+
+          }
+
+          if(user_payload_pro_array[0][0]['flight_pdf'] == "7") {
+
+            $('#flight_data').append(
+
+                        `<tr>
+                          <td class="text-center">6-Mar-19</td>
+                          <td class="text-center">JAKARTA - KUALA LUMPUR - PHUKET</td>
+                          <td class="text-center">MH 710, MH 794</td>
+                          <td class="text-center">11:10</td>
+                          <td class="text-center">15:45</td>
+                          <td class="text-center">Malaysia Airlines</td>
+                          <td class="text-center"></td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">9-Mar-19</td>
+                          <td class="text-center">PHUKET - KUALA LUMPUR - JAKARTA</td>
+                          <td class="text-center">MH 795, MH 727</td>
+                          <td class="text-center">16:55</td>
+                          <td class="text-center">23:20</td>
+                          <td class="text-center">Malaysia Airlines</td>
+                          <td class="text-center">Departure From Hotel 13:55* (9 Mar 19)</td>
+                        </tr>`
+          
+            )
+
+          }
+
+          if(user_payload_pro_array[0][0]['flight_pdf'] == "8") {
+
+            $('#flight_data').append(
+
+                        `<tr>
+                          <td class="text-center">6-Mar-19</td>
+                          <td class="text-center">SINGAPORE - PHUKET</td>
+                          <td class="text-center">MI 754</td>
+                          <td class="text-center">13:05</td>
+                          <td class="text-center">13:40</td>
+                          <td class="text-center">SILKAIR</td>
+                          <td class="text-center"></td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">9-Mar-19</td>
+                          <td class="text-center">PHUKET - SINGAPORE</td>
+                          <td class="text-center">MI 753</td>
+                          <td class="text-center">14:30</td>
+                          <td class="text-center">17:40</td>
+                          <td class="text-center">SILKAIR</td>
+                          <td class="text-center">Departure From Hotel  11:30* (9 Mar 19)</td>
+                        </tr>`
+          
+            )
+
+          }
+
+          if(user_payload_pro_array[0][0]['flight_pdf'] == "9") {
+
+            $('#flight_data').append(
+
+                        `<tr>
+                          <td class="text-center">6-Mar-19</td>
+                          <td class="text-center">HANOI - BANGKOK - PHUKET</td>
+                          <td class="text-center">TG 561 , TG 215</td>
+                          <td class="text-center">10:35</td>
+                          <td class="text-center">15:25</td>
+                          <td class="text-center">Thai Airways</td>
+                          <td class="text-center"></td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">9-Mar-19</td>
+                          <td class="text-center">PHUKET - BANGKOK - HANOI</td>
+                          <td class="text-center">TG 685 , TG 564 </td>
+                          <td class="text-center">13:20</td>
+                          <td class="text-center">19:20</td>
+                          <td class="text-center">Thai Airways</td>
+                          <td class="text-center">Departure From Hotel  10:20* (9 Mar 19)</td>
+                        </tr>`
+          
+            )
+
+          }
+
+          if(user_payload_pro_array[0][0]['flight_pdf'] == "10") {
+
+            $('#flight_data').append(
+
+                        `<tr>
+                          <td class="text-center">6-Mar-19</td>
+                          <td class="text-center">BANGKOK -PHUKET</td>
+                          <td class="text-center">TG 215</td>
+                          <td class="text-center">14:00</td>
+                          <td class="text-center">15:25</td>
+                          <td class="text-center">Thai Airways</td>
+                          <td class="text-center"></td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">9-Mar-19</td>
+                          <td class="text-center">PHUKET - BANGKOK</td>
+                          <td class="text-center">TG 685</td>
+                          <td class="text-center">13:20</td>
+                          <td class="text-center">14:45</td>
+                          <td class="text-center">Thai Airways</td>
+                          <td class="text-center">Departure From Hotel  10:20* (9 Mar 19)</td>
+                        </tr>`
+          
+            )
+
+          }
+
+        } else {
+
+          return null
+
+        }
+
+
+
+      }
+
+      logout = () => {
+
+        sessionStorage.removeItem('user_payload')
+
+        if(sessionStorage.getItem('user_payload')) {
+
+          return null
+
+        } else {
+
+          window.location = 'index.html'
+
+        }
+
+      }
+
+      checkPayload = () => {
+
+          if(!sessionStorage.getItem('user_payload')) {
+
+            window.location = 'index.html'
+
+        }
+      }
+
+      checkPayload()
+      initPayload()
+    </script>
+    <script>
       const user_payload = []
       user_payload.push(JSON.parse(sessionStorage.getItem('user_payload')))
+      console.log(user_payload[0]['passport_id'])
       jQuery("#qrcodeCanvas").qrcode({
-        text: "http://www.aov-trip.com/checkin.php?id=" + user_payload.map(data => (data.passport_id)) + ""
+        text: "http://www.aov-trip.com/checkin.php?id=" + user_payload[0]['passport_id'] + ""
       });
     </script>
-    <script>
-      const user_payload = []
-      user_payload.push(JSON.parse(sessionStorage.getItem('user_payload')))
-      console.table(user_payload)
-      $('#user_name').text('Mr. ' + user_payload.map(data => (data.firstname)))
-    </script>
-    <script>
-        logout = () => {
-  
-          sessionStorage.removeItem('user_payload')
-  
-          if(sessionStorage.getItem('user_payload')) {
-  
-            return null
-  
-          } else {
-  
-            window.location = 'index.html'
-  
-          }
-  
-        }
-  
-        checkPayload = () => {
-  
-            if(!sessionStorage.getItem('user_payload')) {
-  
-              window.location = 'index.html'
-  
-          }
-        }
-  
-        checkPayload()
-      </script>
+    
   </body>
 </html>
