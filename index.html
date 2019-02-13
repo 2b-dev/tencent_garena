@@ -274,6 +274,7 @@
       src="./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js"
     ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
     <!-- Initializations -->
 
     <!-- axios -->
@@ -345,11 +346,20 @@
       new WOW().init();
     </script>
     <!-- Time Counter -->
-    <script type="text/javascript">
+    <script>
+        var a = moment();
+        var b = moment('6/3/2019', 'DD/MM/YYYY');
+        var days = b.diff(a, 'days');
+        const timeCountDown = days + ":23" + ":59" + ":59"
+        console.log(timeCountDown.toString())
+        sessionStorage.setItem('time' , timeCountDown)
+    </script>
+    <script>
+      
       $(document).ready(function() {
         var flip = new FlipClock({
           isCountdown: true,
-          startTime: "31:00:00:05",
+          startTime: sessionStorage.getItem('time'),
           containerElement: $(".countdown"),
           face: {
             days: {
@@ -394,6 +404,8 @@
        * returns default config object
        */
       FlipClock.prototype.getDefaultConfig = function() {
+
+
         return {
           tickDuration: 1000,
           isCountdown: false,
