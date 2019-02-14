@@ -22,7 +22,12 @@ body,
 .view {
   height: 100%;
 }
-
+.container_inputID{
+  position: fixed;
+  width: 100%;
+  max-width: 768px;
+  bottom: 2rem;
+}
 .navbar {
   /*background-color: rgba(0, 0, 0, 0.2);*/
   background-color: #fff;
@@ -346,6 +351,12 @@ main.main {
   }
   .sw-theme-arrows > ul.step-anchor > li.active > a, .sw-theme-arrows>ul.step-anchor>li.done>a, .sw-theme-arrows>ul.step-anchor>li>a, .sw-theme-arrows>ul.step-anchor>li>a:hover{
     padding: 5px 20px 5px 20px;
+  }
+  .container_inputID{
+    position: fixed;
+    width: 100%;
+    max-width: 700px;
+    bottom: 2rem;
   }
 }
 .img-activity-icon{
