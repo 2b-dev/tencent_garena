@@ -374,6 +374,8 @@
         }
 
       }
+      console.log("Load"+sessionStorage.getItem('user_payload'));
+      console.log("Load"+sessionStorage.getItem('user_payload_profile'));
 
       checkPayload = () => {
 
@@ -396,18 +398,16 @@
 
         }
         
+        
 
         axios.post('http://aov-trip.com/aov_api/api/v1/reUserData.php' , JSON.stringify(postData))
           .then(res => {
 
             
             sessionStorage.setItem('user_payload_profile' , JSON.stringify(res.data))
-
-          })
-          .catch(err => console.log(err))
-
-        const re_payload = []
+            const re_payload = []
         re_payload.push(JSON.parse(sessionStorage.getItem('user_payload_profile')))
+        
         
         if(re_payload[0][0]['register_date'] == null) {
 
@@ -420,11 +420,48 @@
           Swal.fire("No Activity Selected" , "" , "warning")
 
         }
-        
 
-      }
+          })
+          .catch(err => console.log(err))
+
+        
+        };
+
+
+        _initData_activity = () => {
+        const user_payload = [];
+        user_payload.push(JSON.parse(sessionStorage.getItem("user_payload")));
+
+        const user_id = user_payload[0]["id"];
+        const postData = {
+          user_id: user_id
+        };
+
+        axios
+          .post(
+            "http://aov-trip.com/aov_api/api/v1/reUserData.php",
+            JSON.stringify(postData)
+          )
+          .then(res => {
+            sessionStorage.setItem(
+              "user_payload_activity",
+              JSON.stringify(res.data)
+            );
+          })
+          .catch(err => console.log(err));
+
+        const re_payload = [];
+        re_payload.push(
+          JSON.parse(sessionStorage.getItem("user_payload_activity"))
+        );
+
+      
+      };
+
+
       checkPayload()
       _initData()
+      _initData_activity()
     </script>
   </body>
 </html>

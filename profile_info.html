@@ -631,13 +631,15 @@
           JSON.parse(sessionStorage.getItem("user_payload_activity"))
         );
 
+       
+      
         if (re_payload[0][0]["activity_id"] == null) {
           Swal.fire("No Activity Selected", "", "warning");
         }
       };
-      checkPayload();
-      _initData();
+      
       initPayload();
+      checkPayload();
     </script>
     <script>
       const user_payload = [];
