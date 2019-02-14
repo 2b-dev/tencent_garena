@@ -79,7 +79,7 @@ if (!$conn) {
                     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
                     while ($row = mysqli_fetch_array($result)) {
                         echo '<h1 class="text-center" style="font-size: 150px;" id="num">' . $row['id'] . '</h1>';
-                        echo '<p class="text-center">' . $row['firstname'] . '</p><hr />';
+                        echo '<h2 class="text-center">' . $row['firstname'] . '</h2><hr />';
                         echo '<p class="">Flight Detail :</p>';
                         echo '<div class="table-responsive text-nowrap"><table class="table table-hover table-bordered table-striped"><theadstyle="background-image: url("./images/bg_head_table.png"); background-repeat: no-repeat; background-size: 100% 100%; color: #fff;"><tr><th class="text-center" scope="col">Date</th><th class="text-center" scope="col">From - To</th><th class="text-center" scope="col">Flight</th><th class="text-center" scope="col">Departure Time</th><th class="text-center" scope="col">Arrive Time</th><th class="text-center" scope="col">Airline</th><th class="text-center" scope="col">Remark</th></tr></thead><tbody>';
                         if ($row["flight_pdf"] == 1) {
@@ -267,9 +267,9 @@ if (!$conn) {
                         }
 
                         echo '</tbody></table></div>';
-                        echo '<p class="">Transportations @ Phuket:<a href="./images/transportation.pdf" target="_blank">Download Transportations here</a></p>';
+                        echo '<p class="">Transportations @ Phuket:<a href="./images/transportation.pdf" target="_blank">Download transportation information</a></p>';
                         echo '<p class="d-none">Tribe Color :'. $row['tribe_color'] .'</p>';
-                        echo '<p class="">Activity Selected : ';
+                        echo '<p class="">Activity Selected : <span class="red-text">';
                         if ($row["activity_id"] == null){
                             echo 'No Activity Selected';
                         }
@@ -297,7 +297,7 @@ if (!$conn) {
                         if ($row["activity_id"] == 18){
                             echo 'FLOW HOUSE OR JET SKI';
                         }
-                        echo '</p>';
+                        echo '</span></p>';
                     }
 
                     mysqli_close($conn);
