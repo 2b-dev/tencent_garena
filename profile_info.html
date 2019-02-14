@@ -153,7 +153,7 @@
                   <p class="h3 mt-4 mb-2 text-center">Profile Infomation</p>
                   <h3 class="text-center mt-5">Your number</h3>
                   <h1 class="text-center" style="font-size: 150px;" id="num">Your number :</h1>
-                  <p id="user_name" class="text-center"></p>
+                  <h2 id="user_name" class="text-center"></h2>
                   <hr />
                   <p class="">
                     Flight Detail :
@@ -186,7 +186,7 @@
                   <p class="">
                     Transportations @ Phuket:
                     <a href="./images/transportation.pdf" target="_blank"
-                      >Download Transportations here</a
+                      >Download transportation information</a
                     >
                   </p>
                   <div class="table-responsive" style="display: none;">
@@ -213,7 +213,7 @@
                     </table>
                   </div>
                   <p class="d-none">Tribe Color :</p>
-                  <p class="" id="activity_section"></p>
+                  <p class="">Activity selected :<span id="activity_section" class="red-text"></span></p>
                   <div class="row">
                     <div class="col-12 text-center my-3">
                       <div id="qrcodeCanvas"></div>
@@ -311,46 +311,46 @@
 
         if (user_payload_pro_array[0][0]["activity_id"] !== null) {
           if (user_payload_pro_array[0][0]["activity_id"] == 5) {
-            $("#activity_section").text("Activity Section : ZIPLINE ACTIVITY");
+            $("#activity_section").text(" ZIPLINE ACTIVITY");
           }
 
           if (user_payload_pro_array[0][0]["activity_id"] == 6) {
             $("#activity_section").text(
-              "Activity Section : PHI PHI ISLAND AND SNORKELING"
+              " PHI PHI ISLAND AND SNORKELING"
             );
           }
 
           if (user_payload_pro_array[0][0]["activity_id"] == 9) {
             $("#activity_section").text(
-              "Activity Section : THAI MASSAGE AND SPA"
+              " THAI MASSAGE AND SPA"
             );
           }
 
           if (user_payload_pro_array[0][0]["activity_id"] == 10) {
             $("#activity_section").text(
-              "Activity Section : SIGHTSEEING & SHOPPING CITY TOUR"
+              " SIGHTSEEING & SHOPPING CITY TOUR"
             );
           }
 
           if (user_payload_pro_array[0][0]["activity_id"] == 13) {
-            $("#activity_section").text("Activity Section : WAKE BOARD");
+            $("#activity_section").text(" WAKE BOARD");
           }
 
           if (user_payload_pro_array[0][0]["activity_id"] == 14) {
-            $("#activity_section").text("Activity Section : RAFTING ACTIVITY");
+            $("#activity_section").text(" RAFTING ACTIVITY");
           }
 
           if (user_payload_pro_array[0][0]["activity_id"] == 17) {
-            $("#activity_section").text("Activity Section : HYPE CRUISE");
+            $("#activity_section").text(" HYPE CRUISE");
           }
 
           if (user_payload_pro_array[0][0]["activity_id"] == 18) {
             $("#activity_section").text(
-              "Activity Section : FLOW HOUSE OR JET SKI"
+              " FLOW HOUSE OR JET SKI"
             );
           }
         } else {
-          $("#activity_section").text("Activity Section : -");
+          $("#activity_section").text(" No Activity Selected");
         }
 
         if (user_payload_pro_array[0][0]["flight_pdf"] !== null) {
