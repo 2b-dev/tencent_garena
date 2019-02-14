@@ -506,6 +506,7 @@
             )
             if(activityMaxUser == activityCurrentUser){
               $('#Available').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
+              $('#reserve_button').addClass('d-none');
             }else{
               //$('#Available').text((activityMaxUser - activityCurrentUser) + ' Available')
               $('#Available').text('Available')
@@ -661,7 +662,7 @@
           success: function(res) {
             if(res.message == "Updated") {
               Swal.fire("Reserve activity" , "" , "success")
-                .then(() => { $('#reserve_button').remove()
+                .then(() => { $('#reserve_button').addClass('d-none')
                   window.location = 'activities.html'
                   
                  })
@@ -693,14 +694,14 @@
             sessionStorage.setItem('user_payload_redata' , JSON.stringify(res.data))
           })
           .catch(err => console.log(err))
-
+          
         const re_userArr = []
         re_userArr.push(JSON.parse(sessionStorage.getItem('user_payload_redata')))
         
         const user_activity = re_userArr[0][0]['activity_id']
         if(user_activity !== null) {
 
-          $('#reserve_button').remove()
+          $('#reserve_button').addClass('d-none')
 
         }
         
@@ -739,11 +740,13 @@
       }
 
     }
-      checkPayload()
-      _initData()
-      checkReserveActivity()
+      _initData()      
       activityLoadData()
       limitationPayload()
+      checkReserveActivity()
+            
+      checkPayload()
+      
     </script>
   </body>
 </html>

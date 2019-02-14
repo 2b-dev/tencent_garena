@@ -168,7 +168,7 @@
               <!--Featured image-->
               <div class="view overlay rounded z-depth-0">
                 <img src="./images/step4_card1.png" class="img-fluid" alt="" />
-                <a href="activities_detail.html">
+                <a onclick="activitySelectId(0 , 5)">
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
@@ -208,7 +208,7 @@
               <!--Featured image-->
               <div class="view overlay rounded z-depth-0">
                 <img src="./images/step4_card2.png" class="img-fluid" alt="" />
-                <a href="activities_detail.html">
+                <a onclick="activitySelectId(1 , 6)">
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
@@ -250,7 +250,7 @@
               <!--Featured image-->
               <div class="view overlay rounded z-depth-0">
                 <img src="./images/step4_card3.png" class="img-fluid" alt="" />
-                <a href="activities_detail.html">
+                <a onclick="activitySelectId(2 , 9)">
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
@@ -288,7 +288,7 @@
               <!--Featured image-->
               <div class="view overlay rounded z-depth-0">
                 <img src="./images/step4_card4.png" class="img-fluid" alt="" />
-                <a href="activities_detail.html">
+                <a onclick="activitySelectId(3 , 10)">
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
@@ -327,7 +327,7 @@
               <!--Featured image-->
               <div class="view overlay rounded z-depth-0">
                 <img src="./images/step4_card5.png" class="img-fluid" alt="" />
-                <a href="activities_detail.html">
+                <a onclick="activitySelectId(4 , 13)">
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
@@ -365,7 +365,7 @@
               <!--Featured image-->
               <div class="view overlay rounded z-depth-0">
                 <img src="./images/step4_card6.png" class="img-fluid" alt="" />
-                <a href="activities_detail.html">
+                <a onclick="activitySelectId(5 , 14)">
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
@@ -404,7 +404,7 @@
               <!--Featured image-->
               <div class="view overlay rounded z-depth-0">
                 <img src="./images/step4_card7.png" class="img-fluid" alt="" />
-                <a href="activities_detail.html">
+                <a onclick="activitySelectId(6 , 17)">
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
@@ -443,7 +443,7 @@
               <!--Featured image-->
               <div class="view overlay rounded z-depth-0">
                 <img src="./images/step4_card8.png" class="img-fluid" alt="" />
-                <a href="activities_detail.html">
+                <a onclick="activitySelectId(7 , 18)">
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
@@ -784,14 +784,16 @@
       
       if(re_payload[0][0]['activity_id'] == null) {
 
-        Swal.fire("No Activity Selected" , "" , "warning")
+        //Swal.fire("No Activity Selected" , "" , "warning")
 
       }
 
     }
+    activityLoadData()
     checkPayload()
     _initData()
-    activityLoadData()
+    
+    
   </script>
   </body>
 </html>
