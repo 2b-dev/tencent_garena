@@ -11,15 +11,18 @@
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
     />
     <!-- Bootstrap core CSS -->
     <link
-      href="./node_modules/mdbootstrap/css/bootstrap.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <!-- Material Design Bootstrap -->
-    <link href="./node_modules/mdbootstrap/css/mdb.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css"
+      rel="stylesheet"
+    />
 
     <link
       href="./node_modules/sweetalert2/dist/sweetalert2.min.css"
@@ -33,10 +36,7 @@
       href="./node_modules/smartwizard/dist/css/smart_wizard_theme_arrows.min.css"
       rel="stylesheet"
     />
-    <link
-      href="./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
     <!-- Your custom styles (optional) -->
     <link href="./css/css.css" rel="stylesheet" />
   </head>
@@ -180,28 +180,28 @@
                     <div class="carousel-item active">
                       <img
                         class="d-block w-100"
-                        src="./images/step4_card1.png"
+                        src="http://aov.illusion.in.th/images/step4_card1.png"
                         alt="First slide"
                       />
                     </div>
                     <div class="carousel-item">
                       <img
                         class="d-block w-100"
-                        src="./images/step4_card1_2.png"
+                        src="http://aov.illusion.in.th/images/step4_card1_2.png"
                         alt="Second slide"
                       />
                     </div>
                     <div class="carousel-item">
                       <img
                         class="d-block w-100"
-                        src="./images/step4_card1_3.png"
+                        src="http://aov.illusion.in.th/images/step4_card1_3.png"
                         alt="Third slide"
                       />
                     </div>
                     <div class="carousel-item">
                       <img
                         class="d-block w-100"
-                        src="./images/step4_card1_4.png"
+                        src="http://aov.illusion.in.th/images/step4_card1_4.png"
                         alt="Third slide"
                       />
                     </div>-->
@@ -238,10 +238,14 @@
               <!--/.Featured Image-->
               <div class="row mb-4 d-none">
                 <div class="col-6 text-left">
-                  <a href="#!" class="btn btn-wood"><i class="fas fa-angle-double-left mr-1"></i>Previous</a>
+                  <a href="#!" class="btn btn-wood"
+                    ><i class="fas fa-angle-double-left mr-1"></i>Previous</a
+                  >
                 </div>
                 <div class="col-6 text-right">
-                  <a href="#!" class="btn btn-wood">Next <i class="fas fa-angle-double-right ml-1"></i></a>
+                  <a href="#!" class="btn btn-wood"
+                    >Next <i class="fas fa-angle-double-right ml-1"></i
+                  ></a>
                 </div>
               </div>
               <!--Card-->
@@ -267,28 +271,32 @@
                   <hr />
 
                   <div class="row justify-content-center" id="limitation">
-                      <!-- 
+                    <!-- 
                       <div class="col-2">
-                        <img src="./images/phobia_icon/icon_1.png" class="img-fluid">
+                        <img src="http://aov.illusion.in.th/images/phobia_icon/icon_1.png" class="img-fluid">
                       </div>
                       <div class="col-2">
-                        <img src="./images/phobia_icon/icon_2.png" class="img-fluid">
+                        <img src="http://aov.illusion.in.th/images/phobia_icon/icon_2.png" class="img-fluid">
                       </div>
                       <div class="col-2">
-                        <img src="./images/phobia_icon/icon_3.png" class="img-fluid">
+                        <img src="http://aov.illusion.in.th/images/phobia_icon/icon_3.png" class="img-fluid">
                       </div>
                       <div class="col-2">
-                        <img src="./images/phobia_icon/icon_4.png" class="img-fluid">
+                        <img src="http://aov.illusion.in.th/images/phobia_icon/icon_4.png" class="img-fluid">
                       </div>
                       <div class="col-2">
-                        <img src="./images/phobia_icon/icon_5.png" class="img-fluid">
+                        <img src="http://aov.illusion.in.th/images/phobia_icon/icon_5.png" class="img-fluid">
                       </div>
                       <div class="col-2">
-                        <img src="./images/phobia_icon/" class="img-fluid">
+                        <img src="http://aov.illusion.in.th/images/phobia_icon/" class="img-fluid">
                       </div>
                       -->
-                    </div>
-                  <button class="btn btn-wood" id="reserve_button" onclick="reserveActivity()">
+                  </div>
+                  <button
+                    class="btn btn-wood"
+                    id="reserve_button"
+                    onclick="reserveActivity()"
+                  >
                     Reserve Your Slot in This Activity
                   </button>
                 </div>
@@ -302,25 +310,18 @@
                   <p class="h5 my-4">ACTIVITIES ARE NOT RECOMMENDED FOR</p>
 
                   <blockquote class="blockquote">
-                    <ul id="rec_text">
-                      
-                    </ul>
+                    <ul id="rec_text"></ul>
                   </blockquote>
 
                   <p class="h5 my-4">PREPARATION</p>
 
                   <blockquote class="blockquote">
-                    <ul id="pre">
-                      
-                      
-                    </ul>
+                    <ul id="pre"></ul>
                   </blockquote>
 
                   <p class="h5 my-4">REQUIREMENT</p>
                   <blockquote class="blockquote">
-                    <ul id="req">
-                      
-                    </ul>
+                    <ul id="req"></ul>
                   </blockquote>
                 </div>
               </div>
@@ -336,23 +337,19 @@
                       class="table table-hover table-bordered table-striped"
                     >
                       <thead
-                        style="background-image: url('./images/bg_head_table.png'); background-repeat: no-repeat; background-size: 100% 100%; color: #fff;"
+                        style="background-image: url('http://aov.illusion.in.th/images/bg_head_table.png'); background-repeat: no-repeat; background-size: 100% 100%; color: #fff;"
                       >
                         <tr>
                           <th class="text-center" scope="col">Time</th>
                           <th class="text-center" scope="col">Activity</th>
                         </tr>
                       </thead>
-                      <tbody id="agenda">
-                        
-                      </tbody>
+                      <tbody id="agenda"></tbody>
                     </table>
                   </div>
                 </div>
               </div>
               <!--/.Card-->
-
-             
             </div>
             <!--Grid column-->
           </div>
@@ -370,28 +367,20 @@
     </footer>
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script
-      type="text/javascript"
-      src="./node_modules/mdbootstrap/js/jquery-3.3.1.min.js"
-    ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./node_modules/smartwizard/dist/js/jquery.smartWizard.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script
-      type="text/javascript"
-      src="./node_modules/mdbootstrap/js/popper.min.js"
-    ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script
-      type="text/javascript"
-      src="./node_modules/mdbootstrap/js/bootstrap.min.js"
-    ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/js/mdb.min.js"></script>
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script
       type="text/javascript"
-      src="./node_modules/mdbootstrap/js/mdb.min.js"
+      src="https://cdn.jsdelivr.net/npm/promise-polyfill"
     ></script>
-    <!-- Sweet Alert -->
-    <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     <script
       type="text/javascript"
       src="./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js"
@@ -408,354 +397,367 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
       logout = () => {
+        sessionStorage.removeItem("user_payload");
 
-        sessionStorage.removeItem('user_payload')
-
-        if(sessionStorage.getItem('user_payload')) {
-
-          return null
-
+        if (sessionStorage.getItem("user_payload")) {
+          return null;
         } else {
-
-          window.location = 'index.html'
-
+          window.location = "index.html";
         }
-
-      }
+      };
 
       checkPayload = () => {
-
-          if(!sessionStorage.getItem('user_payload')) {
-
-            window.location = 'index.html'
-
+        if (!sessionStorage.getItem("user_payload")) {
+          window.location = "index.html";
         }
-      }
+      };
 
       activityLoadData = () => {
-
-        const activityArray = []
-        axios.get('http://aov-trip.com/aov_api/api/v1/activitysFetch.php')
+        const activityArray = [];
+        axios
+          .get("http://aov-trip.com/aov_api/api/v1/activitysFetch.php")
           .then(res => {
+            activityArray.push(res.data);
 
-            activityArray.push(res.data)
-            
-            var activityName = activityArray[0][sessionStorage.getItem('activity_id')]['name']
-            var activityMaxUser = activityArray[0][sessionStorage.getItem('activity_id')]['max_user']
-            var activityCurrentUser = activityArray[0][sessionStorage.getItem('activity_id')]['current_user']
-            var arrayImage = JSON.parse(activityArray[0][sessionStorage.getItem('activity_id')]['gallery'])
-            var arrayDes = JSON.parse(activityArray[0][sessionStorage.getItem('activity_id')]['des'])
-            var arrayRec = JSON.parse(activityArray[0][sessionStorage.getItem('activity_id')]['rec'])
-            var arrayPretxt = JSON.parse(activityArray[0][sessionStorage.getItem('activity_id')]['pre_txt'])
-            var arrayPreicon = JSON.parse(activityArray[0][sessionStorage.getItem('activity_id')]['pre_icon'])
-            var arrayReqtxt = JSON.parse(activityArray[0][sessionStorage.getItem('activity_id')]['req_txt'])
-            var arrayReqicon = JSON.parse(activityArray[0][sessionStorage.getItem('activity_id')]['req_icon'])
-            var arrayAgendaTime = JSON.parse(activityArray[0][sessionStorage.getItem('activity_id')]['agenda_time'])
-            var arrayAgendaActivity = JSON.parse(activityArray[0][sessionStorage.getItem('activity_id')]['agenda_activity'])
-            
-            $('#activityName').text(activityName)
-            if(activityMaxUser == 322){
-              $('#pax').text('Unlimited')
-            }else{
-              $('#pax').text('Max ' + activityMaxUser + ' Pax')
+            var activityName =
+              activityArray[0][sessionStorage.getItem("activity_id")]["name"];
+            var activityMaxUser =
+              activityArray[0][sessionStorage.getItem("activity_id")][
+                "max_user"
+              ];
+            var activityCurrentUser =
+              activityArray[0][sessionStorage.getItem("activity_id")][
+                "current_user"
+              ];
+            var arrayImage = JSON.parse(
+              activityArray[0][sessionStorage.getItem("activity_id")]["gallery"]
+            );
+            var arrayDes = JSON.parse(
+              activityArray[0][sessionStorage.getItem("activity_id")]["des"]
+            );
+            var arrayRec = JSON.parse(
+              activityArray[0][sessionStorage.getItem("activity_id")]["rec"]
+            );
+            var arrayPretxt = JSON.parse(
+              activityArray[0][sessionStorage.getItem("activity_id")]["pre_txt"]
+            );
+            var arrayPreicon = JSON.parse(
+              activityArray[0][sessionStorage.getItem("activity_id")][
+                "pre_icon"
+              ]
+            );
+            var arrayReqtxt = JSON.parse(
+              activityArray[0][sessionStorage.getItem("activity_id")]["req_txt"]
+            );
+            var arrayReqicon = JSON.parse(
+              activityArray[0][sessionStorage.getItem("activity_id")][
+                "req_icon"
+              ]
+            );
+            var arrayAgendaTime = JSON.parse(
+              activityArray[0][sessionStorage.getItem("activity_id")][
+                "agenda_time"
+              ]
+            );
+            var arrayAgendaActivity = JSON.parse(
+              activityArray[0][sessionStorage.getItem("activity_id")][
+                "agenda_activity"
+              ]
+            );
+
+            $("#activityName").text(activityName);
+            if (activityMaxUser == 322) {
+              $("#pax").text("Unlimited");
+            } else {
+              $("#pax").text("Max " + activityMaxUser + " Pax");
             }
 
-            for(i = 0; i < arrayImage.length; i++) {
-              
-
-              if(i == 0){
-                $('#slide').append(
-
+            for (i = 0; i < arrayImage.length; i++) {
+              if (i == 0) {
+                $("#slide").append(
                   `<div class="carousel-item active">
                         <img
                           class="d-block w-100"
-                          src="images/pic_slide/` + arrayImage[i] + `"
+                          src="images/pic_slide/` +
+                    arrayImage[i] +
+                    `"
                           alt="First slide"
                         />
                       </div>`
-
-                )
-              }else{
-                $('#slide').append(
-
+                );
+              } else {
+                $("#slide").append(
                   `<div class="carousel-item ">
                         <img
                           class="d-block w-100"
-                          src="images/pic_slide/` + arrayImage[i] + `"
+                          src="images/pic_slide/` +
+                    arrayImage[i] +
+                    `"
                           alt="First slide"
                         />
                       </div>`
-
-                )
+                );
               }
-
-             
-
             }
 
-            $('#progress').append(
-
-                  `<div
+            $("#progress").append(
+              `<div
                       class="progress-bar"
                       role="progressbar"
-                      style="width:`+ (activityCurrentUser / activityMaxUser) * 100 +`%"
-                      aria-valuenow="` + activityCurrentUser +`"
+                      style="width:` +
+                (activityCurrentUser / activityMaxUser) * 100 +
+                `%"
+                      aria-valuenow="` +
+                activityCurrentUser +
+                `"
                       aria-valuemin="0"
-                      aria-valuemax="` + activityMaxUser + `"
+                      aria-valuemax="` +
+                activityMaxUser +
+                `"
                     ></div>`
-            )
-            if(activityMaxUser == activityCurrentUser){
-              $('#Available').text('SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY')
-              $('#reserve_button').addClass('d-none');
-            }else{
-              //$('#Available').text((activityMaxUser - activityCurrentUser) + ' Available')
-              $('#Available').text('Available')
-            }
+            );
             
-            if(arrayRec !== null) {
-
-              for(i = 0; i < arrayRec.length; i++) {
-              $('#rec_text').append(
-                `<li>`+ arrayRec[i] +`</li>`
-              )
-
-            }
-
-            }
-
-            if(arrayPretxt !== null) {
-
-              for(i = 0; i < arrayPretxt.length; i++) {
-
-              $('#pre').append(
-                `<li>`+ arrayPretxt[i] +
-                    `<img src="./images/icon_activity/`+ arrayPreicon[i] +`" class="img-activity-icon ml-1">
-                  </li>`
-              )
-
-            }
-
-            }
-
-            
-            for(i = 0; i < arrayAgendaActivity.length; i++) {
-
-              $('#agenda').append(
-
-                `<tr>
-                          <td class="text-center">` + arrayAgendaTime[i] +`</td>
-                          <td>` + arrayAgendaActivity[i] + `</td>
-                  </tr>`
-              )
-
-            }
-
-            if(arrayReqtxt !== null) {
-
-              for(i = 0; i < arrayReqtxt.length; i++) {
-
-              $('#req').append(
-
-                `<li>` + arrayReqtxt[i] +`
-                        <img src="./images/icon_activity/`+ arrayReqicon[i] +`" class="img-activity-icon ml-1">
-                      </li>`
-
-              )
-
-            }
-
-            }
-
+            if (parseInt(activityCurrentUser) >= parseInt(activityMaxUser)) {
           
+              $("#Available").text(
+                "SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY"
+              );
+              $("#reserve_button").addClass("d-none");
+            } else {
+              //$('#Available').text((activityMaxUser - activityCurrentUser) + ' Available')
+              $("#Available").text("Available");
+              $("#reserve_button").removeClass("d-none");
+            }
 
+            if (arrayRec !== null) {
+              for (i = 0; i < arrayRec.length; i++) {
+                $("#rec_text").append(`<li>` + arrayRec[i] + `</li>`);
+              }
+            }
+
+            if (arrayPretxt !== null) {
+              for (i = 0; i < arrayPretxt.length; i++) {
+                $("#pre").append(
+                  `<li>` +
+                    arrayPretxt[i] +
+                    `<img src="http://aov.illusion.in.th/images/icon_activity/` +
+                    arrayPreicon[i] +
+                    `" class="img-activity-icon ml-1">
+                  </li>`
+                );
+              }
+            }
+
+            for (i = 0; i < arrayAgendaActivity.length; i++) {
+              $("#agenda").append(
+                `<tr>
+                          <td class="text-center">` +
+                  arrayAgendaTime[i] +
+                  `</td>
+                          <td>` +
+                  arrayAgendaActivity[i] +
+                  `</td>
+                  </tr>`
+              );
+            }
+
+            if (arrayReqtxt !== null) {
+              for (i = 0; i < arrayReqtxt.length; i++) {
+                $("#req").append(
+                  `<li>` +
+                    arrayReqtxt[i] +
+                    `
+                        <img src="http://aov.illusion.in.th/images/icon_activity/` +
+                    arrayReqicon[i] +
+                    `" class="img-activity-icon ml-1">
+                      </li>`
+                );
+              }
+            }
           })
-          .catch(err => console.log(err))
-
-      }
+          .catch(err => console.log(err));
+      };
 
       limitationPayload = () => {
-
         const postData = {
+          ac_id: sessionStorage.getItem("ac_id")
+        };
 
-          ac_id : sessionStorage.getItem('ac_id')
-
-        }
-
-        console.table(postData)
-        const limArr = []
-        axios.post('http://aov-trip.com/aov_api/api/v1/limitationFetch.php' , JSON.stringify(postData))
+        console.table(postData);
+        const limArr = [];
+        axios
+          .post(
+            "http://aov-trip.com/aov_api/api/v1/limitationFetch.php",
+            JSON.stringify(postData)
+          )
           .then(res => {
-            limArr.push(res.data)
-            console.log(limArr[0][0]['lm_1'])
-            console.table(res.data)
-            if(limArr[0][0]['lm_1'] == "1") {
-              $('#limitation').append(
+            limArr.push(res.data);
+            console.log(limArr[0][0]["lm_1"]);
+            console.table(res.data);
+            if (limArr[0][0]["lm_1"] == "1") {
+              $("#limitation").append(
                 `<div class="col-4 col-md-2 my-2">
-                        <img src="./images/phobia_icon/icon_1.png" class="img-fluid">
+                        <img src="http://aov.illusion.in.th/images/phobia_icon/icon_1.png" class="img-fluid">
                       </div>`
-              )
+              );
             }
 
-            if(limArr[0][0]['lm_2'] == "1") {
-              $('#limitation').append(
+            if (limArr[0][0]["lm_2"] == "1") {
+              $("#limitation").append(
                 `<div class="col-4 col-md-2 my-2">
-                        <img src="./images/phobia_icon/icon_2.png" class="img-fluid">
+                        <img src="http://aov.illusion.in.th/images/phobia_icon/icon_2.png" class="img-fluid">
                       </div>`
-              )
+              );
             }
 
-            if(limArr[0][0]['lm_3'] == "1") {
-              $('#limitation').append(
+            if (limArr[0][0]["lm_3"] == "1") {
+              $("#limitation").append(
                 `<div class="col-4 col-md-2 my-2">
-                        <img src="./images/phobia_icon/icon_3.png" class="img-fluid">
+                        <img src="http://aov.illusion.in.th/images/phobia_icon/icon_3.png" class="img-fluid">
                       </div>`
-              )
+              );
             }
 
-            if(limArr[0][0]['lm_4'] == "1") {
-              $('#limitation').append(
+            if (limArr[0][0]["lm_4"] == "1") {
+              $("#limitation").append(
                 `<div class="col-4 col-md-2 my-2">
-                        <img src="./images/phobia_icon/icon_4.png" class="img-fluid">
+                        <img src="http://aov.illusion.in.th/images/phobia_icon/icon_4.png" class="img-fluid">
                       </div>`
-              )
+              );
             }
 
-            if(limArr[0][0]['lm_5'] == "1") {
-              $('#limitation').append(
+            if (limArr[0][0]["lm_5"] == "1") {
+              $("#limitation").append(
                 `<div class="col-4 col-md-2 my-2">
-                        <img src="./images/phobia_icon/icon_5.png" class="img-fluid">
+                        <img src="http://aov.illusion.in.th/images/phobia_icon/icon_5.png" class="img-fluid">
                       </div>`
-              )
+              );
             }
 
-            if(limArr[0][0]['lm_6'] == "1") {
-              $('#limitation').append(
+            if (limArr[0][0]["lm_6"] == "1") {
+              $("#limitation").append(
                 `<div class="col-4 col-md-2 my-2">
-                        <img src="./images/phobia_icon/icon_6.png" class="img-fluid">
+                        <img src="http://aov.illusion.in.th/images/phobia_icon/icon_6.png" class="img-fluid">
                       </div>`
-              )
+              );
             }
-
           })
-          .catch(err => console.log(err))
-      }
+          .catch(err => console.log(err));
+      };
 
       reserveActivity = () => {
+        const userArr = [];
 
-        const userArr = []
-        
-        userArr.push(JSON.parse(sessionStorage.getItem('user_payload')))
-        
-        const user_id = userArr[0]['id']
-        const activity_id = sessionStorage.getItem('ac_id')
-      
-        
-        
-        const postData = { user_id : user_id , activity_id : activity_id  }
+        userArr.push(JSON.parse(sessionStorage.getItem("user_payload")));
+
+        const user_id = userArr[0]["id"];
+        const activity_id = sessionStorage.getItem("ac_id");
+
+        const postData = { user_id: user_id, activity_id: activity_id };
 
         $.ajax({
-          url : "http://aov-trip.com/aov_api/api/v1/reserveActivity.php",
-          type : 'POST',
-          dataType : 'JSON',
-          data : JSON.stringify(postData),
+          url: "http://aov-trip.com/aov_api/api/v1/reserveActivity.php",
+          type: "POST",
+          dataType: "JSON",
+          data: JSON.stringify(postData),
           crossDomain: true,
           success: function(res) {
-            if(res.message == "Updated") {
-              Swal.fire("Reserve activity" , "" , "success")
-                .then(() => { $('#reserve_button').addClass('d-none')
-                 
-                 })
+            if (res.message == "Updated") {
+              Swal.fire("Reserve activity", "", "success").then(() => {
+                $("#reserve_button").addClass("d-none");
+              });
+            }
+
+            if (res.message == "MaxUser") {
+              Swal.fire("SORRY, FULLY BOOKED PLEASE SELECT OPTION ACTIVITY", "", "error").then(() => {
+                window.location.reload();
+              });
             }
           }
-        })
-        
-      }
+        });
+      };
 
       checkReserveActivity = () => {
+        console.log("check");
+        const userArr = [];
 
-        console.log('check');  
-        const userArr = []
+        userArr.push(JSON.parse(sessionStorage.getItem("user_payload")));
 
-        userArr.push(JSON.parse(sessionStorage.getItem('user_payload')))
-
-        const user_id = userArr[0]['id']
+        const user_id = userArr[0]["id"];
 
         const postData = {
+          user_id: user_id
+        };
 
-          user_id : user_id
-
-        }
-
-        
-
-        axios.post('http://aov-trip.com/aov_api/api/v1/reUserData.php' , JSON.stringify(postData))
+        axios
+          .post(
+            "http://aov-trip.com/aov_api/api/v1/reUserData.php",
+            JSON.stringify(postData)
+          )
           .then(res => {
-            console.info(sessionStorage.getItem('user_payload_redata'));
-             if(sessionStorage.getItem('user_payload_redata') === null){
-               console.log("CheckReserve");
-              sessionStorage.setItem('user_payload_redata' , JSON.stringify(res.data))
-             }else{
-              
-             }
+            console.info(sessionStorage.getItem("user_payload_redata"));
+            if (sessionStorage.getItem("user_payload_redata") === null) {
+              console.log("CheckReserve");
+              sessionStorage.setItem(
+                "user_payload_redata",
+                JSON.stringify(res.data)
+              );
+            } else {
+            }
           })
-          .catch(err => console.log(err))
-          
-          
-        const re_userArr = []
-        re_userArr.push(JSON.parse(sessionStorage.getItem('user_payload_redata')))
-        
-        const user_activity = re_userArr[0][0]['activity_id']
-        if(user_activity !== null) {
-          $('#reserve_button').addClass('d-none')
-        }
-        
+          .catch(err => console.log(err));
 
-      }
+        const re_userArr = [];
+        re_userArr.push(
+          JSON.parse(sessionStorage.getItem("user_payload_redata"))
+        );
+
+        const user_activity = re_userArr[0][0]["activity_id"];
+        if (user_activity !== null) {
+          $("#reserve_button").addClass("d-none");
+        }
+      };
 
       _initData = () => {
+        const user_payload = [];
+        user_payload.push(JSON.parse(sessionStorage.getItem("user_payload")));
 
-      const user_payload = []
-      user_payload.push(JSON.parse(sessionStorage.getItem('user_payload')))
-      
-      const user_id = user_payload[0]['id']
-      const postData = {
+        const user_id = user_payload[0]["id"];
+        const postData = {
+          user_id: user_id
+        };
 
-        user_id : user_id
+        axios
+          .post(
+            "http://aov-trip.com/aov_api/api/v1/reUserData.php",
+            JSON.stringify(postData)
+          )
+          .then(res => {
+            sessionStorage.setItem(
+              "user_payload_activity",
+              JSON.stringify(res.data)
+            );
 
-      }
-      
+            const re_payload = [];
+            re_payload.push(
+              JSON.parse(sessionStorage.getItem("user_payload_activity"))
+            );
 
-      axios.post('http://aov-trip.com/aov_api/api/v1/reUserData.php' , JSON.stringify(postData))
-        .then(res => {
+            if (re_payload[0][0]["activity_id"] == null) {
+              Swal.fire("No Activity Selected", "", "warning");
+              $("#reserve_button").removeClass("d-none");
+            } else {
+              $("#reserve_button").addClass("d-none");
+            }
+          })
+          .catch(err => console.log(err));
+      };
 
-          
-          sessionStorage.setItem('user_payload_activity' , JSON.stringify(res.data))
-
-          const re_payload = []
-        re_payload.push(JSON.parse(sessionStorage.getItem('user_payload_activity')))
-        
-
-        
-        if(re_payload[0][0]['activity_id'] == null) {
-
-          Swal.fire("No Activity Selected" , "" , "warning")
-          $('#reserve_button').removeClass('d-none');
-        }else{
-          $('#reserve_button').addClass('d-none');
-        }
-
-        })
-        .catch(err => console.log(err))
-
-      
-
-    }
-      
-     _initData()   
-      activityLoadData()
-      limitationPayload()
-      checkReserveActivity()
-      checkPayload()
+      _initData();
+      activityLoadData();
+      limitationPayload();
+      checkReserveActivity();
+      checkPayload();
     </script>
   </body>
 </html>

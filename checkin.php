@@ -48,9 +48,9 @@ $row = '';
   </head>
 <?php
 $servername = "localhost";
-$userserver = "aov_db";
-$passserver = "Yh0abYrHYI2";
-$dbname = "aov_db";
+$userserver = "cp466530_aov";
+$passserver = "aov1234aov";
+$dbname = "cp466530_aov";
 
 $conn = mysqli_connect($servername, $userserver, $passserver, $dbname);
 if (!$conn) {
@@ -81,7 +81,7 @@ if (!$conn) {
                         echo '<h1 class="text-center" style="font-size: 150px;" id="num">' . $row['id'] . '</h1>';
                         echo '<h2 class="text-center">' . $row['firstname'] . '</h2><hr />';
                         echo '<p class="">Flight Detail :</p>';
-                        echo '<div class="table-responsive text-nowrap"><table class="table table-hover table-bordered table-striped"><theadstyle="background-image: url("./images/bg_head_table.png"); background-repeat: no-repeat; background-size: 100% 100%; color: #fff;"><tr><th class="text-center" scope="col">Date</th><th class="text-center" scope="col">From - To</th><th class="text-center" scope="col">Flight</th><th class="text-center" scope="col">Departure Time</th><th class="text-center" scope="col">Arrive Time</th><th class="text-center" scope="col">Airline</th><th class="text-center" scope="col">Remark</th></tr></thead><tbody>';
+                        echo '<div class="table-responsive text-nowrap"><table class="table table-hover table-bordered table-striped"><theadstyle="background-image: url("http://aov.illusion.in.th/images/bg_head_table.png"); background-repeat: no-repeat; background-size: 100% 100%; color: #fff;"><tr><th class="text-center" scope="col">Date</th><th class="text-center" scope="col">From - To</th><th class="text-center" scope="col">Flight</th><th class="text-center" scope="col">Departure Time</th><th class="text-center" scope="col">Arrive Time</th><th class="text-center" scope="col">Airline</th><th class="text-center" scope="col">Remark</th></tr></thead><tbody>';
                         if ($row["flight_pdf"] == 1) {
                             echo '<tr><td class="text-center">6-Mar-19</td><td class="text-center">SHENZHEN - PHUKET </td><td class="text-center">CZ 6093</td><td class="text-center">14:40</td><td class="text-center">17:20</td><td class="text-center">China Southern Airline</td><td class="text-center">MEET at SHENZHEN Airport 11:40*</td></tr><tr><td class="text-center">9-Mar-19</td><td class="text-center">PHUKET - SHENZHEN</td><td class="text-center">CZ 6094</td><td class="text-center">18:20</td><td class="text-center">22:55</td><td class="text-center">China Southern Airline</td><td class="text-center">Departure From Hotel 15:20*</td></tr>';
                         }
@@ -97,7 +97,7 @@ if (!$conn) {
                           </tr>
                           <tr>
                             <td class="text-center">9-Mar-19</td>
-                            <td class="text-center">PHUKET - SHENZHEN</td>
+                            <td class="text-center">PHUKET - HONGKONG</td>
                             <td class="text-center">KA 213</td>
                             <td class="text-center">12:20</td>
                             <td class="text-center">16:50</td>
@@ -267,7 +267,7 @@ if (!$conn) {
                         }
 
                         echo '</tbody></table></div>';
-                        echo '<p class="">Transportations @ Phuket:<a href="./images/transportation.pdf" target="_blank">Download transportation information</a></p>';
+                        echo '<p class="">Transportations @ Phuket:<a href="http://www.aov-trip.com/images/transportation.pdf" target="_blank">Download transportation information</a></p>';
                         echo '<p class="d-none">Tribe Color :'. $row['tribe_color'] .'</p>';
                         echo '<p class="">Activity Selected : <span class="red-text">';
                         if ($row["activity_id"] == null){

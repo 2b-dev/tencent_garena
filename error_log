@@ -1,0 +1,1 @@
+[18-Feb-2019 09:13:02 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'aov_db'@'localhost' (using password: YES) in /home/cp466530/public_html/aov-trip.com/checkin.php on line 55
