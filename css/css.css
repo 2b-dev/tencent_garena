@@ -31,7 +31,7 @@ body,
 .navbar {
   /*background-color: rgba(0, 0, 0, 0.2);*/
   background-color: #fff;
-  background-image: url('../images/bg_head_table.png');
+  background-image: url('http://aov.illusion.in.th/images/bg_head_table.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -40,7 +40,7 @@ body,
 }
 .top-nav-collapse {
   background-color: #fff;
-  background-image: url('../images/bg_head_table.png');
+  background-image: url('http://aov.illusion.in.th/images/bg_head_table.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -50,24 +50,24 @@ body,
 }
 body.index-bg {
   background-color: #fff;
-  /*background-image: url('../images/onlyBG.png'), url('../images/bg_bottom.png');
+  /*background-image: url('http://aov.illusion.in.th/images/onlyBG.png'), url('http://aov.illusion.in.th/images/bg_bottom.png');
   background-size: 100% auto, 100% auto;
   background-position: center center, center center;
   background-repeat: no-repeat, repeat-y;*/
-  background-image: url("../images/bg_bottom.png");
+  background-image: url("http://aov.illusion.in.th/images/bg_bottom.png");
   background-size: 100% auto;
   background-position: center center;
   background-repeat: repeat-y;
 }
 .bg-head {
   background-color: #fff;
-  background-image: url("../images/bg_Head_desktop.png");
+  background-image: url("http://aov.illusion.in.th/images/bg_Head_desktop.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
 .bg-index-bottom {
-  background-image: url("../images/bg-index-bottom.png");
+  background-image: url("http://aov.illusion.in.th/images/bg-index-bottom.png");
   background-size: 100% auto;
   background-position: top center;
   background-repeat: no-repeat;
@@ -115,7 +115,7 @@ body.index-bg {
   margin-bottom: 1.5rem;
 }
 .flower-title{
-  background-image: url('../images/flower_title_step1.png'), url('../images/flower_title_step1.png');
+  background-image: url('http://aov.illusion.in.th/images/flower_title_step1.png'), url('http://aov.illusion.in.th/images/flower_title_step1.png');
   background-repeat: no-repeat, no-repeat;
   background-position: left center, right center;
   background-size: 40px auto, 40px auto;
@@ -124,7 +124,7 @@ body.index-bg {
 }
 .btn-wood{
   background-color: transparent;
-  background-image: url('../images/btn_wood.png');
+  background-image: url('http://aov.illusion.in.th/images/btn_wood.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   border-radius: 23px;
@@ -139,7 +139,7 @@ body.index-bg {
 }
 .btn_wood_tiki{
   background-color: transparent;
-  background-image: url('../images/btn_wood_tiki.png');
+  background-image: url('http://aov.illusion.in.th/images/btn_wood_tiki.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   min-width: 200px;
@@ -164,12 +164,12 @@ body.index-bg {
 }
 .card-body-paper{
   background-color: #fff;
-  background-image: url('../images/bg_table_hover.png');
+  background-image: url('http://aov.illusion.in.th/images/bg_table_hover.png');
   background-repeat: no-repeat;
   background-size: cover; 
 }
 .bg-paper{
-  /*background-image: url('../images/paper.png');
+  /*background-image: url('http://aov.illusion.in.th/images/paper.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   padding-top: 5rem;
@@ -189,7 +189,7 @@ body.index-bg {
 .sw-theme-arrows > ul.step-anchor > li.active > a , .sw-theme-arrows>ul.step-anchor>li.done>a {
   border-color: none !important;
   background-color: transparent !important;
-  background-image: url('../images/step_pass.png')!important;
+  background-image: url('http://aov.illusion.in.th/images/step_pass.png')!important;
   background-repeat: no-repeat!important;
   background-size: 100% 100%!important;
   color: #fff;
@@ -208,7 +208,7 @@ body.index-bg {
   width: 30px!important;
   height: 30px!important;
   background-color: transparent;
-  background-image: url('../images/tiki_icon.png');
+  background-image: url('http://aov.illusion.in.th/images/tiki_icon.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: left center;
@@ -228,7 +228,7 @@ body.index-bg {
 }
 .sw-theme-arrows>ul.step-anchor>li>a, .sw-theme-arrows>ul.step-anchor>li>a:hover{
   background-color: transparent;
-  background-image: url('../images/step.png');
+  background-image: url('http://aov.illusion.in.th/images/step.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   color: #fff;
@@ -238,7 +238,7 @@ body.index-bg {
 }
 .bg-first{
   background-color: #fff;
-  background-image: url('../images/bg_first.png');
+  background-image: url('http://aov.illusion.in.th/images/bg_first.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
@@ -256,7 +256,7 @@ body.index-bg {
 }
 table.table-hover tbody tr:hover {
   background-color: transparent;
-  background-image: url('../images/bg_table_hover.png');
+  background-image: url('http://aov.illusion.in.th/images/bg_table_hover.png');
   background-size: cover;
   background-repeat: no-repeat;
   color: #000;
@@ -266,14 +266,14 @@ table.table-hover.table-web tbody tr:hover {
   color: #fff;
 }
 body.main-body-option1{
-  background-image: url('../images/bg_option1.png'), url('../images/bg_option2.png'), url('../images/bg_first.png');
+  background-image: url('http://aov.illusion.in.th/images/bg_option1.png'), url('http://aov.illusion.in.th/images/bg_option2.png'), url('http://aov.illusion.in.th/images/bg_first.png');
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-size: 18% auto, 18% auto, cover;
   background-attachment: fixed, fixed, fixed;
   background-position: left bottom, right bottom, center center;
 }
 body.main-body-option2{
-  background-image: url('../images/bg_option5.png'), url('../images/bg_option6.png'), url('../images/bg_option3.png'), url('../images/bg_first.png');
+  background-image: url('http://aov.illusion.in.th/images/bg_option5.png'), url('http://aov.illusion.in.th/images/bg_option6.png'), url('http://aov.illusion.in.th/images/bg_option3.png'), url('http://aov.illusion.in.th/images/bg_first.png');
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
   background-size: 15% auto, 15% auto, 18% auto, cover;
   background-attachment: fixed, fixed, fixed, fixed;
@@ -282,7 +282,7 @@ body.main-body-option2{
 
 main.main {
   min-height: 100vh;
-  /*background-image: url('../images/bg_first.png');
+  /*background-image: url('http://aov.illusion.in.th/images/bg_first.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;*/
@@ -324,7 +324,7 @@ main.main {
 @media only screen and (max-width: 768px) {
   .navbar {
     background-color: #fff;
-    background-image: url('../images/bg_head_table.png');
+    background-image: url('http://aov.illusion.in.th/images/bg_head_table.png');
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -393,7 +393,7 @@ footer.page-footer a{
 }
 @media (max-width: 768px) {
   .bg-index-bottom {
-    background-image: url("../images/bg-index-bottom.png");
+    background-image: url("http://aov.illusion.in.th/images/bg-index-bottom.png");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -407,20 +407,20 @@ footer.page-footer a{
 @media (max-width: 515px) {
   body.index-bg {
     background-color: #fff;
-    background-image: url("../images/bg_bottom.png");
+    background-image: url("http://aov.illusion.in.th/images/bg_bottom.png");
     background-size: 100% auto;
     background-position: center center;
     background-repeat: repeat-y;
   }
   .bg-head {
     background-color: aqua;
-    background-image: url("../images/onlyBG.png");
+    background-image: url("http://aov.illusion.in.th/images/onlyBG.png");
     background-size: auto 100%;
     background-position: center center;
     background-repeat: no-repeat;
   }
   .bg-index-bottom {
-    background-image: url("../images/bg_bottom.png");
+    background-image: url("http://aov.illusion.in.th/images/bg_bottom.png");
     background-size: 100% auto;
     background-position: center center;
     background-repeat: repeat-y;
